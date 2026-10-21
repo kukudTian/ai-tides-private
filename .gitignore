@@ -1,0 +1,7 @@
+node_modules/
+release/
+logs/
+work/
+tmp/
+dist/
+ai-tides-private/
