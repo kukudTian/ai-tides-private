@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title><%= page === 'login' ? '管理后台登录' : `${sectionTitle} - 管理后台` %> - <%= siteName %></title>
+  <link rel="stylesheet" href="/admin.css?v=20260821.02">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body class="admin-body <%= page === 'login' ? 'admin-login-body' : '' %>">
+  <header class="admin-topbar">
+    <div class="admin-shell admin-topbar-inner">
+      <a class="admin-brand" href="/admin?p=traffic">
+        <span class="admin-brand-mark">AI</span>
+        <span>
+          <strong><%= siteName %></strong>
+          <em>内容管理后台</em>
+        </span>
+      </a>
+      <% if (page !== 'login') { %>
+        <nav class="admin-nav" aria-label="后台导航">
+          <a href="/">查看前台</a>
+          <a href="/admin?p=posts">发帖历史</a>
+          <form method="post" action="/admin/logout" class="inline-form">
+            <button type="submit" class="admin-link-btn">退出登录</button>
+          </form>
+        </nav>
+      <% } %>
+    </div>
+  </header>
+
+  <% if (page === 'login') { %>
+    <main class="admin-login-wrap">
+      <section class="admin-login-card">
+        <div class="admin-login-head">
+          <span class="admin-brand-mark">AI</span>
+          <h1><%= siteName %></h1>
+          <p><%= needsSetup ? '首次访问，创建你的管理密码' : '输入管理密码登录后台' %></p>
+        </div>
+        <% if (adminError) { %>
+          <p class="admin-alert admin-alert--error" role="alert"><%= adminError %></p>
+        <% } %>
+        <form method="post" action="/admin/login" class="admin-login-form">
+          <label for="admin-password"><%= needsSetup ? '设置管理密码' : '管理密码' %></label>
+          <input id="admin-password" name="password" type="password"
+                 autocomplete="<%= needsSetup ? 'new-password' : 'current-password' %>"
+                 placeholder="<%= needsSetup ? '至少 8 位，只用于登录后台' : '请输入你的后台密码' %>"
+                 required autofocus>
+          <% if (needsSetup) { %>
+            <label for="admin-confirm">再次输入密码</label>
+            <input id="admin-confirm" name="confirm" type="password" autocomplete="new-password"
+                   placeholder="再输入一次以确认" required>
+          <% } %>
+          <button type="submit" class="admin-btn admin-btn--primary">
+            <%= needsSetup ? '创建并进入后台' : '登录后台' %>
+          </button>
+        </form>
+        <p class="admin-login-hint">
+          <%= needsSetup
+            ? '这是第一次打开后台，不存在系统发放的令牌或校验码。密码会以加盐哈希保存在 Cloudflare D1，以后用同一密码登录。'
+            : '密码由你首次打开 /admin 时设置，不依赖任何平台颁发的令牌；忘记密码时需在 Cloudflare D1 中重置管理员记录。' %>
+        </p>
+      </section>
+    </main>
+  <% } else { %>
+    <main class="admin-shell">
+      <div class="admin-dash-head">
+        <div>
+          <h1><%= sectionTitle %></h1>
+          <p><%= sectionLead %></p>
+        </div>
+        <% if (page === 'posts') { %>
+          <a class="admin-btn admin-btn--primary" href="/category/ai-news/">前台资讯页</a>
+        <% } else if (page === 'tools') { %>
+          <a class="admin-btn admin-btn--primary" href="/category/ai-tools/">前台工具库</a>
+        <% } %>
+      </div>
+
+      <% if (adminError) { %>
+        <p class="admin-alert admin-alert--error" role="alert"><%= adminError %></p>
+      <% } %>
+      <% if (adminNotice) { %>
+        <p class="admin-alert admin-alert--success" role="status"><%= adminNotice %></p>
+      <% } %>
+
+      <nav class="admin-section-nav" aria-label="后台功能分区">
+        <a class="admin-section-link <%= page === 'traffic' ? 'is-active' : '' %>" href="/admin?p=traffic">网站流量</a>
+        <a class="admin-section-link <%= page === 'posts' ? 'is-active' : '' %>" href="/admin?p=posts">发帖历史</a>
+        <a class="admin-section-link <%= page === 'tools' ? 'is-active' : '' %>" href="/admin?p=tools">AI 工具</a>
+        <a class="admin-section-link <%= page === 'submissions' ? 'is-active' : '' %>" href="/admin?p=submissions">合作收录</a>
+        <a class="admin-section-link <%= page === 'keys' ? 'is-active' : '' %>" href="/admin?p=keys">密钥管理</a>
+      </nav>
+
+      <% if (page === 'traffic') { %><%- include('admin/traffic') %><% } %>
+      <% if (page === 'posts') { %><%- include('admin/posts') %><% } %>
+      <% if (page === 'tools') { %><%- include('admin/tools') %><% } %>
+      <% if (page === 'submissions') { %><%- include('admin/submissions') %><% } %>
+      <% if (page === 'keys') { %><%- include('admin/keys') %><% } %>
+    </main>
+  <% } %>
+
+  <script>
+    document.querySelectorAll('form[data-confirm]').forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!window.confirm(form.getAttribute('data-confirm'))) {
+          event.preventDefault();
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-copy]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        const value = button.getAttribute('data-copy');
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(value).then(function () {
+            button.textContent = '已复制';
+            setTimeout(function () { button.textContent = '复制密钥'; }, 2000);
+          });
+        } else {
+          window.prompt('请复制下面的密钥', value);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

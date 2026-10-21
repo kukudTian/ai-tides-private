@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="codeva-kPI4fbXpAn" />
+  <title><%= pageTitle || siteName %></title>
+  <meta name="description" content="<%= pageDescription || siteTagline %>">
+  <link rel="canonical" href="<%= canonical || siteUrl %>">
+  <meta property="og:site_name" content="<%= siteName %>">
+  <meta property="og:title" content="<%= pageTitle || siteName %>">
+  <meta property="og:description" content="<%= pageDescription || siteTagline %>">
+  <meta property="og:url" content="<%= canonical || siteUrl %>">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <% if (jsonLd) { %><script type="application/ld+json"><%- jsonLd %></script><% } %>
+   <link rel="stylesheet" href="/styles.css?v=20260819.02">
+  <link rel="alternate" type="application/rss+xml" title="<%= siteName %> RSS" href="<%= siteUrl %>/rss.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <% if (adsenseClient) { %>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%= adsenseClient %>" crossorigin="anonymous"></script>
+  <% } %>
+  <% if (googleAnalyticsId) { %>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= googleAnalyticsId %>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '<%= googleAnalyticsId %>');
+  </script>
+  <% } %>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <% categories.slice(0, 6).forEach(function(c) { %>
+          <a href="/category/<%= c.slug %>/" class="<%= currentPath.startsWith('/category/' + c.slug) ? 'active' : '' %>"><%= c.name %></a>
+        <% }) %>
+        <a href="/partner/" class="<%= currentPath.startsWith('/partner') ? 'active' : '' %>">收录与合作</a>
+        <a href="/about/" class="<%= currentPath.startsWith('/about') ? 'active' : '' %>">关于我们</a>
+      </nav>
+      <form class="search-form" action="/search/" method="get" role="search">
+        <i data-lucide="search" class="search-icon" aria-hidden="true"></i>
+        <input type="search" name="q" value="<%= typeof q !== 'undefined' ? q : '' %>" placeholder="搜索 AI 资讯与工具" aria-label="搜索">
+        <button type="submit" class="search-submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="category-bar" aria-label="全部分类">
+    <div class="container category-bar-inner">
+      <a class="category-all" href="/">全部</a>
+      <% categories.forEach(function(c) { %>
+        <a href="/category/<%= c.slug %>/" class="<%= currentPath.startsWith('/category/' + c.slug) ? 'active' : '' %>"><%= c.name %> <span><%= c.count %></span></a>
+      <% }) %>
+    </div>
+  </nav>
+
+  <%- body %>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark">AI</span>
+          <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+        </a>
+        <p><%= siteTagline %>，第一时间看懂 AI 世界正在发生什么。</p>
+        <p class="footer-note">© <%= year %> <%= siteName %> · 保留所有权利</p>
+      </div>
+      <div class="footer-col">
+        <h3>热门分类</h3>
+        <ul>
+          <% categories.slice(0, 8).forEach(function(c) { %>
+            <li><a href="/category/<%= c.slug %>/"><%= c.name %></a></li>
+          <% }) %>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          <% tags.slice(0, 12).forEach(function(t) { %>
+            <a href="/tag/<%= t.slug %>/"><%= t.name %></a>
+          <% }) %>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <ul>
+          <li><a href="/category/ai-news/">最新资讯</a></li>
+          <li><a href="/category/ai-tools/">热门工具</a></li>
+          <li><a href="/search/">站内搜索</a></li>
+          <li><a href="/partner/">收录与合作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <ul>
+          <li><a href="/about/">关于我们</a></li>
+        </ul>
+        <ul class="footer-mini">
+          <li><a href="/privacy/">隐私政策</a></li>
+          <li><a href="/terms/">服务条款</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/vendor/lucide.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

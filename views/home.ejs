@@ -1,0 +1,123 @@
+<main class="home-page">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">AI 资讯 · 实时热点</p>
+        <h1><%= siteTagline %></h1>
+        <p class="hero-lead">第一时间追踪 AI 热点：模型发布、Agent 生态与热门工具；过滤噪音，只看真正重要的变化。</p>
+      </div>
+      <div class="hero-stats" aria-label="关注本站的理由">
+        <div class="stat">
+          <i data-lucide="zap" class="stat-icon"></i>
+          <strong>热点速递</strong>
+          <span>模型发布与行业动态持续更新</span>
+        </div>
+        <div class="stat">
+          <i data-lucide="sparkles" class="stat-icon"></i>
+          <strong>精选优先</strong>
+          <span>过滤噪音，只留值得关注的变化</span>
+        </div>
+        <div class="stat">
+          <i data-lucide="compass" class="stat-icon"></i>
+          <strong>上手可用</strong>
+          <span>工具附官网与真实使用路径</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container home-layout">
+    <section class="main-col">
+      <div class="section-head">
+        <div>
+          <h2>最新 AI 资讯</h2>
+          <p>模型发布、Agent 生态与行业动态</p>
+        </div>
+        <a class="text-link" href="/category/ai-news/">更多资讯 <i data-lucide="arrow-right"></i></a>
+      </div>
+
+      <% if (newsPosts.length) { %>
+        <div class="post-grid">
+          <% newsPosts.forEach(function(p) { %>
+            <%- include('partials/card', { post: p }) %>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <div class="empty-state"><p>资讯正在路上，稍后再来看看。</p></div>
+      <% } %>
+
+      <div class="section-head section-head--spaced">
+        <div>
+          <h2>最新 AI 工具</h2>
+          <p>热门工具收录与更新</p>
+        </div>
+        <a class="text-link" href="/category/ai-tools/">更多工具 <i data-lucide="arrow-right"></i></a>
+      </div>
+
+      <% if (featuredTools.length) { %>
+        <div class="featured-row">
+          <% featuredTools.forEach(function(p) { %>
+            <a class="featured-item" href="/tool/<%= p.slug %>/">
+              <span class="featured-label"><i data-lucide="flame"></i> 精选工具</span>
+              <strong><%= p.title.split(' - ')[0] %></strong>
+              <span><%= p.summary %></span>
+            </a>
+          <% }) %>
+        </div>
+      <% } %>
+
+      <% if (toolPosts.length) { %>
+        <div class="post-grid">
+          <% toolPosts.forEach(function(p) { %>
+            <%- include('partials/card', { post: p }) %>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <div class="empty-state"><p>工具库正在扩充中，稍后再来看看。</p></div>
+      <% } %>
+    </section>
+
+    <aside class="sidebar">
+      <%- include('partials/ad', { slot: 'sidebar-top' }) %>
+
+      <section class="side-card">
+        <h2><i data-lucide="flame"></i> 热门工具榜</h2>
+        <ol class="rank-list">
+          <% hotTools.forEach(function(p, i) { %>
+            <li>
+              <span class="rank-no"><%= i + 1 %></span>
+              <a href="/tool/<%= p.slug %>/">
+                <strong><%= p.title.split(' - ')[0] %></strong>
+                <span><%= p.categoryName %></span>
+              </a>
+            </li>
+          <% }) %>
+          <% if (!hotTools.length) { %><p class="muted">暂无热门工具。</p><% } %>
+        </ol>
+      </section>
+
+      <section class="side-card">
+        <h2><i data-lucide="folder"></i> 热门分类</h2>
+        <div class="category-list">
+          <% categories.slice(0, 10).forEach(function(c) { %>
+            <a href="/category/<%= c.slug %>/">
+              <span><%= c.name %></span>
+              <span class="count"><%= c.count %></span>
+            </a>
+          <% }) %>
+        </div>
+      </section>
+
+      <section class="side-card">
+        <h2><i data-lucide="tag"></i> 热门标签</h2>
+        <div class="tag-cloud">
+          <% tags.slice(0, 16).forEach(function(t) { %>
+            <a href="/tag/<%= t.slug %>/"><%= t.name %></a>
+          <% }) %>
+        </div>
+      </section>
+
+      <%- include('partials/ad', { slot: 'sidebar-bottom' }) %>
+    </aside>
+  </div>
+</main>
