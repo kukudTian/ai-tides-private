@@ -1,0 +1,28 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/icons/*
+  Cache-Control: public, max-age=86400, immutable
+
+/screenshots/*
+  Cache-Control: public, max-age=86400, immutable
+
+/vendor/*
+  Cache-Control: public, max-age=604800, immutable
+
+/styles.css
+  Cache-Control: public, max-age=3600
+
+/app.js
+  Cache-Control: public, max-age=3600
+
+/search-index.json
+  Cache-Control: public, max-age=900
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+/rss.xml
+  Cache-Control: public, max-age=900

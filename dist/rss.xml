@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>AI 潮汐</title>
+    <link>https://ai-blog.cloud</link>
+    <description>实时追踪 AI 热点，不错过每一个值得关注的新变化</description>
+    <language>zh-cn</language>
+    <item>
+      <title><![CDATA[漫画翻译器 - AI 漫画翻译平台，OCR 识别与智能排版批量汉化]]></title>
+      <link>https://ai-blog.cloud/tool/manga-translate/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/manga-translate/</guid>
+      <pubDate>Fri, 02 Oct 2026 09:45:29 GMT</pubDate>
+      <description><![CDATA[漫画翻译器是 Ficory LLC 提供的在线漫画翻译平台，支持 100 多种语言互译、OCR 文字识别、智能排版与一键回填，提供整话批量翻译、后台队列、在线译图编辑，并通过 API 接入个人与团队工作流。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录]]></title>
+      <link>https://ai-blog.cloud/tool/unitree-superhuman-humanoid-robot/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/unitree-superhuman-humanoid-robot/</guid>
+      <pubDate>Tue, 18 Aug 2026 11:40:00 GMT</pubDate>
+      <description><![CDATA[宇树科技 8 月 17 日发布「超人」人形机器人，原地跳高 2 米、极限速度 12.66 米每秒，均超过人类极限纪录，从立项到亮相仅用三个多月，展示出具身智能运动能力的快速迭代，公司还将于 8 月 19 日登陆科创板。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[智谱清言 - 智谱 AI 推出的 GLM 全模态 AI 助手]]></title>
+      <link>https://ai-blog.cloud/tool/glm/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/glm/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[智谱清言是智谱 AI 推出的对话式 AI 助手，基于 GLM 系列模型，支持文本对话、AI 绘画、文档阅读、AI 生视频、智能体广场与云知识库，普通用户免费可用，开发者可同步接入 BigModel 开放平台。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[智谱 BigModel - 国产 GLM 大模型开放平台]]></title>
+      <link>https://ai-blog.cloud/tool/bigmodel/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/bigmodel/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[智谱 BigModel 是智谱 AI 的开发者开放平台，提供 GLM 系列模型的对话 API、Embedding、微调、知识库与智能体工具，是国产大模型应用和企业级 AI 项目的主流选择之一。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[商汤大装置 SenseNova - 商汤多模态大模型与 AI 算力平台]]></title>
+      <link>https://ai-blog.cloud/tool/sensenova/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/sensenova/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[商汤大装置是商汤科技推出的 AI 基础设施平台，提供 SenseNova 系列大模型 API、智能体开发工具、算力与模型训练服务，面向企业级 AI 应用和多模态生产场景。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[阿里云百炼 - 通义千问大模型一站式平台]]></title>
+      <link>https://ai-blog.cloud/tool/bailian/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/bailian/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[阿里云百炼是通义千问背后的模型服务平台，提供 Qwen 系列模型 API、多模态能力、RAG 知识库、智能体编排与模型微调，适合个人开发者和企业团队把大模型能力稳定接入业务。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[火山方舟 - 豆包大模型与多模态 API 平台]]></title>
+      <link>https://ai-blog.cloud/tool/volcengine/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/volcengine/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[火山方舟是字节跳动火山引擎推出的大模型服务平台，提供豆包系列模型 API、多模态生成、知识库、联网搜索与智能体编排，是国产大模型应用的高频选择。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[百度千帆 - 文心大模型应用开发平台]]></title>
+      <link>https://ai-blog.cloud/tool/qianfan/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/qianfan/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[百度智能云千帆提供文心大模型 API、Prompt 工程、知识库、智能体与模型微调能力，同时支持调用外部模型，是百度系 AI 应用和企业落地的官方平台。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[腾讯元宝 - 腾讯推出的 AI 助手]]></title>
+      <link>https://ai-blog.cloud/tool/yuanbao/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/yuanbao/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[腾讯元宝是腾讯推出的 AI 助手，覆盖网页、App 与桌面端，支持 AI 搜索、文档阅读、图片视频理解与内容创作，并打通微信公众号、腾讯文档等生态内容。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[讯飞星火 - 科大讯飞大模型与语音 AI 平台]]></title>
+      <link>https://ai-blog.cloud/tool/xinghuo/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/xinghuo/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[讯飞星火是科大讯飞的国产大模型产品，既有面向用户的星火助手，也有开放平台 API 和行业方案，支持文本、语音、多模态以及企业级应用。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[扣子 Coze - 字节跳动的 AI 智能体与应用开发平台]]></title>
+      <link>https://ai-blog.cloud/tool/coze/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/coze/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[扣子是字节跳动推出的 AI 智能体开发平台，用户可以通过可编排的工作流、插件、知识库与数据库快速搭建聊天 Bot、Agent 和全栈 AI 应用，并能发布到多个渠道。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[阶跃星辰开放平台 - Step 系列多模态大模型 API]]></title>
+      <link>https://ai-blog.cloud/tool/stepfun/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/stepfun/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[阶跃星辰开放平台提供 Step 系列多模态大模型 API，覆盖文本对话、图像理解、视频理解与生成，面向开发者和企业提供稳定的模型服务。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[MiniMax 开放平台 - 文本、语音与多模态生成 API]]></title>
+      <link>https://ai-blog.cloud/tool/minimax-open/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/minimax-open/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[MiniMax 开放平台提供大语言模型、语音、图像与视频生成 API，覆盖文本对话、声音克隆、音乐生成与多模态创作，是国产 AI 开放平台中的高频选择。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Groq - LPU 驱动的极速 AI 推理云]]></title>
+      <link>https://ai-blog.cloud/tool/groq/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/groq/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[Groq 是高性能 AI 推理云，通过自研 LPU 提供极低延迟的 Llama 等开源模型 API，并兼容 OpenAI 格式，适合 Agent、实时对话与高频推理场景。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Cursor - AI 原生代码编辑器]]></title>
+      <link>https://ai-blog.cloud/tool/cursor/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/cursor/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[Cursor 是基于 VS Code 打造的 AI 代码编辑器，提供智能补全、代码对话、Composer 和多文件 Agent 能力，能理解整个仓库上下文并直接执行修改。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[秘塔 AI 搜索 - 无广告直达结果的 AI 搜索引擎]]></title>
+      <link>https://ai-blog.cloud/tool/metaso/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/metaso/</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[秘塔 AI 搜索是国产 AI 搜索引擎，主打无广告直达结果，提供全网、学术、文库、播客等检索模式与深度研究能力，适合信息查找和资料整理。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[DeepSeek - 面向大众与开发者的国产大模型产品]]></title>
+      <link>https://ai-blog.cloud/tool/deepseek/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/deepseek/</guid>
+      <pubDate>Sun, 16 Aug 2026 09:00:00 GMT</pubDate>
+      <description><![CDATA[DeepSeek 是深度求索推出的 AI 大模型产品线，普通用户可在网页、桌面端和 App 中直接使用，开发者可通过 API 调用模型，以低成本、强推理和开放生态成为国产模型与 Agent 应用的主流选择。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[硅基流动 SiliconFlow - 一站式 AI 模型 API 平台]]></title>
+      <link>https://ai-blog.cloud/tool/siliconflow/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/siliconflow/</guid>
+      <pubDate>Sun, 16 Aug 2026 08:00:00 GMT</pubDate>
+      <description><![CDATA[硅基流动是国内主流的 AI 模型 API 平台，聚合 DeepSeek、Qwen、GLM 等模型与向量、图像、语音能力，提供 OpenAI 兼容接口、国内直连和统一额度计费。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[OpenRouter - 统一接入全球模型的 API 路由平台]]></title>
+      <link>https://ai-blog.cloud/tool/openrouter/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/openrouter/</guid>
+      <pubDate>Sun, 16 Aug 2026 07:00:00 GMT</pubDate>
+      <description><![CDATA[OpenRouter 是全球模型 API 路由平台，用统一接口接入 OpenAI、Anthropic、Google、DeepSeek 等模型，支持价格对比、模型回退与统一计费。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[OpenCode - 开源 AI 编程智能体与终端工具]]></title>
+      <link>https://ai-blog.cloud/tool/opencode/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/opencode/</guid>
+      <pubDate>Sun, 16 Aug 2026 06:00:00 GMT</pubDate>
+      <description><![CDATA[OpenCode 是开源 AI 编程智能体，在终端中以会话方式读取仓库、编辑文件并执行命令，可接入 OpenAI、Anthropic 与本地模型。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[DeepSeek Harness 开发者预览版发布：MIT 开源，把 Agent 运行时做成可插拔底座]]></title>
+      <link>https://ai-blog.cloud/tool/deepseek-harness-release/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/deepseek-harness-release/</guid>
+      <pubDate>Sun, 16 Aug 2026 04:30:00 GMT</pubDate>
+      <description><![CDATA[DeepSeek 于 8 月 13 日发布 Harness 开发者预览版 v0.1，以 MIT 协议开源，内置四种运行模式、追加式轨迹日志与恢复/分支/回放能力，面向需要自建 Agent 运行时的开发者。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[ChatGPT - OpenAI 推出的全能 AI 对话助手]]></title>
+      <link>https://ai-blog.cloud/tool/chatgpt/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/chatgpt/</guid>
+      <pubDate>Sun, 16 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[ChatGPT 是 OpenAI 推出的 AI 对话助手，支持网页、桌面端和移动端使用，可完成问答、写作、编程、图像生成、联网搜索和深度研究。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Claude - Anthropic 推出的 AI 助手与编程智能体]]></title>
+      <link>https://ai-blog.cloud/tool/claude/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/claude/</guid>
+      <pubDate>Sun, 16 Aug 2026 02:00:00 GMT</pubDate>
+      <description><![CDATA[Claude 是 Anthropic 推出的 AI 助手，强调长文档理解、代码生成和任务执行，并提供网页版、桌面端与 API。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[DeepSeek V4 Pro API 正式上线：100 万上下文、384K 输出，Agent 生态迎新底座]]></title>
+      <link>https://ai-blog.cloud/tool/deepseek-v4-launch/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/deepseek-v4-launch/</guid>
+      <pubDate>Sun, 16 Aug 2026 01:00:00 GMT</pubDate>
+      <description><![CDATA[DeepSeek V4 Pro API 正式上线，支持 100 万 Token 上下文、384K 输出与 500 并发，同时开放 DeepSeek Harness 开发者预览版。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[DeepSeek Harness - DeepSeek 推出的开源 AI Agent Harness 开发框架]]></title>
+      <link>https://ai-blog.cloud/tool/deepseek-harness/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/deepseek-harness/</guid>
+      <pubDate>Sun, 16 Aug 2026 00:30:00 GMT</pubDate>
+      <description><![CDATA[DeepSeek Harness（简称 dsh）是 DeepSeek 开源的 Agent Harness 框架，采用“一切皆插件”架构，开发者可以不改框架源码就替换任意 Agent 组件，并以 MIT 协议开源。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[通义千问 - 阿里云推出的多模态 AI 大模型助手]]></title>
+      <link>https://ai-blog.cloud/tool/tongyi-qianwen/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/tongyi-qianwen/</guid>
+      <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[通义千问是阿里云推出的多模态大模型助手，覆盖对话、写作、翻译、图像理解与办公效率场景，并提供 API 和开源模型。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Kimi - 月之暗面推出的 AI 助手，K3 主打智能体与知识工作]]></title>
+      <link>https://ai-blog.cloud/tool/kimi/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/kimi/</guid>
+      <pubDate>Sat, 15 Aug 2026 08:00:00 GMT</pubDate>
+      <description><![CDATA[Kimi 是月之暗面推出的 AI 助手，K3 上线后更强调智能体编程与知识工作，支持长文档、网页阅读、代码执行和多步任务。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Kimi K3 正式上线 - 主打智能体编程与知识工作]]></title>
+      <link>https://ai-blog.cloud/tool/kimi-k3-launch/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/kimi-k3-launch/</guid>
+      <pubDate>Sat, 15 Aug 2026 06:00:00 GMT</pubDate>
+      <description><![CDATA[Kimi 官方上线 K3，围绕智能体编程与知识工作优化任务规划、代码执行和文件协作能力。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[豆包 - 字节跳动旗下免费 AI 智能助手]]></title>
+      <link>https://ai-blog.cloud/tool/doubao/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/doubao/</guid>
+      <pubDate>Sat, 15 Aug 2026 02:00:00 GMT</pubDate>
+      <description><![CDATA[豆包是字节跳动推出的免费 AI 智能助手，覆盖 Web、App、浏览器插件和 API 多种使用方式，适合日常问答、写作、翻译和资料整理。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Manus - 通用型 AI Agent 产品]]></title>
+      <link>https://ai-blog.cloud/tool/manus/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/manus/</guid>
+      <pubDate>Fri, 14 Aug 2026 02:00:00 GMT</pubDate>
+      <description><![CDATA[Manus 是面向任务交付的通用 AI Agent，能够拆解目标、调用工具并异步执行，适合研究报告、数据处理和网页自动化等场景。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Manus 恢复独立运营 - Agent 产品竞争进入交付能力阶段]]></title>
+      <link>https://ai-blog.cloud/tool/manus-independent-operation/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/manus-independent-operation/</guid>
+      <pubDate>Fri, 14 Aug 2026 02:00:00 GMT</pubDate>
+      <description><![CDATA[Manus 完成架构调整后恢复独立运营，重新聚焦复杂任务交付，Agent 赛道竞争从演示转向执行稳定性。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[OpenAI API - 接入 GPT 系列模型与开发平台]]></title>
+      <link>https://ai-blog.cloud/tool/openai/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/openai/</guid>
+      <pubDate>Fri, 14 Aug 2026 01:00:00 GMT</pubDate>
+      <description><![CDATA[OpenAI API 是面向开发者的模型调用平台，提供 GPT 系列、多模态、微调、工具调用和 Agent 相关接口。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[豆包上线 Agent 工作台 - 网页、文档与任务编排一站完成]]></title>
+      <link>https://ai-blog.cloud/tool/doubao-agent-workbench/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/doubao-agent-workbench/</guid>
+      <pubDate>Thu, 13 Aug 2026 08:00:00 GMT</pubDate>
+      <description><![CDATA[豆包推出 Agent 工作台，将网页操作、文档处理与定时任务统一编排，让多步流程在同一个入口内完成。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[TRAE 编程 - 字节跳动推出的 AI 代码助手]]></title>
+      <link>https://ai-blog.cloud/tool/trae-programming/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/trae-programming/</guid>
+      <pubDate>Thu, 13 Aug 2026 03:20:00 GMT</pubDate>
+      <description><![CDATA[TRAE 是字节跳动推出的 AI 编程助手，围绕项目级开发设计，支持代码补全、自然语言改代码、多文件理解和 Agent 执行。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[通义千问 Qwen3.5 发布 - 多模态与工具调用能力再升级]]></title>
+      <link>https://ai-blog.cloud/tool/qwen3-5-launch/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/qwen3-5-launch/</guid>
+      <pubDate>Wed, 12 Aug 2026 02:00:00 GMT</pubDate>
+      <description><![CDATA[阿里云发布通义千问 Qwen3.5，多模态理解、长文档处理和工具调用能力全面升级，开发者可同时通过 API 与开源权重使用。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[即梦 AI - 字节跳动旗下的 AI 图像和视频生成平台]]></title>
+      <link>https://ai-blog.cloud/tool/jimeng-ai/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/jimeng-ai/</guid>
+      <pubDate>Wed, 12 Aug 2026 01:00:00 GMT</pubDate>
+      <description><![CDATA[即梦 AI 是字节跳动推出的 AI 视觉创作平台，支持图像生成、数字人、视频合成等能力，适合内容创作者快速产出素材。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[LiblibAI - 中国领先的一站式 AI 创作平台]]></title>
+      <link>https://ai-blog.cloud/tool/liblib-ai/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/liblib-ai/</guid>
+      <pubDate>Tue, 11 Aug 2026 06:00:00 GMT</pubDate>
+      <description><![CDATA[LiblibAI 提供模型分享社区和在线生成能力，用户可以在线使用 LoRA、Checkpoint 等模型，也可以把工作流沉淀为团队资产。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[ChatGPT 深度研究更新 - 长报告与多来源引用体验再优化]]></title>
+      <link>https://ai-blog.cloud/tool/chatgpt-deep-research-update/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/chatgpt-deep-research-update/</guid>
+      <pubDate>Tue, 11 Aug 2026 02:00:00 GMT</pubDate>
+      <description><![CDATA[OpenAI 更新 ChatGPT 深度研究功能，长报告生成更稳定，来源引用更完整，任务进行中可随时查看进度。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Gemini 3.7 Flash - Google 推出的高效 Coding 与 Agent 模型]]></title>
+      <link>https://ai-blog.cloud/tool/gemini-3-7-flash/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/gemini-3-7-flash/</guid>
+      <pubDate>Mon, 10 Aug 2026 10:00:00 GMT</pubDate>
+      <description><![CDATA[Gemini 3.7 Flash 是 Google 推出的高效模型，强调 Coding 与 Agent 场景下的速度和成本平衡，适合大规模并行任务。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[可灵 AI 更新视频编辑能力 - 镜头控制与数字人制作更顺手]]></title>
+      <link>https://ai-blog.cloud/tool/kling-ai-video-editing/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/kling-ai-video-editing/</guid>
+      <pubDate>Mon, 10 Aug 2026 04:00:00 GMT</pubDate>
+      <description><![CDATA[可灵 AI 升级视频编辑能力，镜头控制更精细、局部修改更灵活，数字人口播也更容易上手。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[通义灵码 - 阿里云推出的 AI 编码助手]]></title>
+      <link>https://ai-blog.cloud/tool/tongyi-lingma/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/tongyi-lingma/</guid>
+      <pubDate>Sun, 09 Aug 2026 08:40:00 GMT</pubDate>
+      <description><![CDATA[通义灵码是阿里云推出的 AI 编码助手，支持主流 IDE，可在编码、测试、评审等环节提供自动化帮助。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[可灵 AI - 快手推出的 AI 视频生成平台]]></title>
+      <link>https://ai-blog.cloud/tool/kling/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/kling/</guid>
+      <pubDate>Sat, 08 Aug 2026 02:00:00 GMT</pubDate>
+      <description><![CDATA[可灵 AI 是快手推出的 AI 视频生成平台，支持文生视频、图生视频、数字人和智能编辑，适合短视频创作者快速出片。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[海螺视频 - MiniMax 推出的 AI 视频创作工具]]></title>
+      <link>https://ai-blog.cloud/tool/hailuo/</link>
+      <guid isPermaLink="true">https://ai-blog.cloud/tool/hailuo/</guid>
+      <pubDate>Fri, 07 Aug 2026 02:00:00 GMT</pubDate>
+      <description><![CDATA[海螺视频是 MiniMax 推出的 AI 视频生成工具，支持文生视频、图生视频与创意剪辑，适合内容创作者快速制作短片。]]></description>
+    </item>
+  </channel>
+</rss>

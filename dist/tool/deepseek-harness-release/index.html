@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="codeva-kPI4fbXpAn" />
+  <title>DeepSeek Harness 开发者预览版发布：MIT 开源，把 Agent 运行时做成可插拔底座 - AI 潮汐</title>
+  <meta name="description" content="DeepSeek 于 8 月 13 日发布 Harness 开发者预览版 v0.1，以 MIT 协议开源，内置四种运行模式、追加式轨迹日志与恢复/分支/回放能力，面向需要自建 Agent 运行时的开发者。">
+  <link rel="canonical" href="https://ai-blog.cloud/tool/deepseek-harness-release/">
+  <meta property="og:site_name" content="AI 潮汐">
+  <meta property="og:title" content="DeepSeek Harness 开发者预览版发布：MIT 开源，把 Agent 运行时做成可插拔底座 - AI 潮汐">
+  <meta property="og:description" content="DeepSeek 于 8 月 13 日发布 Harness 开发者预览版 v0.1，以 MIT 协议开源，内置四种运行模式、追加式轨迹日志与恢复/分支/回放能力，面向需要自建 Agent 运行时的开发者。">
+  <meta property="og:url" content="https://ai-blog.cloud/tool/deepseek-harness-release/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"DeepSeek Harness 开发者预览版发布：MIT 开源，把 Agent 运行时做成可插拔底座","description":"DeepSeek 于 8 月 13 日发布 Harness 开发者预览版 v0.1，以 MIT 协议开源，内置四种运行模式、追加式轨迹日志与恢复/分支/回放能力，面向需要自建 Agent 运行时的开发者。","datePublished":"2026-08-16T12:30:00+08:00","dateModified":"2026-08-16T13:14:56.855Z","url":"https://ai-blog.cloud/tool/deepseek-harness-release/","author":{"@type":"Organization","name":"AI 潮汐"},"publisher":{"@type":"Organization","name":"AI 潮汐"},"mainEntityOfPage":"https://ai-blog.cloud/tool/deepseek-harness-release/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ai-blog.cloud"},{"@type":"ListItem","position":2,"name":"AI资讯","item":"https://ai-blog.cloud/category/ai-news/"},{"@type":"ListItem","position":3,"name":"DeepSeek Harness 开发者预览版发布：MIT 开源，把 Agent 运行时做成可插拔底座","item":"https://ai-blog.cloud/tool/deepseek-harness-release/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"DeepSeek Harness 和 DeepSeek V4 Pro 是什么关系？","acceptedAnswer":{"@type":"Answer","text":"Harness 是运行框架，V4 Pro 是模型。两者可以组合使用：Harness 通过模型适配器接入 DeepSeek API，模型本身也可以独立在其它应用里调用。"}},{"@type":"Question","name":"只会用现成 AI 工具的人需要学它吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。Harness 面向 AI 开发者、Agent 基础设施团队和插件作者，不是面向普通用户的成品应用。"}},{"@type":"Question","name":"当前版本能用于生产环境吗？","acceptedAnswer":{"@type":"Answer","text":"官方定位是开发者预览版，后续可能出现破坏兼容性的变更，建议先用于试验、评估与插件开发，生产落地需要等待版本趋于稳定。"}},{"@type":"Question","name":"可以接入 DeepSeek 以外的模型吗？","acceptedAnswer":{"@type":"Answer","text":"可以。模型适配器是可替换插件，官方文档覆盖 DeepSeek API、其他供应商以及自定义 OpenAI 兼容端点。"}}]}]}</script>
+   <link rel="stylesheet" href="/styles.css?v=20260819.02">
+  <link rel="alternate" type="application/rss+xml" title="AI 潮汐 RSS" href="https://ai-blog.cloud/rss.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4951997546216729" crossorigin="anonymous"></script>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXMJ6STTQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WXMJ6STTQV');
+  </script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        
+          <a href="/category/ai-tools/" class="">AI工具</a>
+        
+          <a href="/category/ai-news/" class="">AI资讯</a>
+        
+        <a href="/partner/" class="">收录与合作</a>
+        <a href="/about/" class="">关于我们</a>
+      </nav>
+      <form class="search-form" action="/search/" method="get" role="search">
+        <i data-lucide="search" class="search-icon" aria-hidden="true"></i>
+        <input type="search" name="q" value="" placeholder="搜索 AI 资讯与工具" aria-label="搜索">
+        <button type="submit" class="search-submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="category-bar" aria-label="全部分类">
+    <div class="container category-bar-inner">
+      <a class="category-all" href="/">全部</a>
+      
+        <a href="/category/ai-tools/" class="">AI工具 <span>34</span></a>
+      
+        <a href="/category/ai-news/" class="">AI资讯 <span>9</span></a>
+      
+    </div>
+  </nav>
+
+  <main class="tool-page tool-page--news">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      <a href="/category/ai-news/">AI资讯</a>
+      <span>/</span>
+      <span class="current">DeepSeek Harness 开发者预览版发布：MIT 开源，把 Agent 运行时做成可插拔底座</span>
+    </nav>
+
+    <header class="tool-hero">
+      <div class="tool-cover">
+        
+          <img src="/icons/deepseek-harness.svg" alt="DeepSeek Harness 开发者预览版发布：MIT 开源，把 Agent 运行时做成可插拔底座" loading="lazy">
+        
+      </div>
+      <div class="tool-hero-body">
+        <h1>DeepSeek Harness 开发者预览版发布：MIT 开源，把 Agent 运行时做成可插拔底座</h1>
+        <p class="tool-subtitle">框架以 dsh 命令行与 Web UI 双入口开放，模型、工具、沙箱、调度和 UI 全部可按插件组合。</p>
+        <div class="tool-meta">
+          <a class="chip chip--category" href="/category/ai-news/"><i data-lucide="folder"></i>AI资讯</a>
+          
+            <a class="chip" href="/tag/DeepSeek/"><i data-lucide="tag"></i>DeepSeek</a>
+          
+            <a class="chip" href="/tag/Agent%E6%A1%86%E6%9E%B6/"><i data-lucide="tag"></i>Agent框架</a>
+          
+            <a class="chip" href="/tag/%E5%BC%80%E6%BA%90/"><i data-lucide="tag"></i>开源</a>
+          
+            <a class="chip" href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/"><i data-lucide="tag"></i>开发者工具</a>
+          
+        </div>
+        <div class="tool-actions">
+          
+            
+              <a class="btn btn--primary" href="https://github.com/deepseek-ai/deepseek-harness" rel="nofollow noopener" target="_blank">
+                <i data-lucide="external-link"></i> 阅读原文
+              </a>
+            
+          
+          <button class="btn btn--ghost copy-link" data-url="https://ai-blog.cloud/tool/deepseek-harness-release/">
+            <i data-lucide="link"></i> 复制链接
+          </button>
+        </div>
+      </div>
+      <div class="tool-facts">
+        <div><span>发布日期</span><strong>2026-08-16</strong></div>
+        <div><span>热度指数</span><strong>86</strong></div>
+        <div><span>阅读时长</span><strong>1953 字</strong></div>
+      </div>
+    </header>
+
+    
+
+    <div class="tool-layout">
+      <article class="article">
+        
+          <nav class="toc" aria-label="目录">
+            <p>目录</p>
+            <ol>
+              
+                <li><a href="#sec-1">事件：Harness v0.1 开放</a></li>
+              
+                <li><a href="#sec-2">核心架构：一切皆插件</a></li>
+              
+                <li><a href="#sec-3">四种运行模式，覆盖不同场景</a></li>
+              
+                <li><a href="#sec-4">可观测性：从提示词到调度全记录</a></li>
+              
+                <li><a href="#sec-5">快速上手：一条命令启动 Web UI</a></li>
+              
+                <li><a href="#sec-6">成本与接入方式</a></li>
+              
+                <li><a href="#sec-7">和成品 Coding Agent 的差异</a></li>
+              
+                <li><a href="#sec-8">对 Agent 生态的意义</a></li>
+              
+                <li><a href="#sec-9">下一步关注什么</a></li>
+              
+            </ol>
+          </nav>
+        
+
+        
+
+
+        
+
+        
+          <section class="section-block" id="sec-1">
+            <h2>事件：Harness v0.1 开放</h2>
+            <div class="prose"><p>2026 年 8 月 13 日，DeepSeek 面向全球开发者开放 Harness 开发者预览版（v0.1），并同步以 MIT 协议公开源代码。项目命令行名称为 <code>dsh</code>，提供命令行与浏览器 Web UI 两种入口。</p>
+<p>Harness 的定位是可自由组合的 Agent 运行时底座，而不是面向终端用户的成品 Agent 应用。官方同时明确提示，当前版本仍在快速迭代，后续会出现破坏兼容性的变更，短期更适合用于试验、评估与插件开发。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-2">
+            <h2>核心架构：一切皆插件</h2>
+            <div class="prose"><p>Harness 最核心的设计原则是“一切皆插件”。框架基于具备时空可组合性的 Cordis 插件元框架构建，Cordis 只负责插件的加载、卸载与依赖管理。</p>
+<ul>
+<li><strong>模型适配器：</strong>按供应商接入 DeepSeek API、其他服务商或自定义 OpenAI 兼容端点。</li>
+<li><strong>工具注册表：</strong>以插件形式登记 shell、文件编辑、网页读取等能力。</li>
+<li><strong>技能与会话：</strong>Skills 和会话日志独立成插件，可以按项目替换。</li>
+<li><strong>沙箱、存储与调度：</strong>执行环境、持久化与 Agent 循环都可插拔。</li>
+<li><strong>UI：</strong>命令行和 Web UI 同样作为插件组合进运行时。</li>
+</ul>
+<p>框架内部没有需要打补丁的“特权内核”，开发者无需改动源码，只需在配置层挂载或替换插件，就能重组整套运行时。</p></div>
+            
+
+          </section>
+        
+          <section class="section-block" id="sec-3">
+            <h2>四种运行模式，覆盖不同场景</h2>
+            <div class="prose"><p>v0.1 内置四种运行模式，每种默认加载不同的插件集合：</p>
+<ul>
+<li><strong>标准模式：</strong>提供完整工具组合，适合日常 Agent 应用。</li>
+<li><strong>PTC 模式：</strong>程序化工具调用，由模型生成一段代码来组合多轮工具调用。</li>
+<li><strong>极简模式：</strong>只保留 shell 与文件编辑两个工具，用于最小环境下的模型基准测试。</li>
+<li><strong>创造模式：</strong>可检查当前运行时、在内存中试验插件，并把新组合沉淀为新模式。</li>
+</ul>
+<p>对开发者来说，模式的意义不在于选择越多越好，而在于把“完整应用”“模型测试”“插件实验”放在同一套架构里，减少切换工具链的成本。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-4">
+            <h2>可观测性：从提示词到调度全记录</h2>
+            <div class="prose"><p>可观测性是这次发布的主线之一。模型看到的一切都会写入仅追加（append-only）的会话日志，包括系统提示词、思维链、工具调用与结果、子 Agent 调度以及每一次上下文注入。</p>
+<p>开发者可以在 Trajectory 视图中按来源查看完整运行轨迹。会话的恢复、分叉、检索与回放共享同一份事件流，方便复现和排查 Agent 的每一步决策。</p>
+<p>这套设计对生产级 Agent 很重要：模型输出很难保证一次正确，可回放的轨迹能让团队在调试时直接定位是哪一轮工具调用引入了错误，而不是靠重新跑一遍碰运气。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-5">
+            <h2>快速上手：一条命令启动 Web UI</h2>
+            <div class="prose"><p>已安装 Node.js 工具链的开发者，执行下面命令即可启动 Web UI：</p>
+<pre><code>npx @deepseek-ai/dsh web</code></pre>
+<p>默认访问地址为 <code>http://127.0.0.1:3080</code>，填入 DeepSeek API Key 后即可使用。官方文档同样覆盖其他供应商与自定义 OpenAI 兼容端点。</p>
+<p>希望从源码运行的开发者，可以克隆 GitHub 仓库后依次执行 <code>pnpm install</code>、<code>pnpm run build</code> 与 <code>pnpm dsh web</code>。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-6">
+            <h2>成本与接入方式</h2>
+            <div class="prose"><p>框架本身完全免费，以 MIT 协议开源，可自由使用、修改与分发。实际运行成本取决于所接入模型服务商的 API 定价，Harness 不包含模型推理能力。</p>
+<p>由于模型适配器本身是可替换插件，团队完全可以在开发时使用 DeepSeek API，在成本敏感场景切换到国内云厂商的 OpenAI 兼容端点，同一套 Harness 配置不需要重写。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-7">
+            <h2>和成品 Coding Agent 的差异</h2>
+            <div class="prose"><p>Harness 与成品编码 Agent 的关键差异在于控制层。成品 Agent 把模型、工具、沙箱和界面固化为产品体验，Harness 则把这一整层交给开发者改造，可控性与可审计性更强。</p>
+<p>代价是 Profile、Bundle、patch 等概念会带来一定的上手门槛。如果只是想要一个开箱即用的编程助手，Harness 不是最合适的选择；如果团队需要自建执行环境、审计链路或私有工具权限，这套框架更值得评估。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-8">
+            <h2>对 Agent 生态的意义</h2>
+            <div class="prose"><p>v0.1 只是起点。官方明确邀请开发者共建 DSH 插件生态，这意味着 DeepSeek 不只提供模型，也在尝试定义 Agent 运行时的组织方式。</p>
+<p>对行业来说，模型选择标准正在从“谁跑分高”转向“谁在长任务里更稳定、工具调用更可靠、轨迹更好审计”。Harness 把插件机制与可观测性做成默认能力，正是为了在 Agent 评估维度上提前占位。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-9">
+            <h2>下一步关注什么</h2>
+            <div class="prose"><p>接下来值得关注三点：一是 v0.1 之后的兼容性变更节奏，二是第三方 DSH 插件能否快速出现，三是 Harness 与 V4 Pro 的组合在真实 Coding Agent 工作流中的稳定性。</p>
+<p>对团队来说，现在最务实的动作是搭一个隔离的沙箱环境，先用极简模式跑模型基准，再用标准模式测试工具调用与轨迹回放，把评估数据沉淀下来，等插件生态成熟后直接复用。</p></div>
+            
+          </section>
+        
+
+        
+          <section class="section-block" id="source-note">
+            <h2>来源与说明</h2>
+            <div class="prose">
+              <p>本文由 AI 潮汐编辑部基于官方公告与公开资料整理，补充了行业影响、适用场景和行动建议，帮助你在阅读原文前先理解这条信息为什么重要。</p>
+              
+                <p>原始来源：<a href="https://github.com/deepseek-ai/deepseek-harness" rel="nofollow noopener" target="_blank">https://github.com/deepseek-ai/deepseek-harness</a></p>
+              
+              <p>如发现事实、价格或链接有误，可通过 <a href="/contact/">联系我们</a> 提交更正。</p>
+            </div>
+          </section>
+        
+
+        
+
+        
+          <section class="section-block" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+              
+                <details class="faq-item">
+                  <summary>DeepSeek Harness 和 DeepSeek V4 Pro 是什么关系？</summary>
+                  <p>Harness 是运行框架，V4 Pro 是模型。两者可以组合使用：Harness 通过模型适配器接入 DeepSeek API，模型本身也可以独立在其它应用里调用。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>只会用现成 AI 工具的人需要学它吗？</summary>
+                  <p>不需要。Harness 面向 AI 开发者、Agent 基础设施团队和插件作者，不是面向普通用户的成品应用。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>当前版本能用于生产环境吗？</summary>
+                  <p>官方定位是开发者预览版，后续可能出现破坏兼容性的变更，建议先用于试验、评估与插件开发，生产落地需要等待版本趋于稳定。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>可以接入 DeepSeek 以外的模型吗？</summary>
+                  <p>可以。模型适配器是可替换插件，官方文档覆盖 DeepSeek API、其他供应商以及自定义 OpenAI 兼容端点。</p>
+                </details>
+              
+            </div>
+          </section>
+        
+
+        <div class="article-bottom">
+          <div class="prev-next">
+            
+              <a href="/tool/opencode/">
+                <span>上一篇</span>
+                <strong>OpenCode</strong>
+              </a>
+            
+            
+              <a href="/tool/chatgpt/">
+                <span>下一篇</span>
+                <strong>ChatGPT</strong>
+              </a>
+            
+          </div>
+          <div class="tag-cloud tag-cloud--bottom">
+            
+              <a href="/tag/DeepSeek/">DeepSeek</a>
+            
+              <a href="/tag/Agent%E6%A1%86%E6%9E%B6/">Agent框架</a>
+            
+              <a href="/tag/%E5%BC%80%E6%BA%90/">开源</a>
+            
+              <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/">开发者工具</a>
+            
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar sidebar--article">
+        
+
+
+        <section class="side-card">
+          <h2>相关资讯</h2>
+          <div class="related-list">
+            
+              <a href="/tool/unitree-superhuman-humanoid-robot/" class="related-item">
+                
+                  <img src="https://www.unitree.com/favicon.ico" alt="">
+                
+                <span><strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/deepseek-v4-launch/" class="related-item">
+                
+                  <img src="/icons/deepseek-harness.svg" alt="">
+                
+                <span><strong>DeepSeek V4 Pro API 正式上线：100 万上下文、384K 输出，Agent 生态迎新底座</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/kimi-k3-launch/" class="related-item">
+                
+                  <img src="/icons/kimi.png" alt="">
+                
+                <span><strong>Kimi K3 正式上线</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/manus-independent-operation/" class="related-item">
+                
+                  <img src="/icons/manus.png" alt="">
+                
+                <span><strong>Manus 恢复独立运营</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/doubao-agent-workbench/" class="related-item">
+                
+                  <img src="/icons/doubao.png" alt="">
+                
+                <span><strong>豆包上线 Agent 工作台</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/qwen3-5-launch/" class="related-item">
+                
+                  <img src="/icons/tongyi.png" alt="">
+                
+                <span><strong>通义千问 Qwen3.5 发布</strong><em>AI资讯</em></span>
+              </a>
+            
+            
+          </div>
+        </section>
+
+        <section class="side-card">
+          <h2>最新内容</h2>
+          <ol class="rank-list">
+            
+              <li>
+                <span class="rank-no">1</span>
+                <a href="/tool/manga-translate/">
+                  <strong>漫画翻译器</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">2</span>
+                <a href="/tool/unitree-superhuman-humanoid-robot/">
+                  <strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong>
+                  <span>2026-08-18</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">3</span>
+                <a href="/tool/glm/">
+                  <strong>智谱清言</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">4</span>
+                <a href="/tool/bigmodel/">
+                  <strong>智谱 BigModel</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">5</span>
+                <a href="/tool/sensenova/">
+                  <strong>商汤大装置 SenseNova</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">6</span>
+                <a href="/tool/bailian/">
+                  <strong>阿里云百炼</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+          </ol>
+        </section>
+
+        
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark">AI</span>
+          <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+        </a>
+        <p>实时追踪 AI 热点，不错过每一个值得关注的新变化，第一时间看懂 AI 世界正在发生什么。</p>
+        <p class="footer-note">© 2026 AI 潮汐 · 保留所有权利</p>
+      </div>
+      <div class="footer-col">
+        <h3>热门分类</h3>
+        <ul>
+          
+            <li><a href="/category/ai-tools/">AI工具</a></li>
+          
+            <li><a href="/category/ai-news/">AI资讯</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          
+            <a href="/tag/%E8%81%8A%E5%A4%A9%E5%8A%A9%E6%89%8B/">聊天助手</a>
+          
+            <a href="/tag/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+          
+            <a href="/tag/Agent/">Agent</a>
+          
+            <a href="/tag/API/">API</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI/">大模型API</a>
+          
+            <a href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+          
+            <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/">开发者工具</a>
+          
+            <a href="/tag/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
+          
+            <a href="/tag/%E6%99%BA%E8%83%BD%E4%BD%93/">智能体</a>
+          
+            <a href="/tag/%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B/">编程助手</a>
+          
+            <a href="/tag/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/">视频生成</a>
+          
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <ul>
+          <li><a href="/category/ai-news/">最新资讯</a></li>
+          <li><a href="/category/ai-tools/">热门工具</a></li>
+          <li><a href="/search/">站内搜索</a></li>
+          <li><a href="/partner/">收录与合作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <ul>
+          <li><a href="/about/">关于我们</a></li>
+        </ul>
+        <ul class="footer-mini">
+          <li><a href="/privacy/">隐私政策</a></li>
+          <li><a href="/terms/">服务条款</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/vendor/lucide.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

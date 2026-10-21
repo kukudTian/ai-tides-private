@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="codeva-kPI4fbXpAn" />
+  <title>OpenRouter - 统一接入全球模型的 API 路由平台 - AI 潮汐</title>
+  <meta name="description" content="OpenRouter 是全球模型 API 路由平台，用统一接口接入 OpenAI、Anthropic、Google、DeepSeek 等模型，支持价格对比、模型回退与统一计费。">
+  <link rel="canonical" href="https://ai-blog.cloud/tool/openrouter/">
+  <meta property="og:site_name" content="AI 潮汐">
+  <meta property="og:title" content="OpenRouter - 统一接入全球模型的 API 路由平台 - AI 潮汐">
+  <meta property="og:description" content="OpenRouter 是全球模型 API 路由平台，用统一接口接入 OpenAI、Anthropic、Google、DeepSeek 等模型，支持价格对比、模型回退与统一计费。">
+  <meta property="og:url" content="https://ai-blog.cloud/tool/openrouter/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"OpenRouter - 统一接入全球模型的 API 路由平台","description":"OpenRouter 是全球模型 API 路由平台，用统一接口接入 OpenAI、Anthropic、Google、DeepSeek 等模型，支持价格对比、模型回退与统一计费。","datePublished":"2026-08-16T15:00:00+08:00","dateModified":"2026-08-16T07:00:00.000Z","url":"https://ai-blog.cloud/tool/openrouter/","author":{"@type":"Organization","name":"AI 潮汐"},"publisher":{"@type":"Organization","name":"AI 潮汐"},"mainEntityOfPage":"https://ai-blog.cloud/tool/openrouter/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ai-blog.cloud"},{"@type":"ListItem","position":2,"name":"AI工具","item":"https://ai-blog.cloud/category/ai-tools/"},{"@type":"ListItem","position":3,"name":"OpenRouter - 统一接入全球模型的 API 路由平台","item":"https://ai-blog.cloud/tool/openrouter/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"OpenRouter 和官方 API 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"它把多家模型聚合到一个接口，简化接入与结算，但会在厂商价格之上收取小额路由服务费。"}},{"@type":"Question","name":"支持函数调用和流式输出吗？","acceptedAnswer":{"@type":"Answer","text":"支持，接口与 OpenAI Chat Completions 基本兼容，具体能力取决于所选模型。"}},{"@type":"Question","name":"国内可以直接访问吗？","acceptedAnswer":{"@type":"Answer","text":"平台没有针对国内网络的专门接入点，生产环境通常需要自行解决网络链路。"}},{"@type":"Question","name":"推荐链接有什么权益？","acceptedAnswer":{"@type":"Answer","text":"通过推荐入口注册通常可获得 Credits 奖励，双方共享权益，具体以平台规则为准。"}}]}]}</script>
+   <link rel="stylesheet" href="/styles.css?v=20260819.02">
+  <link rel="alternate" type="application/rss+xml" title="AI 潮汐 RSS" href="https://ai-blog.cloud/rss.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4951997546216729" crossorigin="anonymous"></script>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXMJ6STTQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WXMJ6STTQV');
+  </script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        
+          <a href="/category/ai-tools/" class="">AI工具</a>
+        
+          <a href="/category/ai-news/" class="">AI资讯</a>
+        
+        <a href="/partner/" class="">收录与合作</a>
+        <a href="/about/" class="">关于我们</a>
+      </nav>
+      <form class="search-form" action="/search/" method="get" role="search">
+        <i data-lucide="search" class="search-icon" aria-hidden="true"></i>
+        <input type="search" name="q" value="" placeholder="搜索 AI 资讯与工具" aria-label="搜索">
+        <button type="submit" class="search-submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="category-bar" aria-label="全部分类">
+    <div class="container category-bar-inner">
+      <a class="category-all" href="/">全部</a>
+      
+        <a href="/category/ai-tools/" class="">AI工具 <span>34</span></a>
+      
+        <a href="/category/ai-news/" class="">AI资讯 <span>9</span></a>
+      
+    </div>
+  </nav>
+
+  <main class="tool-page ">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      <a href="/category/ai-tools/">AI工具</a>
+      <span>/</span>
+      <span class="current">OpenRouter</span>
+    </nav>
+
+    <header class="tool-hero">
+      <div class="tool-cover">
+        
+          <img src="/icons/openrouter.png" alt="OpenRouter - 统一接入全球模型的 API 路由平台" loading="lazy">
+        
+      </div>
+      <div class="tool-hero-body">
+        <h1>OpenRouter - 统一接入全球模型的 API 路由平台</h1>
+        <p class="tool-subtitle">一个 Key 调用 OpenAI、Anthropic、Google 与开源模型，自动路由、对比价格。</p>
+        <div class="tool-meta">
+          <a class="chip chip--category" href="/category/ai-tools/"><i data-lucide="folder"></i>AI工具</a>
+          
+            <a class="chip" href="/tag/%E4%B8%AD%E8%BD%AC%E7%AB%99/"><i data-lucide="tag"></i>中转站</a>
+          
+            <a class="chip" href="/tag/API/"><i data-lucide="tag"></i>API</a>
+          
+            <a class="chip" href="/tag/%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1/"><i data-lucide="tag"></i>模型路由</a>
+          
+            <a class="chip" href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/"><i data-lucide="tag"></i>开发者工具</a>
+          
+        </div>
+        <div class="tool-actions">
+          
+            <a class="btn btn--primary" href="https://openrouter.ai/" rel="nofollow noopener" target="_blank">
+              <i data-lucide="external-link"></i> 访问官网
+            </a>
+          
+          <button class="btn btn--ghost copy-link" data-url="https://ai-blog.cloud/tool/openrouter/">
+            <i data-lucide="link"></i> 复制链接
+          </button>
+        </div>
+      </div>
+      <div class="tool-facts">
+        <div><span>内容类型</span><strong>工具收录</strong></div>
+        <div><span>热度指数</span><strong>74</strong></div>
+        <div><span>阅读时长</span><strong>1564 字</strong></div>
+      </div>
+    </header>
+
+    
+      <section class="official-band" aria-label="官网直达">
+        <div class="official-band-title">
+          <i data-lucide="globe"></i>
+          <span>官网直达</span>
+        </div>
+        <div class="official-links">
+          
+            <a href="https://openrouter.ai/" rel="nofollow noopener" target="_blank">
+              <span class="official-link-name">OpenRouter 官网</span>
+              <span class="official-link-url">openrouter.ai</span>
+              <i data-lucide="external-link"></i>
+            </a>
+          
+        </div>
+      </section>
+    
+
+    <div class="tool-layout">
+      <article class="article">
+        
+          <nav class="toc" aria-label="目录">
+            <p>目录</p>
+            <ol>
+              
+                <li><a href="#sec-1">OpenRouter 是什么</a></li>
+              
+                <li><a href="#sec-2">核心能力与主要功能</a></li>
+              
+                <li><a href="#sec-3">支持的模型生态</a></li>
+              
+                <li><a href="#sec-4">适合谁使用</a></li>
+              
+                <li><a href="#sec-5">定价与计费方式</a></li>
+              
+                <li><a href="#sec-6">快速上手</a></li>
+              
+                <li><a href="#sec-7">使用注意事项</a></li>
+              
+            </ol>
+          </nav>
+        
+
+        
+
+
+        
+          <section class="tool-gallery" id="screenshots">
+            <div class="section-block-head">
+              <h2>产品界面</h2>
+              <p>来自官网与产品公开页的产品图与界面素材</p>
+            </div>
+            <div class="tool-shot-grid">
+              
+                <a class="tool-shot" href="https://openrouter.ai/" rel="nofollow noopener" target="_blank">
+                  <img src="/screenshots/openrouter.png" alt="OpenRouter - 统一接入全球模型的 API 路由平台 截图 1" loading="lazy">
+                </a>
+              
+            </div>
+          </section>
+        
+
+        
+          <section class="section-block" id="sec-1">
+            <h2>OpenRouter 是什么</h2>
+            <div class="prose"><p>OpenRouter 是一个全球性的模型 API 路由平台，口号是"所有模型的统一接口"。开发者不再需要为每个厂商单独申请 Key、阅读不同文档，只需一个 OpenRouter Key，就能通过同一套 API 调用 OpenAI、Anthropic、Google、Meta、Mistral、DeepSeek 等厂商的模型。</p><p>平台还提供模型价格排行、能力对比、自动路由和模型回退，让应用可以按成本、速度或质量动态选择模型。对需要多模型容灾、跨国业务或快速实验的团队来说，它相当于模型层的"聚合支付网关"。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-2">
+            <h2>核心能力与主要功能</h2>
+            <div class="prose"><ul><li><strong>统一 API：</strong>兼容 OpenAI Chat Completions 协议，模型名用 厂商/模型 格式标识，例如 openai/gpt-4o、deepseek/deepseek-chat。</li><li><strong>价格对比：</strong>模型列表直接展示输入输出单价、上下文长度和限流信息，方便按预算选型。</li><li><strong>自动回退：</strong>主模型失败或限流时可自动切换备选模型，提升线上可用性。</li><li><strong>统一计费：</strong>支持美元 Credits 充值，一张账单覆盖所有厂商，便于成本归因。</li><li><strong>免费模型：</strong>提供部分免费模型与实验模型，适合开发测试和教学场景。</li><li><strong>数据隐私选项：</strong>可配置不记录请求内容，满足更严格的数据合规要求。</li></ul></div>
+            
+
+          </section>
+        
+          <section class="section-block" id="sec-3">
+            <h2>支持的模型生态</h2>
+            <div class="prose"><p>OpenRouter 聚合的模型数量在同类平台中处于第一梯队，包括 OpenAI 的 GPT 系列、Anthropic 的 Claude 系列、Google 的 Gemini 系列、Meta 的 Llama 系列、Mistral、DeepSeek，以及大量社区开源模型。</p><p>每个模型都标注了供应商、价格、上下文窗口和热度数据，开发者可以在平台上的 Playground 直接测试，再决定是否接入自己的应用。需要注意的是，部分模型在平台上的价格包含小额路由服务费，具体以官方结算页面为准。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-4">
+            <h2>适合谁使用</h2>
+            <div class="prose"><p><strong>出海应用开发者：</strong>面向全球用户时用一个 Key 覆盖多厂商，减少账号和结算成本。</p><p><strong>Agent 开发者：</strong>多步任务可能需要混合使用推理、图像和工具调用模型，统一接口更方便编排。</p><p><strong>模型测评团队：</strong>在统一协议下对比不同模型的输出质量和成本。</p><p><strong>需要容灾的产品：</strong>用自动回退降低单点供应商故障的影响。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-5">
+            <h2>定价与计费方式</h2>
+            <div class="prose"><p>OpenRouter 使用 Credits 账户制，先充值后调用。每个模型的单价由模型供应商决定，平台会在页面实时展示每百万 Token 的输入与输出价格；免费模型有较严格的限流，适合测试。</p><p>平台按请求计费并生成明细，开发者可以在控制台按模型、时间范围查看消耗。对于高频生产流量，建议关注官方针对大客户的折扣政策，并利用推荐入口获取额度奖励。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-6">
+            <h2>快速上手</h2>
+            <div class="prose"><p>注册后在控制台创建 API Key，然后使用标准 OpenAI SDK：</p><pre><code>pip install openai
+
+from openai import OpenAI
+client = OpenAI(
+    api_key="你的 OpenRouter Key",
+    base_url="https://openrouter.ai/api/v1"
+)
+resp = client.chat.completions.create(
+    model="deepseek/deepseek-chat",
+    messages=[{"role": "user", "content": "你好"}])
+print(resp.choices[0].message.content)</code></pre><p>平台支持流式输出、函数调用与多模态输入。生产环境建议配置模型回退，并把请求内容隐私开关按业务需要打开。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-7">
+            <h2>使用注意事项</h2>
+            <div class="prose"><p>OpenRouter 面向全球市场，网络接入情况因地区而异，国内生产环境建议通过可用的网络链路或海外服务器访问。免费模型的限流策略较严，不适合直接支撑生产流量；选择付费模型时，要对比平台价与厂商官方价，避免成本失控。</p></div>
+            
+          </section>
+        
+
+        
+
+        
+          <section class="section-block" id="official-links">
+            <h2>官网直达</h2>
+            <div class="prose">
+              <p>想亲自上手体验，直接从官方入口出发：</p>
+              <ul class="official-list">
+                
+                  <li>
+                    <a href="https://openrouter.ai/" rel="nofollow noopener" target="_blank">
+                      <span class="official-list-name">OpenRouter 官网</span>
+                      <span class="official-list-url">openrouter.ai</span>
+                      <i data-lucide="external-link"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </section>
+        
+
+        
+          <section class="section-block" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+              
+                <details class="faq-item">
+                  <summary>OpenRouter 和官方 API 有什么区别？</summary>
+                  <p>它把多家模型聚合到一个接口，简化接入与结算，但会在厂商价格之上收取小额路由服务费。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>支持函数调用和流式输出吗？</summary>
+                  <p>支持，接口与 OpenAI Chat Completions 基本兼容，具体能力取决于所选模型。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>国内可以直接访问吗？</summary>
+                  <p>平台没有针对国内网络的专门接入点，生产环境通常需要自行解决网络链路。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>推荐链接有什么权益？</summary>
+                  <p>通过推荐入口注册通常可获得 Credits 奖励，双方共享权益，具体以平台规则为准。</p>
+                </details>
+              
+            </div>
+          </section>
+        
+
+        <div class="article-bottom">
+          <div class="prev-next">
+            
+              <a href="/tool/siliconflow/">
+                <span>上一篇</span>
+                <strong>硅基流动 SiliconFlow</strong>
+              </a>
+            
+            
+              <a href="/tool/opencode/">
+                <span>下一篇</span>
+                <strong>OpenCode</strong>
+              </a>
+            
+          </div>
+          <div class="tag-cloud tag-cloud--bottom">
+            
+              <a href="/tag/%E4%B8%AD%E8%BD%AC%E7%AB%99/">中转站</a>
+            
+              <a href="/tag/API/">API</a>
+            
+              <a href="/tag/%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1/">模型路由</a>
+            
+              <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/">开发者工具</a>
+            
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar sidebar--article">
+        
+
+
+        <section class="side-card">
+          <h2>相关工具</h2>
+          <div class="related-list">
+            
+              <a href="/tool/manga-translate/" class="related-item">
+                
+                  <img src="/icons/manga-translate.png" alt="">
+                
+                <span><strong>漫画翻译器</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/glm/" class="related-item">
+                
+                  <img src="/icons/glm.png" alt="">
+                
+                <span><strong>智谱清言</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/bigmodel/" class="related-item">
+                
+                  <img src="/icons/bigmodel.png" alt="">
+                
+                <span><strong>智谱 BigModel</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/sensenova/" class="related-item">
+                
+                  <img src="/icons/sensenova.png" alt="">
+                
+                <span><strong>商汤大装置 SenseNova</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/bailian/" class="related-item">
+                
+                  <img src="/icons/bailian.svg" alt="">
+                
+                <span><strong>阿里云百炼</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/volcengine/" class="related-item">
+                
+                  <img src="/icons/volcengine.png" alt="">
+                
+                <span><strong>火山方舟</strong><em>AI工具</em></span>
+              </a>
+            
+            
+          </div>
+        </section>
+
+        <section class="side-card">
+          <h2>最新内容</h2>
+          <ol class="rank-list">
+            
+              <li>
+                <span class="rank-no">1</span>
+                <a href="/tool/manga-translate/">
+                  <strong>漫画翻译器</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">2</span>
+                <a href="/tool/unitree-superhuman-humanoid-robot/">
+                  <strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong>
+                  <span>2026-08-18</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">3</span>
+                <a href="/tool/glm/">
+                  <strong>智谱清言</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">4</span>
+                <a href="/tool/bigmodel/">
+                  <strong>智谱 BigModel</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">5</span>
+                <a href="/tool/sensenova/">
+                  <strong>商汤大装置 SenseNova</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">6</span>
+                <a href="/tool/bailian/">
+                  <strong>阿里云百炼</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+          </ol>
+        </section>
+
+        
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark">AI</span>
+          <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+        </a>
+        <p>实时追踪 AI 热点，不错过每一个值得关注的新变化，第一时间看懂 AI 世界正在发生什么。</p>
+        <p class="footer-note">© 2026 AI 潮汐 · 保留所有权利</p>
+      </div>
+      <div class="footer-col">
+        <h3>热门分类</h3>
+        <ul>
+          
+            <li><a href="/category/ai-tools/">AI工具</a></li>
+          
+            <li><a href="/category/ai-news/">AI资讯</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          
+            <a href="/tag/%E8%81%8A%E5%A4%A9%E5%8A%A9%E6%89%8B/">聊天助手</a>
+          
+            <a href="/tag/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+          
+            <a href="/tag/Agent/">Agent</a>
+          
+            <a href="/tag/API/">API</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI/">大模型API</a>
+          
+            <a href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+          
+            <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/">开发者工具</a>
+          
+            <a href="/tag/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
+          
+            <a href="/tag/%E6%99%BA%E8%83%BD%E4%BD%93/">智能体</a>
+          
+            <a href="/tag/%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B/">编程助手</a>
+          
+            <a href="/tag/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/">视频生成</a>
+          
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <ul>
+          <li><a href="/category/ai-news/">最新资讯</a></li>
+          <li><a href="/category/ai-tools/">热门工具</a></li>
+          <li><a href="/search/">站内搜索</a></li>
+          <li><a href="/partner/">收录与合作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <ul>
+          <li><a href="/about/">关于我们</a></li>
+        </ul>
+        <ul class="footer-mini">
+          <li><a href="/privacy/">隐私政策</a></li>
+          <li><a href="/terms/">服务条款</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/vendor/lucide.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="codeva-kPI4fbXpAn" />
+  <title>ChatGPT 深度研究更新 - 长报告与多来源引用体验再优化 - AI 潮汐</title>
+  <meta name="description" content="OpenAI 更新 ChatGPT 深度研究功能，长报告生成更稳定，来源引用更完整，任务进行中可随时查看进度。">
+  <link rel="canonical" href="https://ai-blog.cloud/tool/chatgpt-deep-research-update/">
+  <meta property="og:site_name" content="AI 潮汐">
+  <meta property="og:title" content="ChatGPT 深度研究更新 - 长报告与多来源引用体验再优化 - AI 潮汐">
+  <meta property="og:description" content="OpenAI 更新 ChatGPT 深度研究功能，长报告生成更稳定，来源引用更完整，任务进行中可随时查看进度。">
+  <meta property="og:url" content="https://ai-blog.cloud/tool/chatgpt-deep-research-update/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"ChatGPT 深度研究更新 - 长报告与多来源引用体验再优化","description":"OpenAI 更新 ChatGPT 深度研究功能，长报告生成更稳定，来源引用更完整，任务进行中可随时查看进度。","datePublished":"2026-08-11T10:00:00+08:00","dateModified":"2026-08-11T02:00:00.000Z","url":"https://ai-blog.cloud/tool/chatgpt-deep-research-update/","author":{"@type":"Organization","name":"AI 潮汐"},"publisher":{"@type":"Organization","name":"AI 潮汐"},"mainEntityOfPage":"https://ai-blog.cloud/tool/chatgpt-deep-research-update/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ai-blog.cloud"},{"@type":"ListItem","position":2,"name":"AI资讯","item":"https://ai-blog.cloud/category/ai-news/"},{"@type":"ListItem","position":3,"name":"ChatGPT 深度研究更新 - 长报告与多来源引用体验再优化","item":"https://ai-blog.cloud/tool/chatgpt-deep-research-update/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"深度研究适合什么任务？","acceptedAnswer":{"@type":"Answer","text":"适合行业调研、竞品分析、资料汇总和需要多来源对比的写作任务，不适合即时问答。"}},{"@type":"Question","name":"研究报告可以导出吗？","acceptedAnswer":{"@type":"Answer","text":"支持长报告生成，通常可以复制到文档继续编辑，具体以产品内导出选项为准。"}},{"@type":"Question","name":"引用来源可以删除或添加吗？","acceptedAnswer":{"@type":"Answer","text":"可以要求模型剔除指定来源，也可以追加来源并重新整理相关结论。"}},{"@type":"Question","name":"研究时间长怎么办？","acceptedAnswer":{"@type":"Answer","text":"把大问题拆成阶段任务，先看目录与核心结论，再逐章扩展；中断后可从已有进度继续。"}},{"@type":"Question","name":"深度研究报告可以直接引用吗？","acceptedAnswer":{"@type":"Answer","text":"建议把报告当作用线索，最终引用前回原文核对页码和原文表述，避免二手转述失真。"}},{"@type":"Question","name":"可以多人共用一个研究报告吗？","acceptedAnswer":{"@type":"Answer","text":"可以先把报告导出为共享文档，再让深度研究按团队反馈补充章节，适合需要集体讨论的选题。"}},{"@type":"Question","name":"深度研究支持中文资料吗？","acceptedAnswer":{"@type":"Answer","text":"支持中文搜索与资料整理，输出语言会跟随提问语言，复杂术语建议在任务里给出对照词。"}}]}]}</script>
+   <link rel="stylesheet" href="/styles.css?v=20260819.02">
+  <link rel="alternate" type="application/rss+xml" title="AI 潮汐 RSS" href="https://ai-blog.cloud/rss.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4951997546216729" crossorigin="anonymous"></script>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXMJ6STTQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WXMJ6STTQV');
+  </script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        
+          <a href="/category/ai-tools/" class="">AI工具</a>
+        
+          <a href="/category/ai-news/" class="">AI资讯</a>
+        
+        <a href="/partner/" class="">收录与合作</a>
+        <a href="/about/" class="">关于我们</a>
+      </nav>
+      <form class="search-form" action="/search/" method="get" role="search">
+        <i data-lucide="search" class="search-icon" aria-hidden="true"></i>
+        <input type="search" name="q" value="" placeholder="搜索 AI 资讯与工具" aria-label="搜索">
+        <button type="submit" class="search-submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="category-bar" aria-label="全部分类">
+    <div class="container category-bar-inner">
+      <a class="category-all" href="/">全部</a>
+      
+        <a href="/category/ai-tools/" class="">AI工具 <span>34</span></a>
+      
+        <a href="/category/ai-news/" class="">AI资讯 <span>9</span></a>
+      
+    </div>
+  </nav>
+
+  <main class="tool-page tool-page--news">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      <a href="/category/ai-news/">AI资讯</a>
+      <span>/</span>
+      <span class="current">ChatGPT 深度研究更新</span>
+    </nav>
+
+    <header class="tool-hero">
+      <div class="tool-cover">
+        
+          <img src="/icons/chatgpt.png" alt="ChatGPT 深度研究更新 - 长报告与多来源引用体验再优化" loading="lazy">
+        
+      </div>
+      <div class="tool-hero-body">
+        <h1>ChatGPT 深度研究更新 - 长报告与多来源引用体验再优化</h1>
+        <p class="tool-subtitle">研究任务支持更长输出、更清晰的来源标注和实时进度提示。</p>
+        <div class="tool-meta">
+          <a class="chip chip--category" href="/category/ai-news/"><i data-lucide="folder"></i>AI资讯</a>
+          
+            <a class="chip" href="/tag/ChatGPT/"><i data-lucide="tag"></i>ChatGPT</a>
+          
+            <a class="chip" href="/tag/OpenAI/"><i data-lucide="tag"></i>OpenAI</a>
+          
+            <a class="chip" href="/tag/%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B6/"><i data-lucide="tag"></i>深度研究</a>
+          
+        </div>
+        <div class="tool-actions">
+          
+            
+              <a class="btn btn--primary" href="https://chatgpt.com/" rel="nofollow noopener" target="_blank">
+                <i data-lucide="external-link"></i> 阅读原文
+              </a>
+            
+          
+          <button class="btn btn--ghost copy-link" data-url="https://ai-blog.cloud/tool/chatgpt-deep-research-update/">
+            <i data-lucide="link"></i> 复制链接
+          </button>
+        </div>
+      </div>
+      <div class="tool-facts">
+        <div><span>发布日期</span><strong>2026-08-11</strong></div>
+        <div><span>热度指数</span><strong>65</strong></div>
+        <div><span>阅读时长</span><strong>2163 字</strong></div>
+      </div>
+    </header>
+
+    
+
+    <div class="tool-layout">
+      <article class="article">
+        
+          <nav class="toc" aria-label="目录">
+            <p>目录</p>
+            <ol>
+              
+                <li><a href="#sec-1">事件：深度研究能力更新</a></li>
+              
+                <li><a href="#sec-2">三个体验点：更长输出、更细引用、更清楚进度</a></li>
+              
+                <li><a href="#sec-3">一次完整研究流程</a></li>
+              
+                <li><a href="#sec-4">来源标注怎么用</a></li>
+              
+                <li><a href="#sec-5">长报告与中断恢复</a></li>
+              
+                <li><a href="#sec-6">和普通聊天、普通搜索的区别</a></li>
+              
+                <li><a href="#sec-7">怎么提问才能拿到好报告</a></li>
+              
+                <li><a href="#sec-8">谁适合现在开始用</a></li>
+              
+                <li><a href="#sec-9">行业影响</a></li>
+              
+                <li><a href="#sec-10">把调研模板保存下来</a></li>
+              
+                <li><a href="#sec-11">配额、成本与等待策略</a></li>
+              
+                <li><a href="#sec-12">把研究结果用起来</a></li>
+              
+                <li><a href="#sec-13">下一步关注什么</a></li>
+              
+            </ol>
+          </nav>
+        
+
+        
+
+
+        
+
+        
+          <section class="section-block" id="sec-1">
+            <h2>事件：深度研究能力更新</h2>
+            <div class="prose"><p>OpenAI 对 ChatGPT 深度研究功能进行更新，重点解决长报告生成、来源标注和任务进度三个体验问题。深度研究是 ChatGPT 面向资料型任务的旗舰能力：模型把复杂问题拆成多轮搜索，阅读大量网页，最后输出带引用的研究报告。这次更新后，报告可以更长、引用更细、中断后可以继续。</p><p>对经常做行业调研、竞品分析和资料汇总的用户来说，这次变化直接对应三个真实痛点：报告写到一半被截断、引用只有链接没有上下文、等待过程像黑箱。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-2">
+            <h2>三个体验点：更长输出、更细引用、更清楚进度</h2>
+            <div class="prose"><p>更新前，用户最常抱怨三件事：调研范围大时报告被截断；引用只给链接不给上下文；等待过程像黑箱。这次更新分别做了调整：复杂任务支持更长输出，减少中途截断；引用粒度细化，结论后面直接标注来源和依据；执行过程展示当前检索范围、已完成步骤和剩余工作，用户可以随时查看而不是干等。</p><p>三者的组合意味着深度研究开始按“可交付项目”的标准设计：进度可见让用户能判断任务是否值得继续，更细的引用让报告可以直接复核，更长输出让大型课题可以一次完成。</p></div>
+            
+
+          </section>
+        
+          <section class="section-block" id="sec-3">
+            <h2>一次完整研究流程</h2>
+            <div class="prose"><p>以"调研 2026 年 AI 编程助手定价变化"为例，完整流程大致是：用户提交任务并补充约束，比如"只看中文资料、包含免费额度信息、输出对比表格"；模型生成研究计划并开始多轮搜索；每读完一批来源，模型会记录要点并继续扩大检索；最后生成报告，包含执行摘要、详细分析、对比表和完整引用列表。</p><p>期间用户随时可以打开任务详情查看进度，也可以追加问题或修改方向，系统会基于已有研究继续而不是推倒重来。</p><p>对于首次使用的人，建议先跑一个"小课题"：限定 5 个来源、报告控制在 2 页内，熟悉流程后再处理大任务，试错成本低得多。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-4">
+            <h2>来源标注怎么用</h2>
+            <div class="prose"><p>更细的来源标注让报告可以直接复核。每条关键结论后面都会出现来源编号，报告末尾统一列出链接与访问时间；用户点开链接即可确认原文是否支持结论。实际操作中，建议优先检查两类内容：价格、日期等硬数据，以及“行业内普遍认为”这类概括性表述。</p><p>如果发现某个来源质量不高，可以要求模型剔除该来源并重新整理相关内容。把来源审核当成流程的一部分，深度研究才能从“看起来专业”变成“经得起追问”。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-5">
+            <h2>长报告与中断恢复</h2>
+            <div class="prose"><p>超长调研任务容易受网络或服务波动影响，更新后的任务恢复能力允许生成中断后继续，不需要从头开始。报告也会在生成过程中分段落盘，用户可以先查看已完成部分，再让模型补齐后续章节。</p><p>这改变了使用方式：可以把一个大问题拆成“先出目录和核心结论，再逐章扩充”；也可以在拿到初步报告后追加问题，把研究往更深处推进。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-6">
+            <h2>和普通聊天、普通搜索的区别</h2>
+            <div class="prose"><p>普通聊天适合即时问答，普通搜索引擎适合自己逐条阅读，深度研究则适合“需要综合多来源、形成结构化结论”的任务。它把搜索、阅读、筛选、综合和写作整合成一次任务，用户从执行者变成审核者。</p><p>代价是时间：复杂调研可能持续较长时间，不适合赶时间的即时问题。判断标准很简单：如果答案能在一次搜索里找到，不需要深度研究；如果需要读十几页资料才能回答，深度研究才有价值。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-7">
+            <h2>怎么提问才能拿到好报告</h2>
+            <div class="prose"><p>有效的调研任务包含四要素：目标、范围、格式和约束。例如“整理主流 AI 编程助手的定价模式（目标），只看公开官网信息（范围），输出对比表格并按价格升序排列（格式），排除需要登录才能查看的内容（约束）”。</p><p>补充材料也很重要：上传现有资料、指定几个必须覆盖的来源、说明报告给谁看，都会显著提升结果质量。模糊任务得到模糊报告，精确任务才可能得到精确报告。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-8">
+            <h2>谁适合现在开始用</h2>
+            <div class="prose"><p>适合需要经常做行业调研、竞品分析、资料汇总和选题研究的人：分析师可以快速拿到带引用的初稿，内容团队可以缩短选题资料收集，咨询和销售团队可以用它准备客户背景。学生使用时应结合课程要求复核引用，把 AI 当作资料整理工具而不是答案来源。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-9">
+            <h2>行业影响</h2>
+            <div class="prose"><p>深度研究把知识工作的起点从“收集资料”提前到“校验资料”，改变的是工作方式而不是简单替代人。当 AI 能稳定交付带引用、可复核的长报告，团队里的初级调研工作会明显减少，但审核、判断和提问能力会变得更加重要。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-10">
+            <h2>把调研模板保存下来</h2>
+            <div class="prose"><p>深度研究最值得投资的是一次性模板建设。常用的模板可以分成三类：<strong>竞品分析模板</strong>固定来源清单、对比维度和输出表格；<strong>选题资料模板</strong>固定"背景、现状、争议、案例、趋势"的章节结构；<strong>数据核验模板</strong>要求每条硬数据附上来源与发布时间。</p><p>每次研究开始时复制模板，只替换主题、约束和日期，能明显减少描述成本，也让报告结构保持一致。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-11">
+            <h2>配额、成本与等待策略</h2>
+            <div class="prose"><p>深度研究比普通聊天消耗更多时间和配额，使用前建议先估算任务规模：需要覆盖几个来源、报告多少页、是否分章节生成。复杂研究可以拆成多轮小任务，先出核心结论，再按章节补全，既降低失败影响，也更容易检查。</p><p>等待期间不需要一直盯进度：研究完成后系统会推送结果，用户可以并行处理其他工作。把深度研究当成异步任务而不是即时问答，使用体验会顺畅很多。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-12">
+            <h2>把研究结果用起来</h2>
+            <div class="prose"><p>拿到研究报告后，下一步通常是写材料或做决策。建议先做三层处理：第一层由模型压缩出执行摘要，控制在半页内；第二层由使用者标记关键结论与风险点；第三层把引用回填到正式文档，保证出处完整。</p><p>如果报告用于团队协作，可以要求深度研究同时输出"结论、证据、反方观点"三栏式结构，方便其他人快速参与讨论。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-13">
+            <h2>下一步关注什么</h2>
+            <div class="prose"><p>接下来关注多来源交叉验证是否进一步自动化、长报告的事实准确率是否有公开评估，以及深度研究是否开放 API 让第三方应用接入。对用户来说，现在就可以建立自己的任务模板：把常用的调研格式、约束和输出要求保存下来，每次只改主题，效率提升会非常明显。</p></div>
+            
+          </section>
+        
+
+        
+          <section class="section-block" id="source-note">
+            <h2>来源与说明</h2>
+            <div class="prose">
+              <p>本文由 AI 潮汐编辑部基于官方公告与公开资料整理，补充了行业影响、适用场景和行动建议，帮助你在阅读原文前先理解这条信息为什么重要。</p>
+              
+                <p>原始来源：<a href="https://chatgpt.com/" rel="nofollow noopener" target="_blank">https://chatgpt.com/</a></p>
+              
+              <p>如发现事实、价格或链接有误，可通过 <a href="/contact/">联系我们</a> 提交更正。</p>
+            </div>
+          </section>
+        
+
+        
+
+        
+          <section class="section-block" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+              
+                <details class="faq-item">
+                  <summary>深度研究适合什么任务？</summary>
+                  <p>适合行业调研、竞品分析、资料汇总和需要多来源对比的写作任务，不适合即时问答。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>研究报告可以导出吗？</summary>
+                  <p>支持长报告生成，通常可以复制到文档继续编辑，具体以产品内导出选项为准。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>引用来源可以删除或添加吗？</summary>
+                  <p>可以要求模型剔除指定来源，也可以追加来源并重新整理相关结论。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>研究时间长怎么办？</summary>
+                  <p>把大问题拆成阶段任务，先看目录与核心结论，再逐章扩展；中断后可从已有进度继续。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>深度研究报告可以直接引用吗？</summary>
+                  <p>建议把报告当作用线索，最终引用前回原文核对页码和原文表述，避免二手转述失真。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>可以多人共用一个研究报告吗？</summary>
+                  <p>可以先把报告导出为共享文档，再让深度研究按团队反馈补充章节，适合需要集体讨论的选题。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>深度研究支持中文资料吗？</summary>
+                  <p>支持中文搜索与资料整理，输出语言会跟随提问语言，复杂术语建议在任务里给出对照词。</p>
+                </details>
+              
+            </div>
+          </section>
+        
+
+        <div class="article-bottom">
+          <div class="prev-next">
+            
+              <a href="/tool/liblib-ai/">
+                <span>上一篇</span>
+                <strong>LiblibAI</strong>
+              </a>
+            
+            
+              <a href="/tool/gemini-3-7-flash/">
+                <span>下一篇</span>
+                <strong>Gemini 3.7 Flash</strong>
+              </a>
+            
+          </div>
+          <div class="tag-cloud tag-cloud--bottom">
+            
+              <a href="/tag/ChatGPT/">ChatGPT</a>
+            
+              <a href="/tag/OpenAI/">OpenAI</a>
+            
+              <a href="/tag/%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B6/">深度研究</a>
+            
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar sidebar--article">
+        
+
+
+        <section class="side-card">
+          <h2>相关资讯</h2>
+          <div class="related-list">
+            
+              <a href="/tool/unitree-superhuman-humanoid-robot/" class="related-item">
+                
+                  <img src="https://www.unitree.com/favicon.ico" alt="">
+                
+                <span><strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/deepseek-harness-release/" class="related-item">
+                
+                  <img src="/icons/deepseek-harness.svg" alt="">
+                
+                <span><strong>DeepSeek Harness 开发者预览版发布：MIT 开源，把 Agent 运行时做成可插拔底座</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/deepseek-v4-launch/" class="related-item">
+                
+                  <img src="/icons/deepseek-harness.svg" alt="">
+                
+                <span><strong>DeepSeek V4 Pro API 正式上线：100 万上下文、384K 输出，Agent 生态迎新底座</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/kimi-k3-launch/" class="related-item">
+                
+                  <img src="/icons/kimi.png" alt="">
+                
+                <span><strong>Kimi K3 正式上线</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/manus-independent-operation/" class="related-item">
+                
+                  <img src="/icons/manus.png" alt="">
+                
+                <span><strong>Manus 恢复独立运营</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/doubao-agent-workbench/" class="related-item">
+                
+                  <img src="/icons/doubao.png" alt="">
+                
+                <span><strong>豆包上线 Agent 工作台</strong><em>AI资讯</em></span>
+              </a>
+            
+            
+          </div>
+        </section>
+
+        <section class="side-card">
+          <h2>最新内容</h2>
+          <ol class="rank-list">
+            
+              <li>
+                <span class="rank-no">1</span>
+                <a href="/tool/manga-translate/">
+                  <strong>漫画翻译器</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">2</span>
+                <a href="/tool/unitree-superhuman-humanoid-robot/">
+                  <strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong>
+                  <span>2026-08-18</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">3</span>
+                <a href="/tool/glm/">
+                  <strong>智谱清言</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">4</span>
+                <a href="/tool/bigmodel/">
+                  <strong>智谱 BigModel</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">5</span>
+                <a href="/tool/sensenova/">
+                  <strong>商汤大装置 SenseNova</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">6</span>
+                <a href="/tool/bailian/">
+                  <strong>阿里云百炼</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+          </ol>
+        </section>
+
+        
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark">AI</span>
+          <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+        </a>
+        <p>实时追踪 AI 热点，不错过每一个值得关注的新变化，第一时间看懂 AI 世界正在发生什么。</p>
+        <p class="footer-note">© 2026 AI 潮汐 · 保留所有权利</p>
+      </div>
+      <div class="footer-col">
+        <h3>热门分类</h3>
+        <ul>
+          
+            <li><a href="/category/ai-tools/">AI工具</a></li>
+          
+            <li><a href="/category/ai-news/">AI资讯</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          
+            <a href="/tag/%E8%81%8A%E5%A4%A9%E5%8A%A9%E6%89%8B/">聊天助手</a>
+          
+            <a href="/tag/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+          
+            <a href="/tag/Agent/">Agent</a>
+          
+            <a href="/tag/API/">API</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI/">大模型API</a>
+          
+            <a href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+          
+            <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/">开发者工具</a>
+          
+            <a href="/tag/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
+          
+            <a href="/tag/%E6%99%BA%E8%83%BD%E4%BD%93/">智能体</a>
+          
+            <a href="/tag/%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B/">编程助手</a>
+          
+            <a href="/tag/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/">视频生成</a>
+          
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <ul>
+          <li><a href="/category/ai-news/">最新资讯</a></li>
+          <li><a href="/category/ai-tools/">热门工具</a></li>
+          <li><a href="/search/">站内搜索</a></li>
+          <li><a href="/partner/">收录与合作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <ul>
+          <li><a href="/about/">关于我们</a></li>
+        </ul>
+        <ul class="footer-mini">
+          <li><a href="/privacy/">隐私政策</a></li>
+          <li><a href="/terms/">服务条款</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/vendor/lucide.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

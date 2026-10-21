@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="codeva-kPI4fbXpAn" />
+  <title>豆包上线 Agent 工作台 - 网页、文档与任务编排一站完成 - AI 潮汐</title>
+  <meta name="description" content="豆包推出 Agent 工作台，将网页操作、文档处理与定时任务统一编排，让多步流程在同一个入口内完成。">
+  <link rel="canonical" href="https://ai-blog.cloud/tool/doubao-agent-workbench/">
+  <meta property="og:site_name" content="AI 潮汐">
+  <meta property="og:title" content="豆包上线 Agent 工作台 - 网页、文档与任务编排一站完成 - AI 潮汐">
+  <meta property="og:description" content="豆包推出 Agent 工作台，将网页操作、文档处理与定时任务统一编排，让多步流程在同一个入口内完成。">
+  <meta property="og:url" content="https://ai-blog.cloud/tool/doubao-agent-workbench/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"豆包上线 Agent 工作台 - 网页、文档与任务编排一站完成","description":"豆包推出 Agent 工作台，将网页操作、文档处理与定时任务统一编排，让多步流程在同一个入口内完成。","datePublished":"2026-08-13T16:00:00+08:00","dateModified":"2026-08-13T08:00:00.000Z","url":"https://ai-blog.cloud/tool/doubao-agent-workbench/","author":{"@type":"Organization","name":"AI 潮汐"},"publisher":{"@type":"Organization","name":"AI 潮汐"},"mainEntityOfPage":"https://ai-blog.cloud/tool/doubao-agent-workbench/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ai-blog.cloud"},{"@type":"ListItem","position":2,"name":"AI资讯","item":"https://ai-blog.cloud/category/ai-news/"},{"@type":"ListItem","position":3,"name":"豆包上线 Agent 工作台 - 网页、文档与任务编排一站完成","item":"https://ai-blog.cloud/tool/doubao-agent-workbench/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Agent 工作台需要编程吗？","acceptedAnswer":{"@type":"Answer","text":"不需要，用自然语言描述目标和约束即可；系统会生成步骤并在关键节点等待确认。"}},{"@type":"Question","name":"哪些任务适合先用工作台？","acceptedAnswer":{"@type":"Answer","text":"竞品调研、资料汇总、定时报告和跨网页数据收集比较适合，优先选择结果可检查的只读任务。"}},{"@type":"Question","name":"定时任务会主动发送消息吗？","acceptedAnswer":{"@type":"Answer","text":"可以推送到豆包消息中心；涉及对外发送或敏感操作时，应在任务设置里要求人工确认。"}},{"@type":"Question","name":"结果保存在哪里？","acceptedAnswer":{"@type":"Answer","text":"生成的报告、表格默认进入豆包文档与云空间，可以继续编辑、分享或导出。"}},{"@type":"Question","name":"工作台会代替人工判断吗？","acceptedAnswer":{"@type":"Answer","text":"不会，关键节点仍需要用户确认；工作台更适合承担执行和整理，判断和决策仍由人负责。"}}]}]}</script>
+   <link rel="stylesheet" href="/styles.css?v=20260819.02">
+  <link rel="alternate" type="application/rss+xml" title="AI 潮汐 RSS" href="https://ai-blog.cloud/rss.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4951997546216729" crossorigin="anonymous"></script>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXMJ6STTQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WXMJ6STTQV');
+  </script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        
+          <a href="/category/ai-tools/" class="">AI工具</a>
+        
+          <a href="/category/ai-news/" class="">AI资讯</a>
+        
+        <a href="/partner/" class="">收录与合作</a>
+        <a href="/about/" class="">关于我们</a>
+      </nav>
+      <form class="search-form" action="/search/" method="get" role="search">
+        <i data-lucide="search" class="search-icon" aria-hidden="true"></i>
+        <input type="search" name="q" value="" placeholder="搜索 AI 资讯与工具" aria-label="搜索">
+        <button type="submit" class="search-submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="category-bar" aria-label="全部分类">
+    <div class="container category-bar-inner">
+      <a class="category-all" href="/">全部</a>
+      
+        <a href="/category/ai-tools/" class="">AI工具 <span>34</span></a>
+      
+        <a href="/category/ai-news/" class="">AI资讯 <span>9</span></a>
+      
+    </div>
+  </nav>
+
+  <main class="tool-page tool-page--news">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      <a href="/category/ai-news/">AI资讯</a>
+      <span>/</span>
+      <span class="current">豆包上线 Agent 工作台</span>
+    </nav>
+
+    <header class="tool-hero">
+      <div class="tool-cover">
+        
+          <img src="/icons/doubao.png" alt="豆包上线 Agent 工作台 - 网页、文档与任务编排一站完成" loading="lazy">
+        
+      </div>
+      <div class="tool-hero-body">
+        <h1>豆包上线 Agent 工作台 - 网页、文档与任务编排一站完成</h1>
+        <p class="tool-subtitle">把浏览器操作、文档处理和定时任务收进同一个工作台，普通用户也能编排多步流程。</p>
+        <div class="tool-meta">
+          <a class="chip chip--category" href="/category/ai-news/"><i data-lucide="folder"></i>AI资讯</a>
+          
+            <a class="chip" href="/tag/%E8%B1%86%E5%8C%85/"><i data-lucide="tag"></i>豆包</a>
+          
+            <a class="chip" href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"><i data-lucide="tag"></i>字节跳动</a>
+          
+            <a class="chip" href="/tag/Agent/"><i data-lucide="tag"></i>Agent</a>
+          
+            <a class="chip" href="/tag/%E5%B7%A5%E5%85%B7%E6%9B%B4%E6%96%B0/"><i data-lucide="tag"></i>工具更新</a>
+          
+        </div>
+        <div class="tool-actions">
+          
+            
+              <a class="btn btn--primary" href="https://www.doubao.com/" rel="nofollow noopener" target="_blank">
+                <i data-lucide="external-link"></i> 阅读原文
+              </a>
+            
+          
+          <button class="btn btn--ghost copy-link" data-url="https://ai-blog.cloud/tool/doubao-agent-workbench/">
+            <i data-lucide="link"></i> 复制链接
+          </button>
+        </div>
+      </div>
+      <div class="tool-facts">
+        <div><span>发布日期</span><strong>2026-08-13</strong></div>
+        <div><span>热度指数</span><strong>69</strong></div>
+        <div><span>阅读时长</span><strong>2283 字</strong></div>
+      </div>
+    </header>
+
+    
+
+    <div class="tool-layout">
+      <article class="article">
+        
+          <nav class="toc" aria-label="目录">
+            <p>目录</p>
+            <ol>
+              
+                <li><a href="#sec-1">事件：Agent 工作台正式上线</a></li>
+              
+                <li><a href="#sec-2">工作台到底做了什么</a></li>
+              
+                <li><a href="#sec-3">能力拆解：浏览器、文档与定时任务</a></li>
+              
+                <li><a href="#sec-4">实战：用工作台完成一次竞品调研</a></li>
+              
+                <li><a href="#sec-5">定时任务：让 AI 替你值班</a></li>
+              
+                <li><a href="#sec-6">与传统对话模式的关键差异</a></li>
+              
+                <li><a href="#sec-7">谁适合现在开始用</a></li>
+              
+                <li><a href="#sec-8">行业影响</a></li>
+              
+                <li><a href="#sec-9">常见失败场景与解决思路</a></li>
+              
+                <li><a href="#sec-10">隐私与权限边界</a></li>
+              
+                <li><a href="#sec-11">下一步关注什么</a></li>
+              
+            </ol>
+          </nav>
+        
+
+        
+
+
+        
+
+        
+          <section class="section-block" id="sec-1">
+            <h2>事件：Agent 工作台正式上线</h2>
+            <div class="prose"><p>豆包在移动端与桌面端同步上线 Agent 工作台，把网页浏览、文档处理、表格生成和定时任务放进同一个入口。此前豆包已经具备对话、图像理解、联网搜索和文档生成能力，但这些能力分散在不同功能页，用户需要自己把“查资料、整理、出报告”三步拆开完成。工作台把这条链路变成一次自然语言描述的任务：用户说明目标和约束，系统负责拆解步骤、调用工具、展示进度并交付成品。</p><p>这次更新不是简单给助手加几个按钮，而是把执行链路产品化：任务列表、执行日志、失败重试和结果文件都成为界面的一部分。换句话说，豆包不再只回答“怎么做”，而是开始直接“做完”。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-2">
+            <h2>工作台到底做了什么</h2>
+            <div class="prose"><p>从产品结构看，Agent 工作台主要包含四层能力：任务编排、工具执行、结果沉淀和人工确认。任务编排负责把大目标拆成步骤，例如“调研三家竞品官网并生成对比表”会被拆成打开官网、抓取产品页、提取价格与功能、汇总成表格。工具执行层调用浏览器、文档、搜索和表格等能力；结果沉淀层把产出物放进豆包文档和云空间；人工确认层则在关键节点暂停，让用户检查数据或修改方向。</p><p>对普通用户来说，真正重要的不是底层技术，而是边界清晰：工作台会明确显示哪些步骤由 AI 执行、哪些需要用户确认，失败时给出原因而不是悄悄跳过。</p></div>
+            
+
+          </section>
+        
+          <section class="section-block" id="sec-3">
+            <h2>能力拆解：浏览器、文档与定时任务</h2>
+            <div class="prose"><p>浏览器操作是这次更新的核心。工作台可以按任务指令打开页面、读取正文、抓取列表、填写表单，并在需要登录或支付等敏感操作时停下确认。文档能力与豆包现有文档体系打通，生成的大纲、报告和表格可以直接继续编辑，不需要导出再导入。定时任务则把单次任务扩展为长期值守：每天早上汇总行业新闻、每周整理一次数据报表，都可以设定执行时间和重复频率。</p><p>三种能力叠加后，典型的变化是：过去需要“收藏链接、手动打开、复制粘贴、再排版”的流程，现在变成“描述一次、反复执行”。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-4">
+            <h2>实战：用工作台完成一次竞品调研</h2>
+            <div class="prose"><p>以“整理三款 AI 编程工具的最新价格和功能更新”为例，完整的执行链路大致如下：第一步，用户输入任务目标、指定三个官网并说明输出格式；第二步，工作台依次打开三个站点，定位定价页和更新日志，提取价格、版本号和新增功能；第三步，系统把结果汇总为表格，并列出每条信息的来源页面；第四步，用户在确认页检查数据，修改遗漏项；第五步，报告自动存入豆包文档，可直接继续润色或转发。</p><p>这个流程里的每一步都可以单独干预：用户可以中途追加来源、要求只保留最近三个月的变化，也可以让 AI 重新抓取某个站点。相比手动调研，它的价值不是“一次生成完美报告”，而是把重复劳动压缩到一次确认。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-5">
+            <h2>定时任务：让 AI 替你值班</h2>
+            <div class="prose"><p>定时任务是工作台最容易建立习惯的功能。用户可以在创建任务时设置“每天早上九点执行”或“每周一执行”，系统会按照规则自动运行并把结果推送到豆包消息中心。对于需要长期跟踪的信息，比如竞品价格变化、行业招聘动态、公开政策文件更新，定时任务比“想起来才查”更可靠。</p><p>实际使用时需要注意两点：一是给定时任务设定清晰的停止条件，避免任务长期跑偏；二是对自动执行的任务设置确认门槛，涉及发送消息、填写外部表单或访问付费内容时，让 AI 在动手前征求同意。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-6">
+            <h2>与传统对话模式的关键差异</h2>
+            <div class="prose"><p>传统对话模式里，用户负责记忆上下文并手动切换功能；Agent 工作台则把上下文和执行权都交给系统。差异最直观的体现是结果形式：对话模式通常返回一段文字建议，工作台返回的是任务记录、执行日志和成品文件。</p><p>这也带来新的使用要求：描述任务时要说清目标、约束和交付格式，而不是只发一句模糊的指令。比如“整理这三家的价格”不如“打开这三个官网的定价页，提取免费版与付费版价格，做成四列表格”稳定。提示词质量仍然是 Agent 成功率的最大变量。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-7">
+            <h2>谁适合现在开始用</h2>
+            <div class="prose"><p>对运营、市场和内容岗位来说，竞品监控、周报整理、资料汇总这类重复任务可以直接迁移到工作台；对学生和研究者来说，文献筛选、网页信息收集和长文档整理能够减少大量复制粘贴；对产品与数据分析岗位来说，把公开数据抓取和初步清洗交给 Agent，可以更快进入分析阶段。</p><p>如果工作流里包含敏感数据、账号登录或对外发布，建议先用只读型任务测试稳定性，再逐步开放更高权限。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-8">
+            <h2>行业影响</h2>
+            <div class="prose"><p>豆包把 Agent 能力做成普通用户可用的产品界面，意味着“多步任务自动化”不再只是开发者专属。头部助手之间的竞争正在从模型跑分转向任务完成率、执行可观测性和错误恢复能力：谁能更稳定地交付文件，谁就更可能成为日常工作的默认入口。</p><p>对开发者来说，这种产品化趋势也给出信号：Agent 应用需要把权限控制、审计日志和人工确认做进产品设计，而不是事后补救。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-9">
+            <h2>常见失败场景与解决思路</h2>
+            <div class="prose"><p>第一次使用工作台时，最常见的失败有三种。</p><ul><li><strong>网站结构变化：</strong>目标页面改版或加了验证码，抓取不到数据。解决思路是缩小抓取范围、提供备用网址，或要求工作台标记"未获取"而不是编造内容。</li><li><strong>指令太模糊：</strong>"帮我查一下行业情况"会生成宽泛步骤。解决思路是先写清目标、来源、字段和输出格式，把指令当成给实习生的工作单。</li><li><strong>任务跑偏：</strong>长流程执行到一半偏离主题。解决思路是设置中间检查点，要求在每个关键步骤后等待确认。</li></ul><p>把失败案例记录成提示词模板，工作台的稳定性会随着使用次数明显提升。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-10">
+            <h2>隐私与权限边界</h2>
+            <div class="prose"><p>工作台会读取网页、文档和云空间内容，使用前要分清数据边界：公开资料可以放心交给任务，企业内部文件先确认共享范围与审批流程；涉及客户数据、合同和未公开信息时，尽量在隔离环境执行并关闭不必要的自动化。</p><p>产品内也应提供操作日志和权限设置，让每个任务都能追溯到执行者与调用记录。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-11">
+            <h2>下一步关注什么</h2>
+            <div class="prose"><p>接下来值得关注三件事：工作台是否开放第三方插件，让用户接入内部系统和更多外部服务；定时任务在长周期运行中的稳定性和权限边界；以及多步任务失败时的自动恢复能力。对普通用户，建议从"每周执行一次的信息汇总"开始，先把流程跑顺，再逐步增加任务复杂度。</p></div>
+            
+          </section>
+        
+
+        
+          <section class="section-block" id="source-note">
+            <h2>来源与说明</h2>
+            <div class="prose">
+              <p>本文由 AI 潮汐编辑部基于官方公告与公开资料整理，补充了行业影响、适用场景和行动建议，帮助你在阅读原文前先理解这条信息为什么重要。</p>
+              
+                <p>原始来源：<a href="https://www.doubao.com/" rel="nofollow noopener" target="_blank">https://www.doubao.com/</a></p>
+              
+              <p>如发现事实、价格或链接有误，可通过 <a href="/contact/">联系我们</a> 提交更正。</p>
+            </div>
+          </section>
+        
+
+        
+
+        
+          <section class="section-block" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+              
+                <details class="faq-item">
+                  <summary>Agent 工作台需要编程吗？</summary>
+                  <p>不需要，用自然语言描述目标和约束即可；系统会生成步骤并在关键节点等待确认。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>哪些任务适合先用工作台？</summary>
+                  <p>竞品调研、资料汇总、定时报告和跨网页数据收集比较适合，优先选择结果可检查的只读任务。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>定时任务会主动发送消息吗？</summary>
+                  <p>可以推送到豆包消息中心；涉及对外发送或敏感操作时，应在任务设置里要求人工确认。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>结果保存在哪里？</summary>
+                  <p>生成的报告、表格默认进入豆包文档与云空间，可以继续编辑、分享或导出。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>工作台会代替人工判断吗？</summary>
+                  <p>不会，关键节点仍需要用户确认；工作台更适合承担执行和整理，判断和决策仍由人负责。</p>
+                </details>
+              
+            </div>
+          </section>
+        
+
+        <div class="article-bottom">
+          <div class="prev-next">
+            
+              <a href="/tool/openai/">
+                <span>上一篇</span>
+                <strong>OpenAI API</strong>
+              </a>
+            
+            
+              <a href="/tool/trae-programming/">
+                <span>下一篇</span>
+                <strong>TRAE 编程</strong>
+              </a>
+            
+          </div>
+          <div class="tag-cloud tag-cloud--bottom">
+            
+              <a href="/tag/%E8%B1%86%E5%8C%85/">豆包</a>
+            
+              <a href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+            
+              <a href="/tag/Agent/">Agent</a>
+            
+              <a href="/tag/%E5%B7%A5%E5%85%B7%E6%9B%B4%E6%96%B0/">工具更新</a>
+            
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar sidebar--article">
+        
+
+
+        <section class="side-card">
+          <h2>相关资讯</h2>
+          <div class="related-list">
+            
+              <a href="/tool/unitree-superhuman-humanoid-robot/" class="related-item">
+                
+                  <img src="https://www.unitree.com/favicon.ico" alt="">
+                
+                <span><strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/deepseek-harness-release/" class="related-item">
+                
+                  <img src="/icons/deepseek-harness.svg" alt="">
+                
+                <span><strong>DeepSeek Harness 开发者预览版发布：MIT 开源，把 Agent 运行时做成可插拔底座</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/deepseek-v4-launch/" class="related-item">
+                
+                  <img src="/icons/deepseek-harness.svg" alt="">
+                
+                <span><strong>DeepSeek V4 Pro API 正式上线：100 万上下文、384K 输出，Agent 生态迎新底座</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/kimi-k3-launch/" class="related-item">
+                
+                  <img src="/icons/kimi.png" alt="">
+                
+                <span><strong>Kimi K3 正式上线</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/manus-independent-operation/" class="related-item">
+                
+                  <img src="/icons/manus.png" alt="">
+                
+                <span><strong>Manus 恢复独立运营</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/qwen3-5-launch/" class="related-item">
+                
+                  <img src="/icons/tongyi.png" alt="">
+                
+                <span><strong>通义千问 Qwen3.5 发布</strong><em>AI资讯</em></span>
+              </a>
+            
+            
+          </div>
+        </section>
+
+        <section class="side-card">
+          <h2>最新内容</h2>
+          <ol class="rank-list">
+            
+              <li>
+                <span class="rank-no">1</span>
+                <a href="/tool/manga-translate/">
+                  <strong>漫画翻译器</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">2</span>
+                <a href="/tool/unitree-superhuman-humanoid-robot/">
+                  <strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong>
+                  <span>2026-08-18</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">3</span>
+                <a href="/tool/glm/">
+                  <strong>智谱清言</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">4</span>
+                <a href="/tool/bigmodel/">
+                  <strong>智谱 BigModel</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">5</span>
+                <a href="/tool/sensenova/">
+                  <strong>商汤大装置 SenseNova</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">6</span>
+                <a href="/tool/bailian/">
+                  <strong>阿里云百炼</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+          </ol>
+        </section>
+
+        
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark">AI</span>
+          <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+        </a>
+        <p>实时追踪 AI 热点，不错过每一个值得关注的新变化，第一时间看懂 AI 世界正在发生什么。</p>
+        <p class="footer-note">© 2026 AI 潮汐 · 保留所有权利</p>
+      </div>
+      <div class="footer-col">
+        <h3>热门分类</h3>
+        <ul>
+          
+            <li><a href="/category/ai-tools/">AI工具</a></li>
+          
+            <li><a href="/category/ai-news/">AI资讯</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          
+            <a href="/tag/%E8%81%8A%E5%A4%A9%E5%8A%A9%E6%89%8B/">聊天助手</a>
+          
+            <a href="/tag/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+          
+            <a href="/tag/Agent/">Agent</a>
+          
+            <a href="/tag/API/">API</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI/">大模型API</a>
+          
+            <a href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+          
+            <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/">开发者工具</a>
+          
+            <a href="/tag/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
+          
+            <a href="/tag/%E6%99%BA%E8%83%BD%E4%BD%93/">智能体</a>
+          
+            <a href="/tag/%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B/">编程助手</a>
+          
+            <a href="/tag/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/">视频生成</a>
+          
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <ul>
+          <li><a href="/category/ai-news/">最新资讯</a></li>
+          <li><a href="/category/ai-tools/">热门工具</a></li>
+          <li><a href="/search/">站内搜索</a></li>
+          <li><a href="/partner/">收录与合作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <ul>
+          <li><a href="/about/">关于我们</a></li>
+        </ul>
+        <ul class="footer-mini">
+          <li><a href="/privacy/">隐私政策</a></li>
+          <li><a href="/terms/">服务条款</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/vendor/lucide.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

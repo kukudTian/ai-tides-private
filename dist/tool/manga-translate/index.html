@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="codeva-kPI4fbXpAn" />
+  <title>漫画翻译器 - AI 漫画翻译平台，OCR 识别与智能排版批量汉化 - AI 潮汐</title>
+  <meta name="description" content="漫画翻译器是 Ficory LLC 提供的在线漫画翻译平台，支持 100 多种语言互译、OCR 文字识别、智能排版与一键回填，提供整话批量翻译、后台队列、在线译图编辑，并通过 API 接入个人与团队工作流。">
+  <link rel="canonical" href="https://ai-blog.cloud/tool/manga-translate/">
+  <meta property="og:site_name" content="AI 潮汐">
+  <meta property="og:title" content="漫画翻译器 - AI 漫画翻译平台，OCR 识别与智能排版批量汉化 - AI 潮汐">
+  <meta property="og:description" content="漫画翻译器是 Ficory LLC 提供的在线漫画翻译平台，支持 100 多种语言互译、OCR 文字识别、智能排版与一键回填，提供整话批量翻译、后台队列、在线译图编辑，并通过 API 接入个人与团队工作流。">
+  <meta property="og:url" content="https://ai-blog.cloud/tool/manga-translate/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"漫画翻译器 - AI 漫画翻译平台，OCR 识别与智能排版批量汉化","description":"漫画翻译器是 Ficory LLC 提供的在线漫画翻译平台，支持 100 多种语言互译、OCR 文字识别、智能排版与一键回填，提供整话批量翻译、后台队列、在线译图编辑，并通过 API 接入个人与团队工作流。","datePublished":"2026-10-02T09:45:29.440Z","dateModified":"2026-10-02T09:47:17.149Z","url":"https://ai-blog.cloud/tool/manga-translate/","author":{"@type":"Organization","name":"AI 潮汐"},"publisher":{"@type":"Organization","name":"AI 潮汐"},"mainEntityOfPage":"https://ai-blog.cloud/tool/manga-translate/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ai-blog.cloud"},{"@type":"ListItem","position":2,"name":"AI工具","item":"https://ai-blog.cloud/category/ai-tools/"},{"@type":"ListItem","position":3,"name":"漫画翻译器 - AI 漫画翻译平台，OCR 识别与智能排版批量汉化","item":"https://ai-blog.cloud/tool/manga-translate/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"漫画翻译器可以免费使用吗？","acceptedAnswer":{"@type":"Answer","text":"可以。未登录用户每天有 5 个免费积分，同一公网 IP 共享；注册用户每天签到可再领 5 个积分。不同模型消耗不同积分，免费额度适合先试用确认效果。"}},{"@type":"Question","name":"支持哪些语言？","acceptedAnswer":{"@type":"Answer","text":"源语言支持英语、日语、韩语、中文等，目标语言覆盖英语、简体中文、繁体中文、法语、西班牙语、葡萄牙语、阿拉伯语等 100 多种语言，具体以翻译工具中的语言列表为准。"}},{"@type":"Question","name":"翻译结果不满意可以修改吗？","acceptedAnswer":{"@type":"Answer","text":"可以。图片翻译成功后点击“编辑译图”进入在线编辑器，可以修改对白、移动文本框、调整字体和排版，编辑后的结果在编辑器中导出。"}},{"@type":"Question","name":"工作室和开发者怎么接入？","acceptedAnswer":{"@type":"Answer","text":"工作室可以用批量与后台队列处理整话；开发者在控制台创建 API Key 后，通过 API 提交翻译任务、查询进度并获取结果，官网提供接入示例。"}}]}]}</script>
+   <link rel="stylesheet" href="/styles.css?v=20260819.02">
+  <link rel="alternate" type="application/rss+xml" title="AI 潮汐 RSS" href="https://ai-blog.cloud/rss.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4951997546216729" crossorigin="anonymous"></script>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXMJ6STTQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WXMJ6STTQV');
+  </script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        
+          <a href="/category/ai-tools/" class="">AI工具</a>
+        
+          <a href="/category/ai-news/" class="">AI资讯</a>
+        
+        <a href="/partner/" class="">收录与合作</a>
+        <a href="/about/" class="">关于我们</a>
+      </nav>
+      <form class="search-form" action="/search/" method="get" role="search">
+        <i data-lucide="search" class="search-icon" aria-hidden="true"></i>
+        <input type="search" name="q" value="" placeholder="搜索 AI 资讯与工具" aria-label="搜索">
+        <button type="submit" class="search-submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="category-bar" aria-label="全部分类">
+    <div class="container category-bar-inner">
+      <a class="category-all" href="/">全部</a>
+      
+        <a href="/category/ai-tools/" class="">AI工具 <span>34</span></a>
+      
+        <a href="/category/ai-news/" class="">AI资讯 <span>9</span></a>
+      
+    </div>
+  </nav>
+
+  <main class="tool-page ">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      <a href="/category/ai-tools/">AI工具</a>
+      <span>/</span>
+      <span class="current">漫画翻译器</span>
+    </nav>
+
+    <header class="tool-hero">
+      <div class="tool-cover">
+        
+          <img src="/icons/manga-translate.png" alt="漫画翻译器 - AI 漫画翻译平台，OCR 识别与智能排版批量汉化" loading="lazy">
+        
+      </div>
+      <div class="tool-hero-body">
+        <h1>漫画翻译器 - AI 漫画翻译平台，OCR 识别与智能排版批量汉化</h1>
+        <p class="tool-subtitle">100+ 语言互译，整话批量翻译，在线译图编辑与 API 接入。</p>
+        <div class="tool-meta">
+          <a class="chip chip--category" href="/category/ai-tools/"><i data-lucide="folder"></i>AI工具</a>
+          
+            <a class="chip" href="/tag/%E6%BC%AB%E7%94%BB%E7%BF%BB%E8%AF%91/"><i data-lucide="tag"></i>漫画翻译</a>
+          
+            <a class="chip" href="/tag/OCR%E8%AF%86%E5%88%AB/"><i data-lucide="tag"></i>OCR识别</a>
+          
+            <a class="chip" href="/tag/%E5%9B%BE%E5%83%8F%E6%9C%AC%E5%9C%B0%E5%8C%96/"><i data-lucide="tag"></i>图像本地化</a>
+          
+            <a class="chip" href="/tag/API/"><i data-lucide="tag"></i>API</a>
+          
+            <a class="chip" href="/tag/Ficory/"><i data-lucide="tag"></i>Ficory</a>
+          
+        </div>
+        <div class="tool-actions">
+          
+            <a class="btn btn--primary" href="https://www.mangatranslate.com/zh-CN/" rel="nofollow noopener sponsored" target="_blank">
+              <i data-lucide="badge-dollar-sign"></i> 链接直达
+            </a>
+            
+              <span class="tool-action-note">合作收录：漫画翻译器提供 100+ 语言漫画翻译、OCR 智能排版、整话批量翻译与 API 接入，未登录每天有免费积分可先试效果。</span>
+            
+          
+          <button class="btn btn--ghost copy-link" data-url="https://ai-blog.cloud/tool/manga-translate/">
+            <i data-lucide="link"></i> 复制链接
+          </button>
+        </div>
+      </div>
+      <div class="tool-facts">
+        <div><span>内容类型</span><strong>工具收录</strong></div>
+        <div><span>热度指数</span><strong>80</strong></div>
+        <div><span>阅读时长</span><strong>1213 字</strong></div>
+      </div>
+    </header>
+
+    
+      <section class="official-band" aria-label="官网直达">
+        <div class="official-band-title">
+          <i data-lucide="globe"></i>
+          <span>链接直达</span>
+        </div>
+        <div class="official-links">
+          
+            <a href="https://www.mangatranslate.com/zh-CN/" rel="nofollow noopener sponsored" target="_blank">
+              <span class="official-link-name">漫画翻译器 链接直达</span>
+              <span class="official-link-url">www.mangatranslate.com/zh-CN</span>
+              <i data-lucide="badge-dollar-sign"></i>
+            </a>
+            
+              <p class="official-link-note">合作收录：漫画翻译器提供 100+ 语言漫画翻译、OCR 智能排版、整话批量翻译与 API 接入，未登录每天有免费积分可先试效果。</p>
+            
+          
+        </div>
+      </section>
+    
+
+    <div class="tool-layout">
+      <article class="article">
+        
+          <nav class="toc" aria-label="目录">
+            <p>目录</p>
+            <ol>
+              
+                <li><a href="#sec-1">漫画翻译器是什么</a></li>
+              
+                <li><a href="#sec-2">核心功能：OCR、智能排版与批量队列</a></li>
+              
+                <li><a href="#sec-3">译图编辑与 API：给专业用户的两个出口</a></li>
+              
+                <li><a href="#sec-4">适合谁用</a></li>
+              
+                <li><a href="#sec-5">价格与免费额度</a></li>
+              
+            </ol>
+          </nav>
+        
+
+        
+
+
+        
+          <section class="tool-gallery" id="screenshots">
+            <div class="section-block-head">
+              <h2>产品界面</h2>
+              <p>来自官网与产品公开页的产品图与界面素材</p>
+            </div>
+            <div class="tool-shot-grid">
+              
+                <a class="tool-shot" href="https://www.mangatranslate.com/zh-CN/" rel="nofollow noopener" target="_blank">
+                  <img src="/screenshots/manga-translate.jpg" alt="漫画翻译器 - AI 漫画翻译平台，OCR 识别与智能排版批量汉化 截图 1" loading="lazy">
+                </a>
+              
+            </div>
+          </section>
+        
+
+        
+          <section class="section-block" id="sec-1">
+            <h2>漫画翻译器是什么</h2>
+            <div class="prose"><p>漫画翻译器（Manga Translator）是一个专门面向漫画的在线翻译平台，由 Ficory LLC 运营。它和通用翻译工具的区别在于：先通过 OCR 把画面里的日文、英文、韩文等对白识别出来，再用翻译模型处理，最后把译文重新排版回原来的气泡位置，尽量保留原有版式与阅读节奏。</p><p>官网数据显示平台累计完成翻译量超过 1 亿，支持 100 多种语言互译。它面向的不只是零散的个人用户，也包括需要批量处理整话漫画的工作室，以及希望把翻译能力接进自己系统的企业和开发者。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-2">
+            <h2>核心功能：OCR、智能排版与批量队列</h2>
+            <div class="prose"><ul><li><strong>模型可选：</strong>Manga、EagleEye、Ultra 三档模型，消耗 1 到 2 积分不等，Ultra 更注重细节质量，适合追求成片效果的用户。</li><li><strong>先进 OCR：</strong>针对复杂背景、变形字体和描边文本做识别，擦字更干净、回填更稳定。</li><li><strong>智能排版与一键回填：</strong>文本框大小、位置和换行自适应，尽量不破坏原漫画的版面。</li><li><strong>批量与后台翻译：</strong>整话、多页批量上传，后台并行处理，稍后在控制台统一下载；单次任务上限随套餐不同，旗舰版支持单次 200 张。</li><li><strong>格式支持：</strong>支持 jpg、jpeg、png、webp、avif、pdf、zip、tar、tar.gz，单页最大 15MB。</li><li><strong>字体库：</strong>提供漫画、行楷、摩登、经典、可爱、典雅、活泼、笔触、清新、文艺、浓墨、海报等风格字体，并支持在编辑器中导入自定义字体。</li></ul></div>
+            
+
+          </section>
+        
+          <section class="section-block" id="sec-3">
+            <h2>译图编辑与 API：给专业用户的两个出口</h2>
+            <div class="prose"><p>对工作室和进阶用户，平台提供“编辑译图”在线编辑器，可以修改对白、移动文本框、调整字体和排版，相当于一个轻量化的在线修图工作台，避免因为个别气泡识别不理想就要重跑整话。</p><p>对企业和开发者，平台提供完整的 API：可以在控制台创建 API Key，提交翻译任务、查询进度并获取结果，把漫画翻译能力接进自己的产品或工作流。API 有独立的基础版套餐，官方也提供了接入示例文档。</p><p>官网入口：<a href="https://www.mangatranslate.com/zh-CN/" rel="nofollow noopener sponsored" target="_blank">漫画翻译器</a></p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-4">
+            <h2>适合谁用</h2>
+            <div class="prose"><p><strong>适合个人读者：</strong>想看外语漫画、偶尔翻译一两话，网页三步就能完成：选择语言、上传图片、下载结果。</p><p><strong>适合漫画工作室：</strong>需要整话批量翻译、统一字体风格、并在编辑器里校对排版，效率和一致性都会明显提升。</p><p><strong>适合企业和开发者：</strong>需要通过 API 把翻译能力接入自己的产品，比如漫画平台、出版社数字化流程或内容出海业务。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-5">
+            <h2>价格与免费额度</h2>
+            <div class="prose"><p>平台提供有限免费试用：未登录用户每天可使用 5 个免费积分（同一公网 IP 共享额度），注册用户可通过每日签到领取 5 个免费积分。不同翻译模型消耗积分不同，因此实际可翻译的图片数量以所选模型为准。</p><p>付费部分采用积分订阅制，官网当前展示的基础版约 ¥55/月（1980 积分）、专业版约 ¥207/月（7700 积分）、旗舰版按年订阅折算约 ¥165.83/月（92400 积分，单次最多 200 张）。订阅套餐包含优先识别与翻译速度、多种翻译模型（GPT-4o、Papago、谷歌翻译）、网站与插件通用、无水印、额外赠送 10% 翻译次数等权益。具体价格与可用支付方式会随地区、币种和活动变化，请以官网结账页为准。</p></div>
+            
+          </section>
+        
+
+        
+
+        
+          <section class="section-block" id="official-links">
+            <h2>链接直达</h2>
+            <div class="prose">
+              <p>想亲自上手体验，直接从推荐入口出发：</p>
+              <ul class="official-list">
+                
+                  <li>
+                    <a href="https://www.mangatranslate.com/zh-CN/" rel="nofollow noopener sponsored" target="_blank">
+                      <span class="official-list-name">链接直达</span>
+                      <span class="official-list-url">www.mangatranslate.com/zh-CN</span>
+                      <i data-lucide="badge-dollar-sign"></i>
+                    </a>
+                    
+                      <p class="official-list-note">合作收录：漫画翻译器提供 100+ 语言漫画翻译、OCR 智能排版、整话批量翻译与 API 接入，未登录每天有免费积分可先试效果。</p>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </section>
+        
+
+        
+          <section class="section-block" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+              
+                <details class="faq-item">
+                  <summary>漫画翻译器可以免费使用吗？</summary>
+                  <p>可以。未登录用户每天有 5 个免费积分，同一公网 IP 共享；注册用户每天签到可再领 5 个积分。不同模型消耗不同积分，免费额度适合先试用确认效果。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>支持哪些语言？</summary>
+                  <p>源语言支持英语、日语、韩语、中文等，目标语言覆盖英语、简体中文、繁体中文、法语、西班牙语、葡萄牙语、阿拉伯语等 100 多种语言，具体以翻译工具中的语言列表为准。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>翻译结果不满意可以修改吗？</summary>
+                  <p>可以。图片翻译成功后点击“编辑译图”进入在线编辑器，可以修改对白、移动文本框、调整字体和排版，编辑后的结果在编辑器中导出。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>工作室和开发者怎么接入？</summary>
+                  <p>工作室可以用批量与后台队列处理整话；开发者在控制台创建 API Key 后，通过 API 提交翻译任务、查询进度并获取结果，官网提供接入示例。</p>
+                </details>
+              
+            </div>
+          </section>
+        
+
+        <div class="article-bottom">
+          <div class="prev-next">
+            
+            
+              <a href="/tool/unitree-superhuman-humanoid-robot/">
+                <span>下一篇</span>
+                <strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong>
+              </a>
+            
+          </div>
+          <div class="tag-cloud tag-cloud--bottom">
+            
+              <a href="/tag/%E6%BC%AB%E7%94%BB%E7%BF%BB%E8%AF%91/">漫画翻译</a>
+            
+              <a href="/tag/OCR%E8%AF%86%E5%88%AB/">OCR识别</a>
+            
+              <a href="/tag/%E5%9B%BE%E5%83%8F%E6%9C%AC%E5%9C%B0%E5%8C%96/">图像本地化</a>
+            
+              <a href="/tag/API/">API</a>
+            
+              <a href="/tag/Ficory/">Ficory</a>
+            
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar sidebar--article">
+        
+
+
+        <section class="side-card">
+          <h2>相关工具</h2>
+          <div class="related-list">
+            
+              <a href="/tool/glm/" class="related-item">
+                
+                  <img src="/icons/glm.png" alt="">
+                
+                <span><strong>智谱清言</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/bigmodel/" class="related-item">
+                
+                  <img src="/icons/bigmodel.png" alt="">
+                
+                <span><strong>智谱 BigModel</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/sensenova/" class="related-item">
+                
+                  <img src="/icons/sensenova.png" alt="">
+                
+                <span><strong>商汤大装置 SenseNova</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/bailian/" class="related-item">
+                
+                  <img src="/icons/bailian.svg" alt="">
+                
+                <span><strong>阿里云百炼</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/volcengine/" class="related-item">
+                
+                  <img src="/icons/volcengine.png" alt="">
+                
+                <span><strong>火山方舟</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/qianfan/" class="related-item">
+                
+                  <img src="/icons/qianfan.png" alt="">
+                
+                <span><strong>百度千帆</strong><em>AI工具</em></span>
+              </a>
+            
+            
+          </div>
+        </section>
+
+        <section class="side-card">
+          <h2>最新内容</h2>
+          <ol class="rank-list">
+            
+              <li>
+                <span class="rank-no">1</span>
+                <a href="/tool/manga-translate/">
+                  <strong>漫画翻译器</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">2</span>
+                <a href="/tool/unitree-superhuman-humanoid-robot/">
+                  <strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong>
+                  <span>2026-08-18</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">3</span>
+                <a href="/tool/glm/">
+                  <strong>智谱清言</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">4</span>
+                <a href="/tool/bigmodel/">
+                  <strong>智谱 BigModel</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">5</span>
+                <a href="/tool/sensenova/">
+                  <strong>商汤大装置 SenseNova</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">6</span>
+                <a href="/tool/bailian/">
+                  <strong>阿里云百炼</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+          </ol>
+        </section>
+
+        
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark">AI</span>
+          <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+        </a>
+        <p>实时追踪 AI 热点，不错过每一个值得关注的新变化，第一时间看懂 AI 世界正在发生什么。</p>
+        <p class="footer-note">© 2026 AI 潮汐 · 保留所有权利</p>
+      </div>
+      <div class="footer-col">
+        <h3>热门分类</h3>
+        <ul>
+          
+            <li><a href="/category/ai-tools/">AI工具</a></li>
+          
+            <li><a href="/category/ai-news/">AI资讯</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          
+            <a href="/tag/%E8%81%8A%E5%A4%A9%E5%8A%A9%E6%89%8B/">聊天助手</a>
+          
+            <a href="/tag/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+          
+            <a href="/tag/Agent/">Agent</a>
+          
+            <a href="/tag/API/">API</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI/">大模型API</a>
+          
+            <a href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+          
+            <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/">开发者工具</a>
+          
+            <a href="/tag/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
+          
+            <a href="/tag/%E6%99%BA%E8%83%BD%E4%BD%93/">智能体</a>
+          
+            <a href="/tag/%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B/">编程助手</a>
+          
+            <a href="/tag/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/">视频生成</a>
+          
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <ul>
+          <li><a href="/category/ai-news/">最新资讯</a></li>
+          <li><a href="/category/ai-tools/">热门工具</a></li>
+          <li><a href="/search/">站内搜索</a></li>
+          <li><a href="/partner/">收录与合作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <ul>
+          <li><a href="/about/">关于我们</a></li>
+        </ul>
+        <ul class="footer-mini">
+          <li><a href="/privacy/">隐私政策</a></li>
+          <li><a href="/terms/">服务条款</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/vendor/lucide.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

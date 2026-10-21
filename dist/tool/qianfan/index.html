@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="codeva-kPI4fbXpAn" />
+  <title>百度千帆 - 文心大模型应用开发平台 - AI 潮汐</title>
+  <meta name="description" content="百度智能云千帆提供文心大模型 API、Prompt 工程、知识库、智能体与模型微调能力，同时支持调用外部模型，是百度系 AI 应用和企业落地的官方平台。">
+  <link rel="canonical" href="https://ai-blog.cloud/tool/qianfan/">
+  <meta property="og:site_name" content="AI 潮汐">
+  <meta property="og:title" content="百度千帆 - 文心大模型应用开发平台 - AI 潮汐">
+  <meta property="og:description" content="百度智能云千帆提供文心大模型 API、Prompt 工程、知识库、智能体与模型微调能力，同时支持调用外部模型，是百度系 AI 应用和企业落地的官方平台。">
+  <meta property="og:url" content="https://ai-blog.cloud/tool/qianfan/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"百度千帆 - 文心大模型应用开发平台","description":"百度智能云千帆提供文心大模型 API、Prompt 工程、知识库、智能体与模型微调能力，同时支持调用外部模型，是百度系 AI 应用和企业落地的官方平台。","datePublished":"2026-08-18T12:00:00+08:00","dateModified":"2026-08-18T04:00:00.000Z","url":"https://ai-blog.cloud/tool/qianfan/","author":{"@type":"Organization","name":"AI 潮汐"},"publisher":{"@type":"Organization","name":"AI 潮汐"},"mainEntityOfPage":"https://ai-blog.cloud/tool/qianfan/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ai-blog.cloud"},{"@type":"ListItem","position":2,"name":"AI工具","item":"https://ai-blog.cloud/category/ai-tools/"},{"@type":"ListItem","position":3,"name":"百度千帆 - 文心大模型应用开发平台","item":"https://ai-blog.cloud/tool/qianfan/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"千帆和文心一言有什么区别？","acceptedAnswer":{"@type":"Answer","text":"文心一言是面向用户的助手，千帆是开发者调用文心大模型和构建应用的平台。"}},{"@type":"Question","name":"可以只用 API 吗？","acceptedAnswer":{"@type":"Answer","text":"可以，注册后创建应用即可通过 API 调用，不需要使用可视化编排。"}},{"@type":"Question","name":"支持外部模型吗？","acceptedAnswer":{"@type":"Answer","text":"平台还支持接入部分第三方模型，方便统一管理和对比。"}}]}]}</script>
+   <link rel="stylesheet" href="/styles.css?v=20260819.02">
+  <link rel="alternate" type="application/rss+xml" title="AI 潮汐 RSS" href="https://ai-blog.cloud/rss.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4951997546216729" crossorigin="anonymous"></script>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXMJ6STTQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WXMJ6STTQV');
+  </script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        
+          <a href="/category/ai-tools/" class="">AI工具</a>
+        
+          <a href="/category/ai-news/" class="">AI资讯</a>
+        
+        <a href="/partner/" class="">收录与合作</a>
+        <a href="/about/" class="">关于我们</a>
+      </nav>
+      <form class="search-form" action="/search/" method="get" role="search">
+        <i data-lucide="search" class="search-icon" aria-hidden="true"></i>
+        <input type="search" name="q" value="" placeholder="搜索 AI 资讯与工具" aria-label="搜索">
+        <button type="submit" class="search-submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="category-bar" aria-label="全部分类">
+    <div class="container category-bar-inner">
+      <a class="category-all" href="/">全部</a>
+      
+        <a href="/category/ai-tools/" class="">AI工具 <span>34</span></a>
+      
+        <a href="/category/ai-news/" class="">AI资讯 <span>9</span></a>
+      
+    </div>
+  </nav>
+
+  <main class="tool-page ">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      <a href="/category/ai-tools/">AI工具</a>
+      <span>/</span>
+      <span class="current">百度千帆</span>
+    </nav>
+
+    <header class="tool-hero">
+      <div class="tool-cover">
+        
+          <img src="/icons/qianfan.png" alt="百度千帆 - 文心大模型应用开发平台" loading="lazy">
+        
+      </div>
+      <div class="tool-hero-body">
+        <h1>百度千帆 - 文心大模型应用开发平台</h1>
+        <p class="tool-subtitle">文心模型 API、Prompt、知识库与 Agent 编排，开发者与业务团队共用一套平台。</p>
+        <div class="tool-meta">
+          <a class="chip chip--category" href="/category/ai-tools/"><i data-lucide="folder"></i>AI工具</a>
+          
+            <a class="chip" href="/tag/%E7%99%BE%E5%BA%A6/"><i data-lucide="tag"></i>百度</a>
+          
+            <a class="chip" href="/tag/%E6%96%87%E5%BF%83%E5%A4%A7%E6%A8%A1%E5%9E%8B/"><i data-lucide="tag"></i>文心大模型</a>
+          
+            <a class="chip" href="/tag/MaaS/"><i data-lucide="tag"></i>MaaS</a>
+          
+            <a class="chip" href="/tag/%E7%9F%A5%E8%AF%86%E5%BA%93/"><i data-lucide="tag"></i>知识库</a>
+          
+        </div>
+        <div class="tool-actions">
+          
+            <a class="btn btn--primary" href="https://qianfan.cloud.baidu.com/" rel="nofollow noopener" target="_blank">
+              <i data-lucide="external-link"></i> 访问官网
+            </a>
+          
+          <button class="btn btn--ghost copy-link" data-url="https://ai-blog.cloud/tool/qianfan/">
+            <i data-lucide="link"></i> 复制链接
+          </button>
+        </div>
+      </div>
+      <div class="tool-facts">
+        <div><span>内容类型</span><strong>工具收录</strong></div>
+        <div><span>热度指数</span><strong>84</strong></div>
+        <div><span>阅读时长</span><strong>770 字</strong></div>
+      </div>
+    </header>
+
+    
+      <section class="official-band" aria-label="官网直达">
+        <div class="official-band-title">
+          <i data-lucide="globe"></i>
+          <span>官网直达</span>
+        </div>
+        <div class="official-links">
+          
+            <a href="https://qianfan.cloud.baidu.com/" rel="nofollow noopener" target="_blank">
+              <span class="official-link-name">百度千帆 官网</span>
+              <span class="official-link-url">qianfan.cloud.baidu.com</span>
+              <i data-lucide="external-link"></i>
+            </a>
+          
+        </div>
+      </section>
+    
+
+    <div class="tool-layout">
+      <article class="article">
+        
+          <nav class="toc" aria-label="目录">
+            <p>目录</p>
+            <ol>
+              
+                <li><a href="#sec-1">百度千帆是什么</a></li>
+              
+                <li><a href="#sec-2">核心能力</a></li>
+              
+                <li><a href="#sec-3">适合谁使用</a></li>
+              
+                <li><a href="#sec-4">免费额度与价格</a></li>
+              
+                <li><a href="#sec-5">快速上手</a></li>
+              
+            </ol>
+          </nav>
+        
+
+        
+
+
+        
+          <section class="tool-gallery" id="screenshots">
+            <div class="section-block-head">
+              <h2>产品界面</h2>
+              <p>来自官网与产品公开页的产品图与界面素材</p>
+            </div>
+            <div class="tool-shot-grid">
+              
+                <a class="tool-shot" href="https://qianfan.cloud.baidu.com/" rel="nofollow noopener" target="_blank">
+                  <img src="/screenshots/qianfan.png" alt="百度千帆 - 文心大模型应用开发平台 截图 1" loading="lazy">
+                </a>
+              
+            </div>
+          </section>
+        
+
+        
+          <section class="section-block" id="sec-1">
+            <h2>百度千帆是什么</h2>
+            <div class="prose"><p>百度智能云千帆是百度推出的文心大模型平台，把模型 API、数据管理、Prompt 工程、知识库、Agent 编排和模型评测整合在一起。个人开发者可以快速接入文心能力，企业团队可以用同一套平台管理知识资产与模型应用。</p><p>平台名称常出现在“文心一言”的开发版本中：文心一言面向消费者，千帆面向开发者与业务系统。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-2">
+            <h2>核心能力</h2>
+            <div class="prose"><ul><li><strong>文心模型 API：</strong>ERNIE 系列文本、多模态与代码能力。</li><li><strong>Prompt 工程：</strong>模板化管理提示词，方便团队协作与版本迭代。</li><li><strong>知识库：</strong>把企业文档构建为可检索的私域知识。</li><li><strong>Agent 编排：</strong>串联模型、工具与业务流程。</li><li><strong>模型微调：</strong>在文心模型上做 SFT，适配领域任务。</li><li><strong>评测与监控：</strong>跟踪效果、成本和调用质量。</li></ul></div>
+            
+
+          </section>
+        
+          <section class="section-block" id="sec-3">
+            <h2>适合谁使用</h2>
+            <div class="prose"><p><strong>开发者：</strong>用文心 API 做聊天机器人、内容生成和文档问答。</p><p><strong>企业：</strong>把客服、知识管理和办公流程接上大模型。</p><p><strong>业务运营：</strong>用 Prompt 模板统一内容产出标准。</p><p><strong>技术负责人：</strong>评估国产模型在不同任务上的效果与成本。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-4">
+            <h2>免费额度与价格</h2>
+            <div class="prose"><p>千帆通常提供部分模型的免费体验额度，用于功能验证；正式 API 调用按 Token 计费，微调、存储和专属资源单独计费。具体额度以控制台与官方活动页为准。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-5">
+            <h2>快速上手</h2>
+            <div class="prose"><p>注册百度智能云账号，开通千帆后创建应用并获取 API Key。请求示例：</p><pre><code>curl https://qianfan.baidubce.com/v2/chat/completions \
+  -H "Authorization: Bearer 你的密钥" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"ernie-4.0-8k","messages":[{"role":"user","content":"你好"}]}'</code></pre><p>平台同时提供控制台内的 Prompt 调试和知识库配置入口，建议先在试玩环境中验证效果，再接入生产代码。</p></div>
+            
+          </section>
+        
+
+        
+
+        
+          <section class="section-block" id="official-links">
+            <h2>官网直达</h2>
+            <div class="prose">
+              <p>想亲自上手体验，直接从官方入口出发：</p>
+              <ul class="official-list">
+                
+                  <li>
+                    <a href="https://qianfan.cloud.baidu.com/" rel="nofollow noopener" target="_blank">
+                      <span class="official-list-name">百度千帆 官网</span>
+                      <span class="official-list-url">qianfan.cloud.baidu.com</span>
+                      <i data-lucide="external-link"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </section>
+        
+
+        
+          <section class="section-block" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+              
+                <details class="faq-item">
+                  <summary>千帆和文心一言有什么区别？</summary>
+                  <p>文心一言是面向用户的助手，千帆是开发者调用文心大模型和构建应用的平台。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>可以只用 API 吗？</summary>
+                  <p>可以，注册后创建应用即可通过 API 调用，不需要使用可视化编排。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>支持外部模型吗？</summary>
+                  <p>平台还支持接入部分第三方模型，方便统一管理和对比。</p>
+                </details>
+              
+            </div>
+          </section>
+        
+
+        <div class="article-bottom">
+          <div class="prev-next">
+            
+              <a href="/tool/volcengine/">
+                <span>上一篇</span>
+                <strong>火山方舟</strong>
+              </a>
+            
+            
+              <a href="/tool/yuanbao/">
+                <span>下一篇</span>
+                <strong>腾讯元宝</strong>
+              </a>
+            
+          </div>
+          <div class="tag-cloud tag-cloud--bottom">
+            
+              <a href="/tag/%E7%99%BE%E5%BA%A6/">百度</a>
+            
+              <a href="/tag/%E6%96%87%E5%BF%83%E5%A4%A7%E6%A8%A1%E5%9E%8B/">文心大模型</a>
+            
+              <a href="/tag/MaaS/">MaaS</a>
+            
+              <a href="/tag/%E7%9F%A5%E8%AF%86%E5%BA%93/">知识库</a>
+            
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar sidebar--article">
+        
+
+
+        <section class="side-card">
+          <h2>相关工具</h2>
+          <div class="related-list">
+            
+              <a href="/tool/manga-translate/" class="related-item">
+                
+                  <img src="/icons/manga-translate.png" alt="">
+                
+                <span><strong>漫画翻译器</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/glm/" class="related-item">
+                
+                  <img src="/icons/glm.png" alt="">
+                
+                <span><strong>智谱清言</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/bigmodel/" class="related-item">
+                
+                  <img src="/icons/bigmodel.png" alt="">
+                
+                <span><strong>智谱 BigModel</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/sensenova/" class="related-item">
+                
+                  <img src="/icons/sensenova.png" alt="">
+                
+                <span><strong>商汤大装置 SenseNova</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/bailian/" class="related-item">
+                
+                  <img src="/icons/bailian.svg" alt="">
+                
+                <span><strong>阿里云百炼</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/volcengine/" class="related-item">
+                
+                  <img src="/icons/volcengine.png" alt="">
+                
+                <span><strong>火山方舟</strong><em>AI工具</em></span>
+              </a>
+            
+            
+          </div>
+        </section>
+
+        <section class="side-card">
+          <h2>最新内容</h2>
+          <ol class="rank-list">
+            
+              <li>
+                <span class="rank-no">1</span>
+                <a href="/tool/manga-translate/">
+                  <strong>漫画翻译器</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">2</span>
+                <a href="/tool/unitree-superhuman-humanoid-robot/">
+                  <strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong>
+                  <span>2026-08-18</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">3</span>
+                <a href="/tool/glm/">
+                  <strong>智谱清言</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">4</span>
+                <a href="/tool/bigmodel/">
+                  <strong>智谱 BigModel</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">5</span>
+                <a href="/tool/sensenova/">
+                  <strong>商汤大装置 SenseNova</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">6</span>
+                <a href="/tool/bailian/">
+                  <strong>阿里云百炼</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+          </ol>
+        </section>
+
+        
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark">AI</span>
+          <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+        </a>
+        <p>实时追踪 AI 热点，不错过每一个值得关注的新变化，第一时间看懂 AI 世界正在发生什么。</p>
+        <p class="footer-note">© 2026 AI 潮汐 · 保留所有权利</p>
+      </div>
+      <div class="footer-col">
+        <h3>热门分类</h3>
+        <ul>
+          
+            <li><a href="/category/ai-tools/">AI工具</a></li>
+          
+            <li><a href="/category/ai-news/">AI资讯</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          
+            <a href="/tag/%E8%81%8A%E5%A4%A9%E5%8A%A9%E6%89%8B/">聊天助手</a>
+          
+            <a href="/tag/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+          
+            <a href="/tag/Agent/">Agent</a>
+          
+            <a href="/tag/API/">API</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI/">大模型API</a>
+          
+            <a href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+          
+            <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/">开发者工具</a>
+          
+            <a href="/tag/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
+          
+            <a href="/tag/%E6%99%BA%E8%83%BD%E4%BD%93/">智能体</a>
+          
+            <a href="/tag/%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B/">编程助手</a>
+          
+            <a href="/tag/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/">视频生成</a>
+          
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <ul>
+          <li><a href="/category/ai-news/">最新资讯</a></li>
+          <li><a href="/category/ai-tools/">热门工具</a></li>
+          <li><a href="/search/">站内搜索</a></li>
+          <li><a href="/partner/">收录与合作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <ul>
+          <li><a href="/about/">关于我们</a></li>
+        </ul>
+        <ul class="footer-mini">
+          <li><a href="/privacy/">隐私政策</a></li>
+          <li><a href="/terms/">服务条款</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/vendor/lucide.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

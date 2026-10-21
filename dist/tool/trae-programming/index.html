@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="codeva-kPI4fbXpAn" />
+  <title>TRAE 编程 - 字节跳动推出的 AI 代码助手 - AI 潮汐</title>
+  <meta name="description" content="TRAE 是字节跳动推出的 AI 编程助手，围绕项目级开发设计，支持代码补全、自然语言改代码、多文件理解和 Agent 执行。">
+  <link rel="canonical" href="https://ai-blog.cloud/tool/trae-programming/">
+  <meta property="og:site_name" content="AI 潮汐">
+  <meta property="og:title" content="TRAE 编程 - 字节跳动推出的 AI 代码助手 - AI 潮汐">
+  <meta property="og:description" content="TRAE 是字节跳动推出的 AI 编程助手，围绕项目级开发设计，支持代码补全、自然语言改代码、多文件理解和 Agent 执行。">
+  <meta property="og:url" content="https://ai-blog.cloud/tool/trae-programming/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"TRAE 编程 - 字节跳动推出的 AI 代码助手","description":"TRAE 是字节跳动推出的 AI 编程助手，围绕项目级开发设计，支持代码补全、自然语言改代码、多文件理解和 Agent 执行。","datePublished":"2026-08-13T11:20:00+08:00","dateModified":"2026-08-13T03:20:00.000Z","url":"https://ai-blog.cloud/tool/trae-programming/","author":{"@type":"Organization","name":"AI 潮汐"},"publisher":{"@type":"Organization","name":"AI 潮汐"},"mainEntityOfPage":"https://ai-blog.cloud/tool/trae-programming/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ai-blog.cloud"},{"@type":"ListItem","position":2,"name":"AI工具","item":"https://ai-blog.cloud/category/ai-tools/"},{"@type":"ListItem","position":3,"name":"TRAE 编程 - 字节跳动推出的 AI 代码助手","item":"https://ai-blog.cloud/tool/trae-programming/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"TRAE 支持哪些 IDE？","acceptedAnswer":{"@type":"Answer","text":"官方提供主流编辑器插件和独立客户端，具体支持列表以官网为准。"}},{"@type":"Question","name":"TRAE 会改写我的整个项目吗？","acceptedAnswer":{"@type":"Answer","text":"不会未经确认直接大规模改写；Agent 模式会展示执行步骤，重要修改通常需要确认。"}},{"@type":"Question","name":"免费版够用吗？","acceptedAnswer":{"@type":"Answer","text":"日常补全和对话基本可用，需要更高模型配额时可以升级付费。"}},{"@type":"Question","name":"TRAE 编程真的免费吗？","acceptedAnswer":{"@type":"Answer","text":"IDE 本身提供免费版本，模型使用额度可能有每日限制或计费规则，请以官方最新说明为准。"}},{"@type":"Question","name":"可以接入自己的 API 吗？","acceptedAnswer":{"@type":"Answer","text":"TRAE 支持配置模型供应商，开发者可以按官方文档绑定自己的模型 API。"}},{"@type":"Question","name":"TRAE 和 VS Code 插件兼容吗？","acceptedAnswer":{"@type":"Answer","text":"它基于 VS Code 生态，多数常见插件可以兼容，但个别插件仍需以实际兼容列表为准。"}}]}]}</script>
+   <link rel="stylesheet" href="/styles.css?v=20260819.02">
+  <link rel="alternate" type="application/rss+xml" title="AI 潮汐 RSS" href="https://ai-blog.cloud/rss.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4951997546216729" crossorigin="anonymous"></script>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXMJ6STTQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WXMJ6STTQV');
+  </script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        
+          <a href="/category/ai-tools/" class="">AI工具</a>
+        
+          <a href="/category/ai-news/" class="">AI资讯</a>
+        
+        <a href="/partner/" class="">收录与合作</a>
+        <a href="/about/" class="">关于我们</a>
+      </nav>
+      <form class="search-form" action="/search/" method="get" role="search">
+        <i data-lucide="search" class="search-icon" aria-hidden="true"></i>
+        <input type="search" name="q" value="" placeholder="搜索 AI 资讯与工具" aria-label="搜索">
+        <button type="submit" class="search-submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="category-bar" aria-label="全部分类">
+    <div class="container category-bar-inner">
+      <a class="category-all" href="/">全部</a>
+      
+        <a href="/category/ai-tools/" class="">AI工具 <span>34</span></a>
+      
+        <a href="/category/ai-news/" class="">AI资讯 <span>9</span></a>
+      
+    </div>
+  </nav>
+
+  <main class="tool-page ">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      <a href="/category/ai-tools/">AI工具</a>
+      <span>/</span>
+      <span class="current">TRAE 编程</span>
+    </nav>
+
+    <header class="tool-hero">
+      <div class="tool-cover">
+        
+          <img src="/icons/trae-programming.png" alt="TRAE 编程 - 字节跳动推出的 AI 代码助手" loading="lazy">
+        
+      </div>
+      <div class="tool-hero-body">
+        <h1>TRAE 编程 - 字节跳动推出的 AI 代码助手</h1>
+        <p class="tool-subtitle">面向项目级开发的 AI 编程工具，支持多文件上下文与 Agent 模式。</p>
+        <div class="tool-meta">
+          <a class="chip chip--category" href="/category/ai-tools/"><i data-lucide="folder"></i>AI工具</a>
+          
+            <a class="chip" href="/tag/%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B/"><i data-lucide="tag"></i>编程助手</a>
+          
+            <a class="chip" href="/tag/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/"><i data-lucide="tag"></i>代码生成</a>
+          
+            <a class="chip" href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/"><i data-lucide="tag"></i>字节跳动</a>
+          
+        </div>
+        <div class="tool-actions">
+          
+            <a class="btn btn--primary" href="https://www.trae.ai/" rel="nofollow noopener" target="_blank">
+              <i data-lucide="external-link"></i> 访问官网
+            </a>
+          
+          <button class="btn btn--ghost copy-link" data-url="https://ai-blog.cloud/tool/trae-programming/">
+            <i data-lucide="link"></i> 复制链接
+          </button>
+        </div>
+      </div>
+      <div class="tool-facts">
+        <div><span>内容类型</span><strong>工具收录</strong></div>
+        <div><span>热度指数</span><strong>82</strong></div>
+        <div><span>阅读时长</span><strong>844 字</strong></div>
+      </div>
+    </header>
+
+    
+      <section class="official-band" aria-label="官网直达">
+        <div class="official-band-title">
+          <i data-lucide="globe"></i>
+          <span>官网直达</span>
+        </div>
+        <div class="official-links">
+          
+            <a href="https://www.trae.ai/" rel="nofollow noopener" target="_blank">
+              <span class="official-link-name">TRAE 编程 官网</span>
+              <span class="official-link-url">www.trae.ai</span>
+              <i data-lucide="external-link"></i>
+            </a>
+          
+        </div>
+      </section>
+    
+
+    <div class="tool-layout">
+      <article class="article">
+        
+          <nav class="toc" aria-label="目录">
+            <p>目录</p>
+            <ol>
+              
+                <li><a href="#sec-1">TRAE 编程是什么</a></li>
+              
+                <li><a href="#sec-2">TRAE 编程的主要功能</a></li>
+              
+                <li><a href="#sec-3">TRAE 编程的适用场景或人群</a></li>
+              
+                <li><a href="#sec-4">TRAE 编程的定价</a></li>
+              
+                <li><a href="#sec-5">如何使用 TRAE 编程</a></li>
+              
+                <li><a href="#sec-6">编辑视角：TRAE 编程的定位</a></li>
+              
+                <li><a href="#sec-7">上手路径：从普通编辑器迁移</a></li>
+              
+                <li><a href="#sec-8">选型建议：TRAE、Cursor、通义灵码怎么选</a></li>
+              
+            </ol>
+          </nav>
+        
+
+        
+
+
+        
+          <section class="tool-gallery" id="screenshots">
+            <div class="section-block-head">
+              <h2>产品界面</h2>
+              <p>来自官网与产品公开页的产品图与界面素材</p>
+            </div>
+            <div class="tool-shot-grid">
+              
+                <a class="tool-shot" href="https://www.trae.ai/" rel="nofollow noopener" target="_blank">
+                  <img src="/screenshots/trae-programming.png" alt="TRAE 编程 - 字节跳动推出的 AI 代码助手 截图 1" loading="lazy">
+                </a>
+              
+            </div>
+          </section>
+        
+
+        
+          <section class="section-block" id="sec-1">
+            <h2>TRAE 编程是什么</h2>
+            <div class="prose"><p>TRAE 是字节跳动推出的 AI 代码助手，定位从单行补全升级到项目级开发，可以在 IDE 中理解多个文件，并根据自然语言描述完成代码修改。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-2">
+            <h2>TRAE 编程的主要功能</h2>
+            <div class="prose"><ul><li><strong>代码补全与生成：</strong>根据上下文提示补全代码，也能从注释生成实现。</li><li><strong>项目理解：</strong>读取整个工作区，回答与多文件逻辑相关的问题。</li><li><strong>Agent 模式：</strong>把任务拆解为编辑、运行、调试等步骤并逐步执行。</li><li><strong>多模型支持：</strong>可在不同模型间切换，适配不同任务。</li></ul></div>
+            
+
+          </section>
+        
+          <section class="section-block" id="sec-3">
+            <h2>TRAE 编程的适用场景或人群</h2>
+            <div class="prose"><p>适合需要快速搭建项目的全栈开发者、希望减少重复编码的工程师，以及正在学习编程、需要代码解释的新手。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-4">
+            <h2>TRAE 编程的定价</h2>
+            <div class="prose"><p>提供免费档位供个人开发者使用，高级模型或更高配额通常需要订阅或按量付费，具体以官网价格页为准。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-5">
+            <h2>如何使用 TRAE 编程</h2>
+            <div class="prose"><p>下载对应 IDE 的插件或独立客户端，登录后打开项目即可使用；复杂任务可在对话中描述目标，再让 Agent 模式自动执行修改。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-6">
+            <h2>编辑视角：TRAE 编程的定位</h2>
+            <div class="prose"><p>TRAE 编程是字节跳动推出的 AI 原生代码编辑器，最大的特点是“免费”和“开箱即用”：基于 VS Code 生态，内置豆包系列模型，支持对话、代码补全和多文件修改。对个人开发者和小团队来说，它把 AI IDE 的入门成本降得很低。</p><p>和 Cursor 相比，TRAE 的国内接入更直接，界面和模型也更适合中文用户；但它是否能替代 Cursor，取决于你的模型偏好、插件需求和团队协作方式。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-7">
+            <h2>上手路径：从普通编辑器迁移</h2>
+            <div class="prose"><ol><li>从官网下载安装，导入 VS Code 的配置文件或直接打开现有项目。</li><li>先在新项目上测试 AI 对话和代码补全，不要一上来就自动改生产代码。</li><li>用多文件修改功能做小范围重构，并利用 Git diff 检查每一处改动。</li><li>切换到自己的模型供应商时，确认 API 密钥和配额设置。</li></ol></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-8">
+            <h2>选型建议：TRAE、Cursor、通义灵码怎么选</h2>
+            <div class="prose"><p>如果你想要一个免费、完整、开箱即用的 AI 编辑器，TRAE 值得先试。如果你已被 VS Code 插件和团队配置深度绑定，通义灵码这类插件更平滑。如果你需要更强的模型调度和 Agent 能力，Cursor 或 TRAE 的 Agent 模式更接近。</p><p>建议用同一个项目分别体验 3 到 5 天，重点看多文件修改、长上下文和错误修复，而不是只看单次生成效果。</p></div>
+            
+          </section>
+        
+
+        
+
+        
+          <section class="section-block" id="official-links">
+            <h2>官网直达</h2>
+            <div class="prose">
+              <p>想亲自上手体验，直接从官方入口出发：</p>
+              <ul class="official-list">
+                
+                  <li>
+                    <a href="https://www.trae.ai/" rel="nofollow noopener" target="_blank">
+                      <span class="official-list-name">TRAE 编程 官网</span>
+                      <span class="official-list-url">www.trae.ai</span>
+                      <i data-lucide="external-link"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </section>
+        
+
+        
+          <section class="section-block" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+              
+                <details class="faq-item">
+                  <summary>TRAE 支持哪些 IDE？</summary>
+                  <p>官方提供主流编辑器插件和独立客户端，具体支持列表以官网为准。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>TRAE 会改写我的整个项目吗？</summary>
+                  <p>不会未经确认直接大规模改写；Agent 模式会展示执行步骤，重要修改通常需要确认。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>免费版够用吗？</summary>
+                  <p>日常补全和对话基本可用，需要更高模型配额时可以升级付费。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>TRAE 编程真的免费吗？</summary>
+                  <p>IDE 本身提供免费版本，模型使用额度可能有每日限制或计费规则，请以官方最新说明为准。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>可以接入自己的 API 吗？</summary>
+                  <p>TRAE 支持配置模型供应商，开发者可以按官方文档绑定自己的模型 API。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>TRAE 和 VS Code 插件兼容吗？</summary>
+                  <p>它基于 VS Code 生态，多数常见插件可以兼容，但个别插件仍需以实际兼容列表为准。</p>
+                </details>
+              
+            </div>
+          </section>
+        
+
+        <div class="article-bottom">
+          <div class="prev-next">
+            
+              <a href="/tool/doubao-agent-workbench/">
+                <span>上一篇</span>
+                <strong>豆包上线 Agent 工作台</strong>
+              </a>
+            
+            
+              <a href="/tool/qwen3-5-launch/">
+                <span>下一篇</span>
+                <strong>通义千问 Qwen3.5 发布</strong>
+              </a>
+            
+          </div>
+          <div class="tag-cloud tag-cloud--bottom">
+            
+              <a href="/tag/%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B/">编程助手</a>
+            
+              <a href="/tag/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/">代码生成</a>
+            
+              <a href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+            
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar sidebar--article">
+        
+
+
+        <section class="side-card">
+          <h2>相关工具</h2>
+          <div class="related-list">
+            
+              <a href="/tool/manga-translate/" class="related-item">
+                
+                  <img src="/icons/manga-translate.png" alt="">
+                
+                <span><strong>漫画翻译器</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/glm/" class="related-item">
+                
+                  <img src="/icons/glm.png" alt="">
+                
+                <span><strong>智谱清言</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/bigmodel/" class="related-item">
+                
+                  <img src="/icons/bigmodel.png" alt="">
+                
+                <span><strong>智谱 BigModel</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/sensenova/" class="related-item">
+                
+                  <img src="/icons/sensenova.png" alt="">
+                
+                <span><strong>商汤大装置 SenseNova</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/bailian/" class="related-item">
+                
+                  <img src="/icons/bailian.svg" alt="">
+                
+                <span><strong>阿里云百炼</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/volcengine/" class="related-item">
+                
+                  <img src="/icons/volcengine.png" alt="">
+                
+                <span><strong>火山方舟</strong><em>AI工具</em></span>
+              </a>
+            
+            
+          </div>
+        </section>
+
+        <section class="side-card">
+          <h2>最新内容</h2>
+          <ol class="rank-list">
+            
+              <li>
+                <span class="rank-no">1</span>
+                <a href="/tool/manga-translate/">
+                  <strong>漫画翻译器</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">2</span>
+                <a href="/tool/unitree-superhuman-humanoid-robot/">
+                  <strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong>
+                  <span>2026-08-18</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">3</span>
+                <a href="/tool/glm/">
+                  <strong>智谱清言</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">4</span>
+                <a href="/tool/bigmodel/">
+                  <strong>智谱 BigModel</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">5</span>
+                <a href="/tool/sensenova/">
+                  <strong>商汤大装置 SenseNova</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">6</span>
+                <a href="/tool/bailian/">
+                  <strong>阿里云百炼</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+          </ol>
+        </section>
+
+        
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark">AI</span>
+          <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+        </a>
+        <p>实时追踪 AI 热点，不错过每一个值得关注的新变化，第一时间看懂 AI 世界正在发生什么。</p>
+        <p class="footer-note">© 2026 AI 潮汐 · 保留所有权利</p>
+      </div>
+      <div class="footer-col">
+        <h3>热门分类</h3>
+        <ul>
+          
+            <li><a href="/category/ai-tools/">AI工具</a></li>
+          
+            <li><a href="/category/ai-news/">AI资讯</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          
+            <a href="/tag/%E8%81%8A%E5%A4%A9%E5%8A%A9%E6%89%8B/">聊天助手</a>
+          
+            <a href="/tag/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+          
+            <a href="/tag/Agent/">Agent</a>
+          
+            <a href="/tag/API/">API</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI/">大模型API</a>
+          
+            <a href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+          
+            <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/">开发者工具</a>
+          
+            <a href="/tag/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
+          
+            <a href="/tag/%E6%99%BA%E8%83%BD%E4%BD%93/">智能体</a>
+          
+            <a href="/tag/%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B/">编程助手</a>
+          
+            <a href="/tag/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/">视频生成</a>
+          
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <ul>
+          <li><a href="/category/ai-news/">最新资讯</a></li>
+          <li><a href="/category/ai-tools/">热门工具</a></li>
+          <li><a href="/search/">站内搜索</a></li>
+          <li><a href="/partner/">收录与合作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <ul>
+          <li><a href="/about/">关于我们</a></li>
+        </ul>
+        <ul class="footer-mini">
+          <li><a href="/privacy/">隐私政策</a></li>
+          <li><a href="/terms/">服务条款</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/vendor/lucide.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

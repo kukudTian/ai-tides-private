@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="codeva-kPI4fbXpAn" />
+  <title>智谱 BigModel - 国产 GLM 大模型开放平台 - AI 潮汐</title>
+  <meta name="description" content="智谱 BigModel 是智谱 AI 的开发者开放平台，提供 GLM 系列模型的对话 API、Embedding、微调、知识库与智能体工具，是国产大模型应用和企业级 AI 项目的主流选择之一。">
+  <link rel="canonical" href="https://ai-blog.cloud/tool/bigmodel/">
+  <meta property="og:site_name" content="AI 潮汐">
+  <meta property="og:title" content="智谱 BigModel - 国产 GLM 大模型开放平台 - AI 潮汐">
+  <meta property="og:description" content="智谱 BigModel 是智谱 AI 的开发者开放平台，提供 GLM 系列模型的对话 API、Embedding、微调、知识库与智能体工具，是国产大模型应用和企业级 AI 项目的主流选择之一。">
+  <meta property="og:url" content="https://ai-blog.cloud/tool/bigmodel/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"智谱 BigModel - 国产 GLM 大模型开放平台","description":"智谱 BigModel 是智谱 AI 的开发者开放平台，提供 GLM 系列模型的对话 API、Embedding、微调、知识库与智能体工具，是国产大模型应用和企业级 AI 项目的主流选择之一。","datePublished":"2026-08-18T12:00:00+08:00","dateModified":"2026-08-18T04:00:00.000Z","url":"https://ai-blog.cloud/tool/bigmodel/","author":{"@type":"Organization","name":"AI 潮汐"},"publisher":{"@type":"Organization","name":"AI 潮汐"},"mainEntityOfPage":"https://ai-blog.cloud/tool/bigmodel/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ai-blog.cloud"},{"@type":"ListItem","position":2,"name":"AI工具","item":"https://ai-blog.cloud/category/ai-tools/"},{"@type":"ListItem","position":3,"name":"智谱 BigModel - 国产 GLM 大模型开放平台","item":"https://ai-blog.cloud/tool/bigmodel/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"BigModel 支持 OpenAI 兼容接口吗？","acceptedAnswer":{"@type":"Answer","text":"部分接口提供兼容能力，同时也有官方 SDK 和 HTTP API，具体以文档中的鉴权方式为准。"}},{"@type":"Question","name":"新用户有免费额度吗？","acceptedAnswer":{"@type":"Answer","text":"平台通常会发放体验额度，可用于调用少量 Token 验证效果，具体活动以控制台展示为准。"}},{"@type":"Question","name":"可以微调模型吗？","acceptedAnswer":{"@type":"Answer","text":"可以。平台支持基于自有数据微调 GLM 模型，适合定制输出风格和领域知识。"}}]}]}</script>
+   <link rel="stylesheet" href="/styles.css?v=20260819.02">
+  <link rel="alternate" type="application/rss+xml" title="AI 潮汐 RSS" href="https://ai-blog.cloud/rss.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4951997546216729" crossorigin="anonymous"></script>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXMJ6STTQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WXMJ6STTQV');
+  </script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        
+          <a href="/category/ai-tools/" class="">AI工具</a>
+        
+          <a href="/category/ai-news/" class="">AI资讯</a>
+        
+        <a href="/partner/" class="">收录与合作</a>
+        <a href="/about/" class="">关于我们</a>
+      </nav>
+      <form class="search-form" action="/search/" method="get" role="search">
+        <i data-lucide="search" class="search-icon" aria-hidden="true"></i>
+        <input type="search" name="q" value="" placeholder="搜索 AI 资讯与工具" aria-label="搜索">
+        <button type="submit" class="search-submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="category-bar" aria-label="全部分类">
+    <div class="container category-bar-inner">
+      <a class="category-all" href="/">全部</a>
+      
+        <a href="/category/ai-tools/" class="">AI工具 <span>34</span></a>
+      
+        <a href="/category/ai-news/" class="">AI资讯 <span>9</span></a>
+      
+    </div>
+  </nav>
+
+  <main class="tool-page ">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      <a href="/category/ai-tools/">AI工具</a>
+      <span>/</span>
+      <span class="current">智谱 BigModel</span>
+    </nav>
+
+    <header class="tool-hero">
+      <div class="tool-cover">
+        
+          <img src="/icons/bigmodel.png" alt="智谱 BigModel - 国产 GLM 大模型开放平台" loading="lazy">
+        
+      </div>
+      <div class="tool-hero-body">
+        <h1>智谱 BigModel - 国产 GLM 大模型开放平台</h1>
+        <p class="tool-subtitle">把 GLM 系列模型、Embedding、微调与知识库能力集成到自己的产品里。</p>
+        <div class="tool-meta">
+          <a class="chip chip--category" href="/category/ai-tools/"><i data-lucide="folder"></i>AI工具</a>
+          
+            <a class="chip" href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI/"><i data-lucide="tag"></i>大模型API</a>
+          
+            <a class="chip" href="/tag/%E6%99%BA%E8%B0%B1/"><i data-lucide="tag"></i>智谱</a>
+          
+            <a class="chip" href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B9%B3%E5%8F%B0/"><i data-lucide="tag"></i>开发者平台</a>
+          
+            <a class="chip" href="/tag/MaaS/"><i data-lucide="tag"></i>MaaS</a>
+          
+        </div>
+        <div class="tool-actions">
+          
+            <a class="btn btn--primary" href="https://open.bigmodel.cn/" rel="nofollow noopener" target="_blank">
+              <i data-lucide="external-link"></i> 访问官网
+            </a>
+          
+          <button class="btn btn--ghost copy-link" data-url="https://ai-blog.cloud/tool/bigmodel/">
+            <i data-lucide="link"></i> 复制链接
+          </button>
+        </div>
+      </div>
+      <div class="tool-facts">
+        <div><span>内容类型</span><strong>工具收录</strong></div>
+        <div><span>热度指数</span><strong>88</strong></div>
+        <div><span>阅读时长</span><strong>1078 字</strong></div>
+      </div>
+    </header>
+
+    
+      <section class="official-band" aria-label="官网直达">
+        <div class="official-band-title">
+          <i data-lucide="globe"></i>
+          <span>官网直达</span>
+        </div>
+        <div class="official-links">
+          
+            <a href="https://open.bigmodel.cn/" rel="nofollow noopener" target="_blank">
+              <span class="official-link-name">智谱 BigModel 官网</span>
+              <span class="official-link-url">open.bigmodel.cn</span>
+              <i data-lucide="external-link"></i>
+            </a>
+          
+        </div>
+      </section>
+    
+
+    <div class="tool-layout">
+      <article class="article">
+        
+          <nav class="toc" aria-label="目录">
+            <p>目录</p>
+            <ol>
+              
+                <li><a href="#sec-1">BigModel 是什么</a></li>
+              
+                <li><a href="#sec-2">核心能力</a></li>
+              
+                <li><a href="#sec-3">与智谱清言的区别</a></li>
+              
+                <li><a href="#sec-4">适合谁使用</a></li>
+              
+                <li><a href="#sec-5">定价与免费额度</a></li>
+              
+                <li><a href="#sec-6">快速上手</a></li>
+              
+            </ol>
+          </nav>
+        
+
+        
+
+
+        
+          <section class="tool-gallery" id="screenshots">
+            <div class="section-block-head">
+              <h2>产品界面</h2>
+              <p>来自官网与产品公开页的产品图与界面素材</p>
+            </div>
+            <div class="tool-shot-grid">
+              
+                <a class="tool-shot" href="https://open.bigmodel.cn/" rel="nofollow noopener" target="_blank">
+                  <img src="/screenshots/bigmodel.png" alt="智谱 BigModel - 国产 GLM 大模型开放平台 截图 1" loading="lazy">
+                </a>
+              
+            </div>
+          </section>
+        
+
+        
+          <section class="section-block" id="sec-1">
+            <h2>BigModel 是什么</h2>
+            <div class="prose"><p>BigModel 是智谱 AI 面向开发者与企业推出的模型服务平台，把 GLM 系列模型封装成标准 API，并提供模型广场、密钥管理、用量统计与文档体系。开发者不需要自建模型推理环境，就能把文本生成、图像理解、Embedding 等能力接入应用。</p><p>平台与智谱清言共用 GLM 模型底座，因此可以先在清言中体验能力，再通过 BigModel 完成产品化接入。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-2">
+            <h2>核心能力</h2>
+            <div class="prose"><ul><li><strong>GLM 对话 API：</strong>支持长上下文、流式输出、函数调用与多模态输入。</li><li><strong>Embedding：</strong>把文档和查询向量化，用于语义检索与知识库。</li><li><strong>模型微调：</strong>基于业务数据训练定制模型，控制输出风格与领域知识。</li><li><strong>知识库：</strong>上传文档后自动切片、向量化，并在对话中检索引用。</li><li><strong>智能体构建：</strong>通过工具定义把模型接入数据库、搜索与业务系统。</li><li><strong>控制台与监控：</strong>统一管理 API Key、额度、调用日志和成本。</li></ul></div>
+            
+
+          </section>
+        
+          <section class="section-block" id="sec-3">
+            <h2>与智谱清言的区别</h2>
+            <div class="prose"><p>智谱清言解决“人直接使用模型”，BigModel 解决“软件调用模型”。前者强调聊天工作台和开箱即用，后者强调接口稳定、身份认证、计量计费和开发文档。</p><p>对同一个模型能力，产品团队通常先在清言中做效果验证，再用 BigModel 的 SDK 和 API 写入生产代码。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-4">
+            <h2>适合谁使用</h2>
+            <div class="prose"><p><strong>独立开发者：</strong>快速为应用接入中文大模型，不需要维护推理服务。</p><p><strong>Agent 团队：</strong>用函数调用和知识库搭建多步任务流程。</p><p><strong>企业 IT：</strong>通过统一控制台管理部门用量、权限与成本。</p><p><strong>教育与研究：</strong>在课程、论文和内部系统中测试 GLM 能力。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-5">
+            <h2>定价与免费额度</h2>
+            <div class="prose"><p>BigModel 提供按用量计费的 API，价格根据模型版本、输入输出 Token 和附加能力计算。新用户通常可以领取免费体验额度，用于测试模型效果与接口稳定性。</p><p>自建知识库、Embedding 和微调任务会额外计费，建议生产环境先做小流量验证，再根据调用量与延迟选择合适模型。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-6">
+            <h2>快速上手</h2>
+            <div class="prose"><p>注册 BigModel 账号后，在控制台创建 API Key，然后使用官方 SDK 发起调用。示例代码如下：</p><pre><code>pip install zhipuai
+
+from zhipuai import ZhipuAI
+client = ZhipuAI(api_key="你的密钥")
+resp = client.chat.completions.create(
+    model="glm-4.6",
+    messages=[{"role": "user", "content": "用三句话介绍智谱"}])
+print(resp.choices[0].message.content)</code></pre><p>模型名称以控制台往返最新列表为准；接入后建议开启用量告警，并先在测试环境验证流式输出与工具调用。</p></div>
+            
+          </section>
+        
+
+        
+
+        
+          <section class="section-block" id="official-links">
+            <h2>官网直达</h2>
+            <div class="prose">
+              <p>想亲自上手体验，直接从官方入口出发：</p>
+              <ul class="official-list">
+                
+                  <li>
+                    <a href="https://open.bigmodel.cn/" rel="nofollow noopener" target="_blank">
+                      <span class="official-list-name">智谱 BigModel 官网</span>
+                      <span class="official-list-url">open.bigmodel.cn</span>
+                      <i data-lucide="external-link"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </section>
+        
+
+        
+          <section class="section-block" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+              
+                <details class="faq-item">
+                  <summary>BigModel 支持 OpenAI 兼容接口吗？</summary>
+                  <p>部分接口提供兼容能力，同时也有官方 SDK 和 HTTP API，具体以文档中的鉴权方式为准。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>新用户有免费额度吗？</summary>
+                  <p>平台通常会发放体验额度，可用于调用少量 Token 验证效果，具体活动以控制台展示为准。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>可以微调模型吗？</summary>
+                  <p>可以。平台支持基于自有数据微调 GLM 模型，适合定制输出风格和领域知识。</p>
+                </details>
+              
+            </div>
+          </section>
+        
+
+        <div class="article-bottom">
+          <div class="prev-next">
+            
+              <a href="/tool/glm/">
+                <span>上一篇</span>
+                <strong>智谱清言</strong>
+              </a>
+            
+            
+              <a href="/tool/sensenova/">
+                <span>下一篇</span>
+                <strong>商汤大装置 SenseNova</strong>
+              </a>
+            
+          </div>
+          <div class="tag-cloud tag-cloud--bottom">
+            
+              <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI/">大模型API</a>
+            
+              <a href="/tag/%E6%99%BA%E8%B0%B1/">智谱</a>
+            
+              <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B9%B3%E5%8F%B0/">开发者平台</a>
+            
+              <a href="/tag/MaaS/">MaaS</a>
+            
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar sidebar--article">
+        
+
+
+        <section class="side-card">
+          <h2>相关工具</h2>
+          <div class="related-list">
+            
+              <a href="/tool/manga-translate/" class="related-item">
+                
+                  <img src="/icons/manga-translate.png" alt="">
+                
+                <span><strong>漫画翻译器</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/glm/" class="related-item">
+                
+                  <img src="/icons/glm.png" alt="">
+                
+                <span><strong>智谱清言</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/sensenova/" class="related-item">
+                
+                  <img src="/icons/sensenova.png" alt="">
+                
+                <span><strong>商汤大装置 SenseNova</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/bailian/" class="related-item">
+                
+                  <img src="/icons/bailian.svg" alt="">
+                
+                <span><strong>阿里云百炼</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/volcengine/" class="related-item">
+                
+                  <img src="/icons/volcengine.png" alt="">
+                
+                <span><strong>火山方舟</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/qianfan/" class="related-item">
+                
+                  <img src="/icons/qianfan.png" alt="">
+                
+                <span><strong>百度千帆</strong><em>AI工具</em></span>
+              </a>
+            
+            
+          </div>
+        </section>
+
+        <section class="side-card">
+          <h2>最新内容</h2>
+          <ol class="rank-list">
+            
+              <li>
+                <span class="rank-no">1</span>
+                <a href="/tool/manga-translate/">
+                  <strong>漫画翻译器</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">2</span>
+                <a href="/tool/unitree-superhuman-humanoid-robot/">
+                  <strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong>
+                  <span>2026-08-18</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">3</span>
+                <a href="/tool/glm/">
+                  <strong>智谱清言</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">4</span>
+                <a href="/tool/bigmodel/">
+                  <strong>智谱 BigModel</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">5</span>
+                <a href="/tool/sensenova/">
+                  <strong>商汤大装置 SenseNova</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">6</span>
+                <a href="/tool/bailian/">
+                  <strong>阿里云百炼</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+          </ol>
+        </section>
+
+        
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark">AI</span>
+          <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+        </a>
+        <p>实时追踪 AI 热点，不错过每一个值得关注的新变化，第一时间看懂 AI 世界正在发生什么。</p>
+        <p class="footer-note">© 2026 AI 潮汐 · 保留所有权利</p>
+      </div>
+      <div class="footer-col">
+        <h3>热门分类</h3>
+        <ul>
+          
+            <li><a href="/category/ai-tools/">AI工具</a></li>
+          
+            <li><a href="/category/ai-news/">AI资讯</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          
+            <a href="/tag/%E8%81%8A%E5%A4%A9%E5%8A%A9%E6%89%8B/">聊天助手</a>
+          
+            <a href="/tag/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+          
+            <a href="/tag/Agent/">Agent</a>
+          
+            <a href="/tag/API/">API</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI/">大模型API</a>
+          
+            <a href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+          
+            <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/">开发者工具</a>
+          
+            <a href="/tag/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
+          
+            <a href="/tag/%E6%99%BA%E8%83%BD%E4%BD%93/">智能体</a>
+          
+            <a href="/tag/%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B/">编程助手</a>
+          
+            <a href="/tag/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/">视频生成</a>
+          
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <ul>
+          <li><a href="/category/ai-news/">最新资讯</a></li>
+          <li><a href="/category/ai-tools/">热门工具</a></li>
+          <li><a href="/search/">站内搜索</a></li>
+          <li><a href="/partner/">收录与合作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <ul>
+          <li><a href="/about/">关于我们</a></li>
+        </ul>
+        <ul class="footer-mini">
+          <li><a href="/privacy/">隐私政策</a></li>
+          <li><a href="/terms/">服务条款</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/vendor/lucide.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

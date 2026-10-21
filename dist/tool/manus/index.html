@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="codeva-kPI4fbXpAn" />
+  <title>Manus - 通用型 AI Agent 产品 - AI 潮汐</title>
+  <meta name="description" content="Manus 是面向任务交付的通用 AI Agent，能够拆解目标、调用工具并异步执行，适合研究报告、数据处理和网页自动化等场景。">
+  <link rel="canonical" href="https://ai-blog.cloud/tool/manus/">
+  <meta property="og:site_name" content="AI 潮汐">
+  <meta property="og:title" content="Manus - 通用型 AI Agent 产品 - AI 潮汐">
+  <meta property="og:description" content="Manus 是面向任务交付的通用 AI Agent，能够拆解目标、调用工具并异步执行，适合研究报告、数据处理和网页自动化等场景。">
+  <meta property="og:url" content="https://ai-blog.cloud/tool/manus/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Manus - 通用型 AI Agent 产品","description":"Manus 是面向任务交付的通用 AI Agent，能够拆解目标、调用工具并异步执行，适合研究报告、数据处理和网页自动化等场景。","datePublished":"2026-08-14T10:00:00+08:00","dateModified":"2026-08-14T02:00:00.000Z","url":"https://ai-blog.cloud/tool/manus/","author":{"@type":"Organization","name":"AI 潮汐"},"publisher":{"@type":"Organization","name":"AI 潮汐"},"mainEntityOfPage":"https://ai-blog.cloud/tool/manus/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ai-blog.cloud"},{"@type":"ListItem","position":2,"name":"AI工具","item":"https://ai-blog.cloud/category/ai-tools/"},{"@type":"ListItem","position":3,"name":"Manus - 通用型 AI Agent 产品","item":"https://ai-blog.cloud/tool/manus/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Manus 和普通聊天机器人有什么区别？","acceptedAnswer":{"@type":"Answer","text":"普通聊天机器人主要生成回答，Manus 会实际执行步骤并交付文件，更像远程助手。"}},{"@type":"Question","name":"Manus 能操作我的电脑吗？","acceptedAnswer":{"@type":"Answer","text":"一般在云端沙箱中运行，通过授权工具执行任务，具体权限边界由产品定义。"}},{"@type":"Question","name":"任务执行需要等待多久？","acceptedAnswer":{"@type":"Answer","text":"简单任务较快，复杂调研可能运行较长时间，支持异步等待。"}},{"@type":"Question","name":"Manus 能自动操作我的账号吗？","acceptedAnswer":{"@type":"Answer","text":"不建议让 Agent 直接登录高权限账号。应使用官方提供的沙盒或授权流程，并随时人工审查操作结果。"}},{"@type":"Question","name":"Agent 输出的信息可靠吗？","acceptedAnswer":{"@type":"Answer","text":"输出需要人工核对来源，尤其是数字、价格、日期等关键事实。"}},{"@type":"Question","name":"任务复杂度太高怎么办？","acceptedAnswer":{"@type":"Answer","text":"把大任务拆成多个小任务，每个任务都写清目标、边界和验收标准。"}}]}]}</script>
+   <link rel="stylesheet" href="/styles.css?v=20260819.02">
+  <link rel="alternate" type="application/rss+xml" title="AI 潮汐 RSS" href="https://ai-blog.cloud/rss.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4951997546216729" crossorigin="anonymous"></script>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXMJ6STTQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WXMJ6STTQV');
+  </script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        
+          <a href="/category/ai-tools/" class="">AI工具</a>
+        
+          <a href="/category/ai-news/" class="">AI资讯</a>
+        
+        <a href="/partner/" class="">收录与合作</a>
+        <a href="/about/" class="">关于我们</a>
+      </nav>
+      <form class="search-form" action="/search/" method="get" role="search">
+        <i data-lucide="search" class="search-icon" aria-hidden="true"></i>
+        <input type="search" name="q" value="" placeholder="搜索 AI 资讯与工具" aria-label="搜索">
+        <button type="submit" class="search-submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="category-bar" aria-label="全部分类">
+    <div class="container category-bar-inner">
+      <a class="category-all" href="/">全部</a>
+      
+        <a href="/category/ai-tools/" class="">AI工具 <span>34</span></a>
+      
+        <a href="/category/ai-news/" class="">AI资讯 <span>9</span></a>
+      
+    </div>
+  </nav>
+
+  <main class="tool-page ">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      <a href="/category/ai-tools/">AI工具</a>
+      <span>/</span>
+      <span class="current">Manus</span>
+    </nav>
+
+    <header class="tool-hero">
+      <div class="tool-cover">
+        
+          <img src="/icons/manus.png" alt="Manus - 通用型 AI Agent 产品" loading="lazy">
+        
+      </div>
+      <div class="tool-hero-body">
+        <h1>Manus - 通用型 AI Agent 产品</h1>
+        <p class="tool-subtitle">把复杂任务拆成多步执行，自动调用工具完成资料收集、报告生成和网页操作。</p>
+        <div class="tool-meta">
+          <a class="chip chip--category" href="/category/ai-tools/"><i data-lucide="folder"></i>AI工具</a>
+          
+            <a class="chip" href="/tag/%E6%99%BA%E8%83%BD%E4%BD%93/"><i data-lucide="tag"></i>智能体</a>
+          
+            <a class="chip" href="/tag/%E8%87%AA%E5%8A%A8%E5%8C%96/"><i data-lucide="tag"></i>自动化</a>
+          
+            <a class="chip" href="/tag/Agent/"><i data-lucide="tag"></i>Agent</a>
+          
+        </div>
+        <div class="tool-actions">
+          
+            <a class="btn btn--primary" href="https://manus.im/" rel="nofollow noopener" target="_blank">
+              <i data-lucide="external-link"></i> 访问官网
+            </a>
+          
+          <button class="btn btn--ghost copy-link" data-url="https://ai-blog.cloud/tool/manus/">
+            <i data-lucide="link"></i> 复制链接
+          </button>
+        </div>
+      </div>
+      <div class="tool-facts">
+        <div><span>内容类型</span><strong>工具收录</strong></div>
+        <div><span>热度指数</span><strong>88</strong></div>
+        <div><span>阅读时长</span><strong>809 字</strong></div>
+      </div>
+    </header>
+
+    
+      <section class="official-band" aria-label="官网直达">
+        <div class="official-band-title">
+          <i data-lucide="globe"></i>
+          <span>官网直达</span>
+        </div>
+        <div class="official-links">
+          
+            <a href="https://manus.im/" rel="nofollow noopener" target="_blank">
+              <span class="official-link-name">Manus 官网</span>
+              <span class="official-link-url">manus.im</span>
+              <i data-lucide="external-link"></i>
+            </a>
+          
+        </div>
+      </section>
+    
+
+    <div class="tool-layout">
+      <article class="article">
+        
+          <nav class="toc" aria-label="目录">
+            <p>目录</p>
+            <ol>
+              
+                <li><a href="#sec-1">Manus 是什么</a></li>
+              
+                <li><a href="#sec-2">Manus 的主要功能</a></li>
+              
+                <li><a href="#sec-3">Manus 的适用场景或人群</a></li>
+              
+                <li><a href="#sec-4">Manus 的定价</a></li>
+              
+                <li><a href="#sec-5">如何使用 Manus</a></li>
+              
+                <li><a href="#sec-6">编辑视角：Manus 真正适合的任务</a></li>
+              
+                <li><a href="#sec-7">上手路径：第一次用 Agent 的正确姿势</a></li>
+              
+                <li><a href="#sec-8">选型建议：Manus 和扣子这类平台怎么选</a></li>
+              
+            </ol>
+          </nav>
+        
+
+        
+
+
+        
+          <section class="tool-gallery" id="screenshots">
+            <div class="section-block-head">
+              <h2>产品界面</h2>
+              <p>来自官网与产品公开页的产品图与界面素材</p>
+            </div>
+            <div class="tool-shot-grid">
+              
+                <a class="tool-shot" href="https://manus.im/" rel="nofollow noopener" target="_blank">
+                  <img src="/screenshots/manus.png" alt="Manus - 通用型 AI Agent 产品 截图 1" loading="lazy">
+                </a>
+              
+            </div>
+          </section>
+        
+
+        
+          <section class="section-block" id="sec-1">
+            <h2>Manus 是什么</h2>
+            <div class="prose"><p>Manus 是面向任务交付的通用型 AI Agent 产品，强调“想法到结果”的完整链路：用户提出目标后，Agent 会规划步骤、调用工具并异步执行，最终交付文件或结论。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-2">
+            <h2>Manus 的主要功能</h2>
+            <div class="prose"><ul><li><strong>任务拆解：</strong>自动把复杂目标拆成可执行步骤。</li><li><strong>工具调用：</strong>可浏览网页、操作文件、运行代码和处理数据。</li><li><strong>异步执行：</strong>任务在后台继续运行，完成后通知用户。</li><li><strong>结果交付：</strong>输出报告、表格、代码或整理好的资料包。</li></ul></div>
+            
+
+          </section>
+        
+          <section class="section-block" id="sec-3">
+            <h2>Manus 的适用场景或人群</h2>
+            <div class="prose"><p>适合需要研究报告的投研与咨询人员、需要批量处理数据的运营人员、需要自动化调研的创作者，以及希望用 Agent 完成日常办公任务的知识工作者。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-4">
+            <h2>Manus 的定价</h2>
+            <div class="prose"><p>产品按额度或会员提供不同档位，复杂任务消耗更多计算资源，具体价格以官网为准。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-5">
+            <h2>如何使用 Manus</h2>
+            <div class="prose"><p>登录后直接描述任务目标，例如“整理某行业过去一年的事件并生成报告”，等待 Agent 拆解执行并查看交付结果。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-6">
+            <h2>编辑视角：Manus 真正适合的任务</h2>
+            <div class="prose"><p>Manus 是通用型 AI Agent 产品，特点是让 AI 在浏览器或电脑里连续操作并完成任务，而不是只给一段回答。它适合需要多步骤调查、整理和交付的任务，例如行业调研、资料汇总、批量数据整理和方案起草。</p><p>需要明确的是：Agent 不是万能自动化。它更像一个“实习生”，能执行明确流程，但需要你给出清晰目标、边界和验收标准。涉及付款、登录重要账号或敏感数据时，不应把最终权限交给无人值守流程。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-7">
+            <h2>上手路径：第一次用 Agent 的正确姿势</h2>
+            <div class="prose"><ol><li>把任务拆成可验收的小步骤，例如“先收集 10 个官方来源，再输出对比表”。</li><li>提供网址、关键词或参考资料，比只给一句模糊指令的成功率高很多。</li><li>在沙盒或隔离环境执行，避免 Agent 访问真实支付和个人账号。</li><li>输出后人工复核关键事实，再进入下一步。</li></ol></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-8">
+            <h2>选型建议：Manus 和扣子这类平台怎么选</h2>
+            <div class="prose"><p>Manus 更像“给一次任务，让它自己跑完”；扣子 Coze 更像“把固定流程做成可复用的 Agent”。如果你的任务是临时、开放、需要判断的调研，Manus 更合适；如果任务是高频、确定、要重复执行的，先把流程固化到扣子更稳定。</p><p>两者不冲突，可以先用 Manus 验证任务值得自动化，再搬到低代码平台固化。</p></div>
+            
+          </section>
+        
+
+        
+
+        
+          <section class="section-block" id="official-links">
+            <h2>官网直达</h2>
+            <div class="prose">
+              <p>想亲自上手体验，直接从官方入口出发：</p>
+              <ul class="official-list">
+                
+                  <li>
+                    <a href="https://manus.im/" rel="nofollow noopener" target="_blank">
+                      <span class="official-list-name">Manus 官网</span>
+                      <span class="official-list-url">manus.im</span>
+                      <i data-lucide="external-link"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </section>
+        
+
+        
+          <section class="section-block" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+              
+                <details class="faq-item">
+                  <summary>Manus 和普通聊天机器人有什么区别？</summary>
+                  <p>普通聊天机器人主要生成回答，Manus 会实际执行步骤并交付文件，更像远程助手。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>Manus 能操作我的电脑吗？</summary>
+                  <p>一般在云端沙箱中运行，通过授权工具执行任务，具体权限边界由产品定义。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>任务执行需要等待多久？</summary>
+                  <p>简单任务较快，复杂调研可能运行较长时间，支持异步等待。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>Manus 能自动操作我的账号吗？</summary>
+                  <p>不建议让 Agent 直接登录高权限账号。应使用官方提供的沙盒或授权流程，并随时人工审查操作结果。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>Agent 输出的信息可靠吗？</summary>
+                  <p>输出需要人工核对来源，尤其是数字、价格、日期等关键事实。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>任务复杂度太高怎么办？</summary>
+                  <p>把大任务拆成多个小任务，每个任务都写清目标、边界和验收标准。</p>
+                </details>
+              
+            </div>
+          </section>
+        
+
+        <div class="article-bottom">
+          <div class="prev-next">
+            
+              <a href="/tool/doubao/">
+                <span>上一篇</span>
+                <strong>豆包</strong>
+              </a>
+            
+            
+              <a href="/tool/manus-independent-operation/">
+                <span>下一篇</span>
+                <strong>Manus 恢复独立运营</strong>
+              </a>
+            
+          </div>
+          <div class="tag-cloud tag-cloud--bottom">
+            
+              <a href="/tag/%E6%99%BA%E8%83%BD%E4%BD%93/">智能体</a>
+            
+              <a href="/tag/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>
+            
+              <a href="/tag/Agent/">Agent</a>
+            
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar sidebar--article">
+        
+
+
+        <section class="side-card">
+          <h2>相关工具</h2>
+          <div class="related-list">
+            
+              <a href="/tool/manga-translate/" class="related-item">
+                
+                  <img src="/icons/manga-translate.png" alt="">
+                
+                <span><strong>漫画翻译器</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/glm/" class="related-item">
+                
+                  <img src="/icons/glm.png" alt="">
+                
+                <span><strong>智谱清言</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/bigmodel/" class="related-item">
+                
+                  <img src="/icons/bigmodel.png" alt="">
+                
+                <span><strong>智谱 BigModel</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/sensenova/" class="related-item">
+                
+                  <img src="/icons/sensenova.png" alt="">
+                
+                <span><strong>商汤大装置 SenseNova</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/bailian/" class="related-item">
+                
+                  <img src="/icons/bailian.svg" alt="">
+                
+                <span><strong>阿里云百炼</strong><em>AI工具</em></span>
+              </a>
+            
+              <a href="/tool/volcengine/" class="related-item">
+                
+                  <img src="/icons/volcengine.png" alt="">
+                
+                <span><strong>火山方舟</strong><em>AI工具</em></span>
+              </a>
+            
+            
+          </div>
+        </section>
+
+        <section class="side-card">
+          <h2>最新内容</h2>
+          <ol class="rank-list">
+            
+              <li>
+                <span class="rank-no">1</span>
+                <a href="/tool/manga-translate/">
+                  <strong>漫画翻译器</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">2</span>
+                <a href="/tool/unitree-superhuman-humanoid-robot/">
+                  <strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong>
+                  <span>2026-08-18</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">3</span>
+                <a href="/tool/glm/">
+                  <strong>智谱清言</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">4</span>
+                <a href="/tool/bigmodel/">
+                  <strong>智谱 BigModel</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">5</span>
+                <a href="/tool/sensenova/">
+                  <strong>商汤大装置 SenseNova</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">6</span>
+                <a href="/tool/bailian/">
+                  <strong>阿里云百炼</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+          </ol>
+        </section>
+
+        
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark">AI</span>
+          <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+        </a>
+        <p>实时追踪 AI 热点，不错过每一个值得关注的新变化，第一时间看懂 AI 世界正在发生什么。</p>
+        <p class="footer-note">© 2026 AI 潮汐 · 保留所有权利</p>
+      </div>
+      <div class="footer-col">
+        <h3>热门分类</h3>
+        <ul>
+          
+            <li><a href="/category/ai-tools/">AI工具</a></li>
+          
+            <li><a href="/category/ai-news/">AI资讯</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          
+            <a href="/tag/%E8%81%8A%E5%A4%A9%E5%8A%A9%E6%89%8B/">聊天助手</a>
+          
+            <a href="/tag/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+          
+            <a href="/tag/Agent/">Agent</a>
+          
+            <a href="/tag/API/">API</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI/">大模型API</a>
+          
+            <a href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+          
+            <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/">开发者工具</a>
+          
+            <a href="/tag/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
+          
+            <a href="/tag/%E6%99%BA%E8%83%BD%E4%BD%93/">智能体</a>
+          
+            <a href="/tag/%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B/">编程助手</a>
+          
+            <a href="/tag/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/">视频生成</a>
+          
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <ul>
+          <li><a href="/category/ai-news/">最新资讯</a></li>
+          <li><a href="/category/ai-tools/">热门工具</a></li>
+          <li><a href="/search/">站内搜索</a></li>
+          <li><a href="/partner/">收录与合作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <ul>
+          <li><a href="/about/">关于我们</a></li>
+        </ul>
+        <ul class="footer-mini">
+          <li><a href="/privacy/">隐私政策</a></li>
+          <li><a href="/terms/">服务条款</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/vendor/lucide.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

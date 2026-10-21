@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="codeva-kPI4fbXpAn" />
+  <title>通义千问 Qwen3.5 发布 - 多模态与工具调用能力再升级 - AI 潮汐</title>
+  <meta name="description" content="阿里云发布通义千问 Qwen3.5，多模态理解、长文档处理和工具调用能力全面升级，开发者可同时通过 API 与开源权重使用。">
+  <link rel="canonical" href="https://ai-blog.cloud/tool/qwen3-5-launch/">
+  <meta property="og:site_name" content="AI 潮汐">
+  <meta property="og:title" content="通义千问 Qwen3.5 发布 - 多模态与工具调用能力再升级 - AI 潮汐">
+  <meta property="og:description" content="阿里云发布通义千问 Qwen3.5，多模态理解、长文档处理和工具调用能力全面升级，开发者可同时通过 API 与开源权重使用。">
+  <meta property="og:url" content="https://ai-blog.cloud/tool/qwen3-5-launch/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"通义千问 Qwen3.5 发布 - 多模态与工具调用能力再升级","description":"阿里云发布通义千问 Qwen3.5，多模态理解、长文档处理和工具调用能力全面升级，开发者可同时通过 API 与开源权重使用。","datePublished":"2026-08-12T10:00:00+08:00","dateModified":"2026-08-12T02:00:00.000Z","url":"https://ai-blog.cloud/tool/qwen3-5-launch/","author":{"@type":"Organization","name":"AI 潮汐"},"publisher":{"@type":"Organization","name":"AI 潮汐"},"mainEntityOfPage":"https://ai-blog.cloud/tool/qwen3-5-launch/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ai-blog.cloud"},{"@type":"ListItem","position":2,"name":"AI资讯","item":"https://ai-blog.cloud/category/ai-news/"},{"@type":"ListItem","position":3,"name":"通义千问 Qwen3.5 发布 - 多模态与工具调用能力再升级","item":"https://ai-blog.cloud/tool/qwen3-5-launch/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qwen3.5 和上一代有什么不同？","acceptedAnswer":{"@type":"Answer","text":"主要在多模态理解、长文档定位和工具调用稳定性上提升，API 与开源权重同步更新。"}},{"@type":"Question","name":"如何体验 Qwen3.5？","acceptedAnswer":{"@type":"Answer","text":"可以通过通义千问官网、阿里云百炼平台体验 API，或在 Hugging Face 获取开源权重。"}},{"@type":"Question","name":"开源权重可以商用吗？","acceptedAnswer":{"@type":"Answer","text":"具体以官方开源许可为准，商业使用前建议核对最新条款。"}},{"@type":"Question","name":"本地部署需要多大算力？","acceptedAnswer":{"@type":"Answer","text":"取决于模型尺寸，小尺寸模型可在消费级显卡运行，大尺寸建议使用多卡集群或云资源。"}},{"@type":"Question","name":"Qwen3.5 支持视频理解吗？","acceptedAnswer":{"@type":"Answer","text":"本次升级聚焦图像、图表和扫描件，视频能力以官方发布信息为准。"}},{"@type":"Question","name":"Qwen3.5 有企业级支持吗？","acceptedAnswer":{"@type":"Answer","text":"阿里云百炼等平台提供企业级服务，具体以官方销售与技术支持为准。"}}]}]}</script>
+   <link rel="stylesheet" href="/styles.css?v=20260819.02">
+  <link rel="alternate" type="application/rss+xml" title="AI 潮汐 RSS" href="https://ai-blog.cloud/rss.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4951997546216729" crossorigin="anonymous"></script>
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXMJ6STTQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WXMJ6STTQV');
+  </script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        
+          <a href="/category/ai-tools/" class="">AI工具</a>
+        
+          <a href="/category/ai-news/" class="">AI资讯</a>
+        
+        <a href="/partner/" class="">收录与合作</a>
+        <a href="/about/" class="">关于我们</a>
+      </nav>
+      <form class="search-form" action="/search/" method="get" role="search">
+        <i data-lucide="search" class="search-icon" aria-hidden="true"></i>
+        <input type="search" name="q" value="" placeholder="搜索 AI 资讯与工具" aria-label="搜索">
+        <button type="submit" class="search-submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="category-bar" aria-label="全部分类">
+    <div class="container category-bar-inner">
+      <a class="category-all" href="/">全部</a>
+      
+        <a href="/category/ai-tools/" class="">AI工具 <span>34</span></a>
+      
+        <a href="/category/ai-news/" class="">AI资讯 <span>9</span></a>
+      
+    </div>
+  </nav>
+
+  <main class="tool-page tool-page--news">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      <a href="/category/ai-news/">AI资讯</a>
+      <span>/</span>
+      <span class="current">通义千问 Qwen3.5 发布</span>
+    </nav>
+
+    <header class="tool-hero">
+      <div class="tool-cover">
+        
+          <img src="/icons/tongyi.png" alt="通义千问 Qwen3.5 发布 - 多模态与工具调用能力再升级" loading="lazy">
+        
+      </div>
+      <div class="tool-hero-body">
+        <h1>通义千问 Qwen3.5 发布 - 多模态与工具调用能力再升级</h1>
+        <p class="tool-subtitle">新版本强化图像理解、长文档处理与工具调用，API 和开源权重同步更新。</p>
+        <div class="tool-meta">
+          <a class="chip chip--category" href="/category/ai-news/"><i data-lucide="folder"></i>AI资讯</a>
+          
+            <a class="chip" href="/tag/%E9%80%9A%E4%B9%89%E5%8D%83%E9%97%AE/"><i data-lucide="tag"></i>通义千问</a>
+          
+            <a class="chip" href="/tag/%E9%98%BF%E9%87%8C%E4%BA%91/"><i data-lucide="tag"></i>阿里云</a>
+          
+            <a class="chip" href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"><i data-lucide="tag"></i>大模型</a>
+          
+        </div>
+        <div class="tool-actions">
+          
+            
+              <a class="btn btn--primary" href="https://tongyi.aliyun.com/" rel="nofollow noopener" target="_blank">
+                <i data-lucide="external-link"></i> 阅读原文
+              </a>
+            
+          
+          <button class="btn btn--ghost copy-link" data-url="https://ai-blog.cloud/tool/qwen3-5-launch/">
+            <i data-lucide="link"></i> 复制链接
+          </button>
+        </div>
+      </div>
+      <div class="tool-facts">
+        <div><span>发布日期</span><strong>2026-08-12</strong></div>
+        <div><span>热度指数</span><strong>67</strong></div>
+        <div><span>阅读时长</span><strong>2234 字</strong></div>
+      </div>
+    </header>
+
+    
+
+    <div class="tool-layout">
+      <article class="article">
+        
+          <nav class="toc" aria-label="目录">
+            <p>目录</p>
+            <ol>
+              
+                <li><a href="#sec-1">事件：Qwen3.5 发布</a></li>
+              
+                <li><a href="#sec-2">多模态：从“能看图”到“看懂图表”</a></li>
+              
+                <li><a href="#sec-3">长文档：把上下文用起来</a></li>
+              
+                <li><a href="#sec-4">工具调用：Agent 开发的稳定性</a></li>
+              
+                <li><a href="#sec-5">开源权重与 API 双轨</a></li>
+              
+                <li><a href="#sec-6">快速接入示例</a></li>
+              
+                <li><a href="#sec-7">选型建议：什么时候升级</a></li>
+              
+                <li><a href="#sec-8">行业影响</a></li>
+              
+                <li><a href="#sec-9">常见问题场景怎么处理</a></li>
+              
+                <li><a href="#sec-10">下一步关注什么</a></li>
+              
+            </ol>
+          </nav>
+        
+
+        
+
+
+        
+
+        
+          <section class="section-block" id="sec-1">
+            <h2>事件：Qwen3.5 发布</h2>
+            <div class="prose"><p>阿里云发布通义千问 Qwen3.5，覆盖多模态理解、长文档处理和工具调用三个方向的升级，并通过 API 与开源权重双轨开放。与上一代相比，这次发布更强调真实业务场景：图像和图表理解、合同与论文处理、Agent 开发中的函数调用稳定性，都是国内企业使用大模型时最常遇到的问题。</p><p>对开发者来说，Qwen3.5 的意义不只是新模型可用，而是升级路径清晰：API 用户切换模型版本即可，自部署用户可以选择合适尺寸的开源权重，两个方向都保持原有生态兼容。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-2">
+            <h2>多模态：从“能看图”到“看懂图表”</h2>
+            <div class="prose"><p>多模态能力是这次升级的重点。Qwen3.5 不仅识别图片内容，还能处理表格截图、柱状图、流程图和扫描件，并在回答中引用图中具体区域。对办公场景来说，这意味着报销单、合同扫描页、竞品页面截图和产品数据表可以直接进入对话，由模型提取关键信息。</p><p>使用上的建议：图片质量直接影响识别结果，拍摄或截图时尽量保证文字清晰、角度端正；复杂表格可以同时上传原文，让模型交叉核对。对于含敏感信息的图片，先在本地确认后再上传。</p></div>
+            
+
+          </section>
+        
+          <section class="section-block" id="sec-3">
+            <h2>长文档：把上下文用起来</h2>
+            <div class="prose"><p>Qwen3.5 在长上下文处理上做了针对性优化，目标不是简单堆长度，而是让模型在超长输入中保持定位能力：回答问题时能关联文档开头与结尾的信息，而不是只关注最近几段。对合同、招股书、论文和年度报告这类材料，用户可以一次上传，直接要求“找出所有赔偿条款并对比三份合同的差异”。</p><p>工程上建议配合结构化使用：先让模型生成章节摘要，再针对摘要追问细节；需要引用原文时，明确要求输出页码或条款编号。长文档任务对输出长度也敏感，建议分阶段输出，避免一次生成过长内容。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-4">
+            <h2>工具调用：Agent 开发的稳定性</h2>
+            <div class="prose"><p>工具调用是 Agent 应用的地基。Qwen3.5 优化了 JSON 输出、多轮函数调用和参数拼接的稳定性，并改进“模型误以为工具已完成”这类常见失败模式。官方同时强化了结构化输出能力，让模型返回的结果更容易被程序解析。</p><p>对 Agent 开发者来说，迁移测试应该关注三类指标：函数名和参数是否总被正确生成、多轮工具调用后上下文是否混淆、失败时模型是否能准确报告错误原因。跑分不能替代这些真实链路测试。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-5">
+            <h2>开源权重与 API 双轨</h2>
+            <div class="prose"><p>Qwen3.5 延续 Qwen 系列的开源路线，不同尺寸的权重可以在 Hugging Face 等平台获取，适合需要私有化部署、数据不出域或深度定制模型的团队。API 则通过阿里云百炼等平台提供，支持弹性扩容、按量计费和与云上服务集成。</p><p>选择建议：快速验证和低频场景先用 API；高频调用、数据敏感或需要微调的场景优先考虑开源权重自部署。两边的模型版本保持一致，业务逻辑可以后期无缝切换。</p><p>无论哪种接入方式，建议在正式环境前先跑通计费核对：记录每次请求的输入输出 Token，与账单对照，避免成本失控。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-6">
+            <h2>快速接入示例</h2>
+            <div class="prose"><p>通过阿里云百炼平台接入的流程很短：开通百炼服务，创建 API Key，在代码中指定模型名即可调用。以 OpenAI 兼容接口为例：</p><pre><code>pip install openai
+
+from openai import OpenAI
+client = OpenAI(
+    api_key="你的百炼 API Key",
+    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
+)
+resp = client.chat.completions.create(
+    model="qwen3.5",
+    messages=[{"role": "user", "content": "提取这份合同里的赔偿条款"}]
+)
+print(resp.choices[0].message.content)</code></pre><p>接入后建议先跑一轮典型业务用例，把输出格式、延迟和成本记录下来，再决定是否切换生产流量。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-7">
+            <h2>选型建议：什么时候升级</h2>
+            <div class="prose"><p>已经在使用 Qwen3 的团队，建议先做三类升级测试：长文档问答的定位准确率、图表类多模态任务、以及 Agent 工具调用的稳定性。如果当前业务只做短文本问答，升级收益不大，可以等价格与生态稳定后再切换；如果已经踩到上下文截断、函数调用格式错误或图片识别不准的坑，Qwen3.5 值得优先测试。</p><p>测试时保留同一组任务和评估标准，把升级前后的结果并排对比，重点看错误类型而不是单一指标。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-8">
+            <h2>行业影响</h2>
+            <div class="prose"><p>Qwen3.5 的发布继续强化“开源 + 云服务”两条腿走路的格局：开源权重让国内团队可以私有化部署，云 API 让中小企业低成本起步。模型能力之外，Agent 工具链、评测标准和工程工具会成为新的竞争点。</p><p>对应用开发者来说，这意味着大模型的选择越来越多，真正拉开差距的将是数据、流程和交付质量。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-9">
+            <h2>常见问题场景怎么处理</h2>
+            <div class="prose"><p>实际接入时，几个高频问题值得提前准备。</p><ul><li><strong>多模态误读：</strong>截图文字变形、表格跨页时容易出错。解决思路是上传清晰原图并附上文本版，让模型交叉核对。</li><li><strong>长文档丢失细节：</strong>超长输入下个别条款被遗漏。解决思路是让模型先输出章节定位，再按章节逐段追问。</li><li><strong>工具调用不稳定：</strong>Agent 场景建议启用结构化输出，并把函数定义写得足够具体，参数默认值也一并说明。</li></ul><p>这些问题不是模型单独能解决的，输入质量、任务设计和工程封装共同决定最终效果。</p><p>升级前建议先建一组回归用例：五条中文问答、三份长文档、两类图表截图和一套函数调用，记录输出格式与错误率。有了基线，升级判断才有依据。</p></div>
+            
+          </section>
+        
+          <section class="section-block" id="sec-10">
+            <h2>下一步关注什么</h2>
+            <div class="prose"><p>后续关注三件事：官方基准之外的真实业务评测、开源许可条款的更新、以及 Qwen3.5 在复杂 Agent 链路中的错误率。对开发者来说，现在最值得做的是把现有任务迁移到测试环境跑一轮压测，积累升级决策所需的数据。</p></div>
+            
+          </section>
+        
+
+        
+          <section class="section-block" id="source-note">
+            <h2>来源与说明</h2>
+            <div class="prose">
+              <p>本文由 AI 潮汐编辑部基于官方公告与公开资料整理，补充了行业影响、适用场景和行动建议，帮助你在阅读原文前先理解这条信息为什么重要。</p>
+              
+                <p>原始来源：<a href="https://tongyi.aliyun.com/" rel="nofollow noopener" target="_blank">https://tongyi.aliyun.com/</a></p>
+              
+              <p>如发现事实、价格或链接有误，可通过 <a href="/contact/">联系我们</a> 提交更正。</p>
+            </div>
+          </section>
+        
+
+        
+
+        
+          <section class="section-block" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+              
+                <details class="faq-item">
+                  <summary>Qwen3.5 和上一代有什么不同？</summary>
+                  <p>主要在多模态理解、长文档定位和工具调用稳定性上提升，API 与开源权重同步更新。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>如何体验 Qwen3.5？</summary>
+                  <p>可以通过通义千问官网、阿里云百炼平台体验 API，或在 Hugging Face 获取开源权重。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>开源权重可以商用吗？</summary>
+                  <p>具体以官方开源许可为准，商业使用前建议核对最新条款。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>本地部署需要多大算力？</summary>
+                  <p>取决于模型尺寸，小尺寸模型可在消费级显卡运行，大尺寸建议使用多卡集群或云资源。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>Qwen3.5 支持视频理解吗？</summary>
+                  <p>本次升级聚焦图像、图表和扫描件，视频能力以官方发布信息为准。</p>
+                </details>
+              
+                <details class="faq-item">
+                  <summary>Qwen3.5 有企业级支持吗？</summary>
+                  <p>阿里云百炼等平台提供企业级服务，具体以官方销售与技术支持为准。</p>
+                </details>
+              
+            </div>
+          </section>
+        
+
+        <div class="article-bottom">
+          <div class="prev-next">
+            
+              <a href="/tool/trae-programming/">
+                <span>上一篇</span>
+                <strong>TRAE 编程</strong>
+              </a>
+            
+            
+              <a href="/tool/jimeng-ai/">
+                <span>下一篇</span>
+                <strong>即梦 AI</strong>
+              </a>
+            
+          </div>
+          <div class="tag-cloud tag-cloud--bottom">
+            
+              <a href="/tag/%E9%80%9A%E4%B9%89%E5%8D%83%E9%97%AE/">通义千问</a>
+            
+              <a href="/tag/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
+            
+              <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+            
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar sidebar--article">
+        
+
+
+        <section class="side-card">
+          <h2>相关资讯</h2>
+          <div class="related-list">
+            
+              <a href="/tool/unitree-superhuman-humanoid-robot/" class="related-item">
+                
+                  <img src="https://www.unitree.com/favicon.ico" alt="">
+                
+                <span><strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/deepseek-harness-release/" class="related-item">
+                
+                  <img src="/icons/deepseek-harness.svg" alt="">
+                
+                <span><strong>DeepSeek Harness 开发者预览版发布：MIT 开源，把 Agent 运行时做成可插拔底座</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/deepseek-v4-launch/" class="related-item">
+                
+                  <img src="/icons/deepseek-harness.svg" alt="">
+                
+                <span><strong>DeepSeek V4 Pro API 正式上线：100 万上下文、384K 输出，Agent 生态迎新底座</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/kimi-k3-launch/" class="related-item">
+                
+                  <img src="/icons/kimi.png" alt="">
+                
+                <span><strong>Kimi K3 正式上线</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/manus-independent-operation/" class="related-item">
+                
+                  <img src="/icons/manus.png" alt="">
+                
+                <span><strong>Manus 恢复独立运营</strong><em>AI资讯</em></span>
+              </a>
+            
+              <a href="/tool/doubao-agent-workbench/" class="related-item">
+                
+                  <img src="/icons/doubao.png" alt="">
+                
+                <span><strong>豆包上线 Agent 工作台</strong><em>AI资讯</em></span>
+              </a>
+            
+            
+          </div>
+        </section>
+
+        <section class="side-card">
+          <h2>最新内容</h2>
+          <ol class="rank-list">
+            
+              <li>
+                <span class="rank-no">1</span>
+                <a href="/tool/manga-translate/">
+                  <strong>漫画翻译器</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">2</span>
+                <a href="/tool/unitree-superhuman-humanoid-robot/">
+                  <strong>宇树发布「超人」人形机器人，跳跃与奔跑速度均超人类纪录</strong>
+                  <span>2026-08-18</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">3</span>
+                <a href="/tool/glm/">
+                  <strong>智谱清言</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">4</span>
+                <a href="/tool/bigmodel/">
+                  <strong>智谱 BigModel</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">5</span>
+                <a href="/tool/sensenova/">
+                  <strong>商汤大装置 SenseNova</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+              <li>
+                <span class="rank-no">6</span>
+                <a href="/tool/bailian/">
+                  <strong>阿里云百炼</strong>
+                  <span>AI工具</span>
+                </a>
+              </li>
+            
+          </ol>
+        </section>
+
+        
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark">AI</span>
+          <span class="brand-text">AI 潮汐<em>AI 资讯与工具库</em></span>
+        </a>
+        <p>实时追踪 AI 热点，不错过每一个值得关注的新变化，第一时间看懂 AI 世界正在发生什么。</p>
+        <p class="footer-note">© 2026 AI 潮汐 · 保留所有权利</p>
+      </div>
+      <div class="footer-col">
+        <h3>热门分类</h3>
+        <ul>
+          
+            <li><a href="/category/ai-tools/">AI工具</a></li>
+          
+            <li><a href="/category/ai-news/">AI资讯</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          
+            <a href="/tag/%E8%81%8A%E5%A4%A9%E5%8A%A9%E6%89%8B/">聊天助手</a>
+          
+            <a href="/tag/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+          
+            <a href="/tag/Agent/">Agent</a>
+          
+            <a href="/tag/API/">API</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+          
+            <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8BAPI/">大模型API</a>
+          
+            <a href="/tag/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/">字节跳动</a>
+          
+            <a href="/tag/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7/">开发者工具</a>
+          
+            <a href="/tag/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
+          
+            <a href="/tag/%E6%99%BA%E8%83%BD%E4%BD%93/">智能体</a>
+          
+            <a href="/tag/%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B/">编程助手</a>
+          
+            <a href="/tag/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/">视频生成</a>
+          
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容</h3>
+        <ul>
+          <li><a href="/category/ai-news/">最新资讯</a></li>
+          <li><a href="/category/ai-tools/">热门工具</a></li>
+          <li><a href="/search/">站内搜索</a></li>
+          <li><a href="/partner/">收录与合作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <ul>
+          <li><a href="/about/">关于我们</a></li>
+        </ul>
+        <ul class="footer-mini">
+          <li><a href="/privacy/">隐私政策</a></li>
+          <li><a href="/terms/">服务条款</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/vendor/lucide.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
