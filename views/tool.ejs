@@ -1,0 +1,245 @@
+<main class="tool-page <%= post.kind === 'news' ? 'tool-page--news' : '' %>">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      <a href="/category/<%= post.category %>/"><%= post.categoryName %></a>
+      <span>/</span>
+      <span class="current"><%= post.title.split(' - ')[0] %></span>
+    </nav>
+
+    <header class="tool-hero">
+      <div class="tool-cover">
+        <% if (post.cover && post.cover.url) { %>
+          <img src="<%= post.cover.url %>" alt="<%= post.title %>" loading="lazy">
+        <% } else { %>
+          <span class="letter-tile letter-tile--lg" style="background-color: <%= post.cover ? post.cover.color : '#e5484d' %>"><%= post.cover ? post.cover.letter : 'AI' %></span>
+        <% } %>
+      </div>
+      <div class="tool-hero-body">
+        <h1><%= post.title %></h1>
+        <% if (post.subtitle) { %><p class="tool-subtitle"><%= post.subtitle %></p><% } %>
+        <div class="tool-meta">
+          <a class="chip chip--category" href="/category/<%= post.category %>/"><i data-lucide="folder"></i><%= post.categoryName %></a>
+          <% (post.tags || []).slice(0, 5).forEach(function(t) { %>
+            <a class="chip" href="/tag/<%= encodeURIComponent(t) %>/"><i data-lucide="tag"></i><%= t %></a>
+          <% }) %>
+        </div>
+        <div class="tool-actions">
+          <% if (post.kind === 'news') { %>
+            <% if (post.sourceUrl) { %>
+              <a class="btn btn--primary" href="<%= post.sourceUrl %>" rel="nofollow noopener" target="_blank">
+                <i data-lucide="external-link"></i> 阅读原文
+              </a>
+            <% } %>
+          <% } else if (post.recommendUrl) { %>
+            <a class="btn btn--primary" href="<%= post.recommendUrl %>" rel="nofollow noopener sponsored" target="_blank">
+              <i data-lucide="badge-dollar-sign"></i> 链接直达
+            </a>
+            <% if (post.recommendNote) { %>
+              <span class="tool-action-note"><%= post.recommendNote %></span>
+            <% } %>
+          <% } else if (post.officialUrl) { %>
+            <a class="btn btn--primary" href="<%= post.officialUrl %>" rel="nofollow noopener" target="_blank">
+              <i data-lucide="external-link"></i> 访问官网
+            </a>
+          <% } %>
+          <button class="btn btn--ghost copy-link" data-url="<%= canonical %>">
+            <i data-lucide="link"></i> 复制链接
+          </button>
+        </div>
+      </div>
+      <div class="tool-facts">
+        <div><span><%= post.kind === 'news' ? '发布日期' : '内容类型' %></span><strong><%= post.kind === 'news' ? post.publishedAt.slice(0, 10) : '工具收录' %></strong></div>
+        <div><span>热度指数</span><strong><%= post.hotScore %></strong></div>
+        <div><span>阅读时长</span><strong><%= post.sections.length ? post.sections.map(function(s){return s.body;}).join('').replace(/<[^>]+>/g,'').length : 0 %> 字</strong></div>
+      </div>
+    </header>
+
+    <% if (post.kind === 'tool' && (post.officialUrl || post.recommendUrl)) { %>
+      <section class="official-band" aria-label="官网直达">
+        <div class="official-band-title">
+          <i data-lucide="globe"></i>
+          <span><%= post.recommendUrl ? '链接直达' : '官网直达' %></span>
+        </div>
+        <div class="official-links">
+          <% if (post.recommendUrl) { %>
+            <a href="<%= post.recommendUrl %>" rel="nofollow noopener sponsored" target="_blank">
+              <span class="official-link-name"><%= post.title.split(' - ')[0] %> 链接直达</span>
+              <span class="official-link-url"><%= post.recommendUrl.replace(/^https?:\/\//, '').replace(/\/+$/, '') %></span>
+              <i data-lucide="badge-dollar-sign"></i>
+            </a>
+            <% if (post.recommendNote) { %>
+              <p class="official-link-note"><%= post.recommendNote %></p>
+            <% } %>
+          <% } else if (post.officialUrl) { %>
+            <a href="<%= post.officialUrl %>" rel="nofollow noopener" target="_blank">
+              <span class="official-link-name"><%= post.title.split(' - ')[0] %> 官网</span>
+              <span class="official-link-url"><%= post.officialUrl.replace(/^https?:\/\//, '').replace(/\/+$/, '') %></span>
+              <i data-lucide="external-link"></i>
+            </a>
+          <% } %>
+        </div>
+      </section>
+    <% } %>
+
+    <div class="tool-layout">
+      <article class="article">
+        <% if (toc.length > 2) { %>
+          <nav class="toc" aria-label="目录">
+            <p>目录</p>
+            <ol>
+              <% toc.forEach(function(t) { %>
+                <li><a href="#<%= t.id %>"><%= t.heading %></a></li>
+              <% }) %>
+            </ol>
+          </nav>
+        <% } %>
+
+        <%- include('partials/ad', { slot: 'article-top' }) %>
+
+        <% if (post.kind === 'tool' && post.screenshots && post.screenshots.length) { %>
+          <section class="tool-gallery" id="screenshots">
+            <div class="section-block-head">
+              <h2>产品界面</h2>
+              <p>来自官网与产品公开页的产品图与界面素材</p>
+            </div>
+            <div class="tool-shot-grid">
+              <% post.screenshots.forEach(function(src, i) { %>
+                <a class="tool-shot" href="<%= post.recommendUrl || post.officialUrl || post.sourceUrl || '#' %>" rel="nofollow noopener" target="_blank">
+                  <img src="<%= src %>" alt="<%= post.title %> 截图 <%= i + 1 %>" loading="lazy">
+                </a>
+              <% }) %>
+            </div>
+          </section>
+        <% } %>
+
+        <% (post.sections || []).forEach(function(s, i) { %>
+          <section class="section-block" id="<%= 'sec-' + (i + 1) %>">
+            <h2><%= s.heading %></h2>
+            <div class="prose"><%- s.body %></div>
+            <% if (i === 1) { %><%- include('partials/ad', { slot: 'article-middle' }) %><% } %>
+          </section>
+        <% }) %>
+
+        <% if (post.kind === 'news') { %>
+          <section class="section-block" id="source-note">
+            <h2>来源与说明</h2>
+            <div class="prose">
+              <p>本文由 AI 潮汐编辑部基于官方公告与公开资料整理，补充了行业影响、适用场景和行动建议，帮助你在阅读原文前先理解这条信息为什么重要。</p>
+              <% if (post.sourceUrl) { %>
+                <p>原始来源：<a href="<%= post.sourceUrl %>" rel="nofollow noopener" target="_blank"><%= post.sourceUrl %></a></p>
+              <% } %>
+              <p>如发现事实、价格或链接有误，可通过 <a href="/contact/">联系我们</a> 提交更正。</p>
+            </div>
+          </section>
+        <% } %>
+
+        <% if (post.kind === 'tool' && (post.officialUrl || post.recommendUrl)) { %>
+          <section class="section-block" id="official-links">
+            <h2><%= post.recommendUrl ? '链接直达' : '官网直达' %></h2>
+            <div class="prose">
+              <p><%= post.recommendUrl ? '想亲自上手体验，直接从推荐入口出发：' : '想亲自上手体验，直接从官方入口出发：' %></p>
+              <ul class="official-list">
+                <% if (post.recommendUrl) { %>
+                  <li>
+                    <a href="<%= post.recommendUrl %>" rel="nofollow noopener sponsored" target="_blank">
+                      <span class="official-list-name">链接直达</span>
+                      <span class="official-list-url"><%= post.recommendUrl.replace(/^https?:\/\//, '').replace(/\/+$/, '') %></span>
+                      <i data-lucide="badge-dollar-sign"></i>
+                    </a>
+                    <% if (post.recommendNote) { %>
+                      <p class="official-list-note"><%= post.recommendNote %></p>
+                    <% } %>
+                  </li>
+                <% } else if (post.officialUrl) { %>
+                  <li>
+                    <a href="<%= post.officialUrl %>" rel="nofollow noopener" target="_blank">
+                      <span class="official-list-name"><%= post.title.split(' - ')[0] %> 官网</span>
+                      <span class="official-list-url"><%= post.officialUrl.replace(/^https?:\/\//, '').replace(/\/+$/, '') %></span>
+                      <i data-lucide="external-link"></i>
+                    </a>
+                  </li>
+                <% } %>
+              </ul>
+            </div>
+          </section>
+        <% } %>
+
+        <% if (post.faq && post.faq.length) { %>
+          <section class="section-block" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+              <% post.faq.forEach(function(f) { %>
+                <details class="faq-item">
+                  <summary><%= f.q %></summary>
+                  <p><%= f.a %></p>
+                </details>
+              <% }) %>
+            </div>
+          </section>
+        <% } %>
+
+        <div class="article-bottom">
+          <div class="prev-next">
+            <% if (next) { %>
+              <a href="/tool/<%= next.slug %>/">
+                <span>上一篇</span>
+                <strong><%= next.title.split(' - ')[0] %></strong>
+              </a>
+            <% } %>
+            <% if (prev) { %>
+              <a href="/tool/<%= prev.slug %>/">
+                <span>下一篇</span>
+                <strong><%= prev.title.split(' - ')[0] %></strong>
+              </a>
+            <% } %>
+          </div>
+          <div class="tag-cloud tag-cloud--bottom">
+            <% (post.tags || []).forEach(function(t) { %>
+              <a href="/tag/<%= encodeURIComponent(t) %>/"><%= t %></a>
+            <% }) %>
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar sidebar--article">
+        <%- include('partials/ad', { slot: 'article-side-top' }) %>
+
+        <section class="side-card">
+          <h2>相关<%= post.kind === 'news' ? '资讯' : '工具' %></h2>
+          <div class="related-list">
+            <% related.forEach(function(p) { %>
+              <a href="/tool/<%= p.slug %>/" class="related-item">
+                <% if (p.cover && p.cover.url) { %>
+                  <img src="<%= p.cover.url %>" alt="">
+                <% } else { %>
+                  <span class="letter-tile" style="background-color: <%= p.cover ? p.cover.color : '#e5484d' %>"><%= p.cover ? p.cover.letter : 'AI' %></span>
+                <% } %>
+                <span><strong><%= p.title.split(' - ')[0] %></strong><em><%= p.categoryName %></em></span>
+              </a>
+            <% }) %>
+            <% if (!related.length) { %><p class="muted">暂无相关内容。</p><% } %>
+          </div>
+        </section>
+
+        <section class="side-card">
+          <h2>最新内容</h2>
+          <ol class="rank-list">
+            <% (latest || []).slice(0, 6).forEach(function(p, i) { %>
+              <li>
+                <span class="rank-no"><%= i + 1 %></span>
+                <a href="/tool/<%= p.slug %>/">
+                  <strong><%= p.title.split(' - ')[0] %></strong>
+                  <span><%= p.kind === 'news' ? p.publishedAt.slice(0, 10) : p.categoryName %></span>
+                </a>
+              </li>
+            <% }) %>
+          </ol>
+        </section>
+
+        <%- include('partials/ad', { slot: 'article-side-bottom' }) %>
+      </aside>
+    </div>
+  </div>
+</main>
