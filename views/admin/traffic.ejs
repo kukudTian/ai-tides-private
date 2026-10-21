@@ -1,0 +1,124 @@
+<%
+var daily = traffic.daily || [];
+var maxDaily = 1;
+daily.forEach(function (d) {
+  if (Number(d.pageviews) > maxDaily) maxDaily = Number(d.pageviews);
+});
+%>
+
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <h2>日期筛选</h2>
+    <span>仅统计真实浏览器的页面访问，爬虫与预检请求已过滤</span>
+  </div>
+  <div class="admin-panel-body">
+    <form class="admin-range-form" method="get" action="/admin">
+      <input type="hidden" name="p" value="traffic">
+      <label>
+        开始日期
+        <input type="date" name="start" value="<%= trafficRange.from %>" max="<%= trafficRange.today %>">
+      </label>
+      <label>
+        结束日期
+        <input type="date" name="end" value="<%= trafficRange.to || trafficRange.today %>" max="<%= trafficRange.today %>">
+      </label>
+      <button class="admin-btn admin-btn--primary" type="submit">应用筛选</button>
+      <% if (trafficRange.from || trafficRange.to) { %>
+        <a class="admin-btn" href="/admin?p=traffic">清除筛选</a>
+      <% } %>
+    </form>
+  </div>
+</section>
+
+<section class="admin-stat-grid admin-stat-grid--traffic">
+  <div class="admin-stat">
+    <strong><%= traffic.todayVisitors %></strong>
+    <span>今日访客</span>
+  </div>
+  <div class="admin-stat">
+    <strong><%= traffic.todayPageviews %></strong>
+    <span>今日浏览量</span>
+  </div>
+  <div class="admin-stat">
+    <strong><%= traffic.weekVisitors %></strong>
+    <span>本周访客</span>
+  </div>
+  <div class="admin-stat">
+    <strong><%= traffic.weekPageviews %></strong>
+    <span>本周浏览量</span>
+  </div>
+  <div class="admin-stat">
+    <strong><%= traffic.allTimeVisitors %></strong>
+    <span>累计访客</span>
+  </div>
+  <div class="admin-stat">
+    <strong><%= traffic.allTimePageviews %></strong>
+    <span>累计浏览量</span>
+  </div>
+</section>
+
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <h2>每日浏览走势</h2>
+    <span><%= traffic.rangeLabel %>，共 <%= traffic.totalVisitors %> 位访客、<%= traffic.totalPageviews %> 次浏览</span>
+  </div>
+  <% if (daily.length) { %>
+    <div class="admin-daily-chart">
+      <% daily.forEach(function (d) { %>
+        <div class="admin-daily-col" title="<%= d.date %>：<%= d.pageviews %> 次浏览 / <%= d.visitors %> 位访客">
+          <span class="admin-daily-value"><%= d.pageviews %></span>
+          <i class="admin-daily-bar" style="height:<%= d.pageviews ? Math.max(4, Math.round(Number(d.pageviews) / maxDaily * 100)) : 2 %>%"></i>
+          <em><%= String(d.date).slice(5) %></em>
+        </div>
+      <% }) %>
+    </div>
+  <% } else { %>
+    <div class="admin-empty">选中的范围内暂无访问数据。</div>
+  <% } %>
+</section>
+
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <h2>每周汇总</h2>
+    <span>周次按北京时间统计</span>
+  </div>
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>周次</th>
+          <th>起止日期</th>
+          <th>浏览量</th>
+          <th>访客数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% traffic.weekly.forEach(function (w) { %>
+          <tr>
+            <td><%= w.label %></td>
+            <td class="admin-cell-muted"><%= w.start %> ~ <%= w.end %></td>
+            <td class="admin-cell-views"><%= w.pageviews %></td>
+            <td class="admin-cell-views"><%= w.visitors %></td>
+          </tr>
+        <% }) %>
+        <% if (!traffic.weekly.length) { %>
+          <tr><td colspan="4" class="admin-empty">暂无周汇总数据。</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <h2>流量统计维护</h2>
+    <span>清空后从下一条访问开始重新计数</span>
+  </div>
+  <div class="admin-panel-body">
+    <form method="post" action="/admin/traffic/reset" data-confirm="确认清空全部流量统计？此操作不可恢复。">
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
+      <button class="admin-btn admin-btn--danger" type="submit">清空历史流量</button>
+    </form>
+    <p class="admin-panel-lead admin-panel-lead--flat">仅在需要完全重新计数时使用；网站今日及历史访客数据会被一并删除。</p>
+  </div>
+</section>

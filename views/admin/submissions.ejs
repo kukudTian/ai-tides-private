@@ -1,0 +1,111 @@
+<%
+var emailLabels = {
+  pending: '待发送',
+  sent: '已发送',
+  failed: '发送失败'
+};
+var statusLabels = {
+  unread: '未读',
+  read: '已读',
+  online: '已上线',
+  rejected: '不考虑上线'
+};
+%>
+
+<section class="admin-sub-stats">
+  <div class="admin-sub-stat admin-sub-stat--unread">
+    <strong><%= submissionStats.unread %></strong>
+    <span>未读</span>
+  </div>
+  <div class="admin-sub-stat admin-sub-stat--read">
+    <strong><%= submissionStats.read %></strong>
+    <span>已读</span>
+  </div>
+  <div class="admin-sub-stat admin-sub-stat--online">
+    <strong><%= submissionStats.online %></strong>
+    <span>已上线</span>
+  </div>
+  <div class="admin-sub-stat admin-sub-stat--rejected">
+    <strong><%= submissionStats.rejected %></strong>
+    <span>不考虑上线</span>
+  </div>
+</section>
+
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <h2>合作收录申请</h2>
+    <span>前台提交后自动推送邮件，后台跟进状态</span>
+  </div>
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>站点</th>
+          <th>类型</th>
+          <th>网址</th>
+          <th>联系方式</th>
+          <th>说明</th>
+          <th>付费</th>
+          <th>邮件状态</th>
+          <th>收录状态</th>
+          <th class="admin-th-actions">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% partnerSubmissions.forEach(function (row) { %>
+          <%
+          var emailClass = row.emailStatus === 'sent'
+            ? 'admin-status--active'
+            : row.emailStatus === 'failed'
+              ? 'admin-status--email-failed'
+              : 'admin-status--email-pending';
+          var statusClass = row.status === 'online'
+            ? 'admin-status--active'
+            : row.status === 'rejected'
+              ? 'admin-status--revoked'
+              : row.status === 'read'
+                ? 'admin-status--read'
+                : 'admin-status--unread';
+          %>
+          <tr>
+            <td>
+              <span class="admin-pf-contact"><%= row.name %></span>
+              <span class="admin-cell-muted"><%= row.createdAtText %></span>
+            </td>
+            <td><span class="admin-type-chip"><%= row.type || '其他' %></span></td>
+            <td>
+              <a class="admin-source-link admin-url-cell" href="<%= row.url %>" target="_blank" rel="noopener nofollow"><%= row.url %></a>
+            </td>
+            <td>
+              <span class="admin-contact-block"><%= row.contact || '—' %></span>
+              <% if (row.email) { %><span class="admin-contact-block"><%= row.email %></span><% } %>
+            </td>
+            <td class="admin-desc-cell"><%= row.desc || '—' %></td>
+            <td><%= row.priceNote ? '是' : '否' %></td>
+            <td>
+              <span class="admin-status <%= emailClass %>"><%= emailLabels[row.emailStatus] || row.emailStatus %></span>
+            </td>
+            <td>
+              <span class="admin-status <%= statusClass %>"><%= statusLabels[row.status] || row.status %></span>
+            </td>
+            <td>
+              <form class="admin-sub-status-form" method="post" action="/admin/submissions/<%= encodeURIComponent(row.id) %>/status">
+                <input type="hidden" name="_csrf" value="<%= csrf %>">
+                <select class="admin-sub-status-select" name="status">
+                  <option value="unread" <%= row.status === 'unread' ? 'selected' : '' %>>未读</option>
+                  <option value="read" <%= row.status === 'read' ? 'selected' : '' %>>已读</option>
+                  <option value="online" <%= row.status === 'online' ? 'selected' : '' %>>已上线</option>
+                  <option value="rejected" <%= row.status === 'rejected' ? 'selected' : '' %>>不考虑上线</option>
+                </select>
+                <button class="admin-btn admin-btn--small" type="submit">保存</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+        <% if (!partnerSubmissions.length) { %>
+          <tr><td colspan="9" class="admin-empty">还没有收到收录申请。</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</section>

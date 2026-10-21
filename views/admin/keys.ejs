@@ -1,0 +1,120 @@
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <h2>创建发布密钥</h2>
+    <span>小龙虾调用后台发布接口时使用</span>
+  </div>
+  <div class="admin-panel-body">
+    <form class="admin-api-form" method="post" action="/admin/api-keys">
+      <label for="api-key-name">密钥名称</label>
+      <div class="admin-api-form-row">
+        <input id="api-key-name" name="name" type="text" maxlength="40" value="小龙虾-资讯发布" autocomplete="off">
+        <input type="hidden" name="_csrf" value="<%= csrf %>">
+        <button class="admin-btn admin-btn--primary" type="submit">生成密钥</button>
+      </div>
+    </form>
+    <% if (newKey) { %>
+      <div class="admin-key-reveal" role="status">
+        <div class="admin-key-reveal-head">
+          <strong><%= newKey.name %> 已生成</strong>
+          <button class="admin-btn admin-btn--small" type="button" data-copy="<%= newKey.key %>">复制密钥</button>
+        </div>
+        <code class="admin-key-value"><%= newKey.key %></code>
+      </div>
+      <p class="admin-panel-lead admin-panel-lead--flat">完整密钥只在本次创建后显示一次，请先复制保存；之后只能查看前缀。</p>
+    <% } else { %>
+      <p class="admin-panel-lead">完整密钥只在创建时出现一次，后续只能看到前缀；吊销后立即失效。</p>
+    <% } %>
+  </div>
+</section>
+
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <h2>密钥列表</h2>
+    <span>共 <%= apiKeys.length %> 个密钥</span>
+  </div>
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>前缀</th>
+          <th>创建时间</th>
+          <th>最后使用</th>
+          <th>状态</th>
+          <th class="admin-th-actions">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% apiKeys.forEach(function (key) { %>
+          <tr>
+            <td><%= key.name %></td>
+            <td><span class="admin-key-prefix"><%= key.prefix %></span></td>
+            <td class="admin-cell-muted"><%= key.createdAtText %></td>
+            <td class="admin-cell-muted"><%= key.lastUsedAtText %></td>
+            <td>
+              <span class="admin-status <%= key.revoked ? 'admin-status--revoked' : 'admin-status--active' %>">
+                <%= key.revoked ? '已吊销' : '可用' %>
+              </span>
+            </td>
+            <td>
+              <% if (!key.revoked) { %>
+                <form class="inline-form" method="post" action="/admin/api-keys/<%= encodeURIComponent(key.id) %>/revoke" data-confirm="确认吊销这个密钥？小龙虾将无法继续用它发布。">
+                  <input type="hidden" name="_csrf" value="<%= csrf %>">
+                  <button class="admin-btn admin-btn--small admin-btn--danger" type="submit">吊销</button>
+                </form>
+              <% } else { %>
+                <span class="admin-cell-muted"><%= key.revokedAtText %></span>
+              <% } %>
+            </td>
+          </tr>
+        <% }) %>
+        <% if (!apiKeys.length) { %>
+          <tr><td colspan="6" class="admin-empty">还没有创建过发布密钥。</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <h2>修改后台密码</h2>
+    <span>更新后会退出当前登录</span>
+  </div>
+  <div class="admin-panel-body">
+    <form class="admin-password-form" method="post" action="/admin/password">
+      <label>
+        当前密码
+        <input type="password" name="currentPassword" autocomplete="current-password" required>
+      </label>
+      <label>
+        新密码
+        <input type="password" name="nextPassword" minlength="8" autocomplete="new-password" required>
+      </label>
+      <label>
+        确认新密码
+        <input type="password" name="confirmPassword" minlength="8" autocomplete="new-password" required>
+      </label>
+      <input type="hidden" name="_csrf" value="<%= csrf %>">
+      <button class="admin-btn admin-btn--primary" type="submit">更新密码</button>
+    </form>
+  </div>
+</section>
+
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <h2>工作日志</h2>
+    <span>最近 30 条</span>
+  </div>
+  <ul class="admin-log-list">
+    <% workerLog.forEach(function (log) { %>
+      <li class="admin-log-item <%= log.kind === 'published' ? 'admin-log-item--published' : log.kind === 'warn' ? 'admin-log-item--warn' : log.kind === 'error' ? 'admin-log-item--error' : '' %>">
+        <span class="admin-log-time"><%= log.time %></span>
+        <span class="admin-log-text"><%- log.html %></span>
+      </li>
+    <% }) %>
+    <% if (!workerLog.length) { %>
+      <li class="admin-empty">暂无工作日志。</li>
+    <% } %>
+  </ul>
+</section>

@@ -1,0 +1,110 @@
+<%
+var recommendCount = 0;
+var toolViewsTotal = 0;
+var toolViewsRange = 0;
+toolPosts.forEach(function (row) {
+  if (row.post && row.post.recommendUrl) recommendCount += 1;
+  toolViewsTotal += Number(row.views) || 0;
+  toolViewsRange += Number(row.rangeViews) || 0;
+});
+%>
+
+<section class="admin-stat-grid">
+  <div class="admin-stat">
+    <strong><%= toolPosts.length %></strong>
+    <span>已收录工具</span>
+  </div>
+  <div class="admin-stat">
+    <strong><%= recommendCount %></strong>
+    <span>含推荐链接</span>
+  </div>
+  <div class="admin-stat">
+    <strong><%= toolViewsRange %></strong>
+    <span>区间工具浏览</span>
+  </div>
+  <div class="admin-stat">
+    <strong><%= toolViewsTotal %></strong>
+    <span>工具累计浏览</span>
+  </div>
+</section>
+
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <h2>AI 工具收录</h2>
+    <span>官方工具放官网直达，有返利合作的放链接直达</span>
+  </div>
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>工具</th>
+          <th>官网 / 来源</th>
+          <th>推荐入口</th>
+          <th>区间浏览</th>
+          <th>累计浏览</th>
+          <th>更新时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% toolPosts.forEach(function (row) { %>
+          <%
+          var item = row.post;
+          var maxDay = 1;
+          row.daily.forEach(function (day) {
+            if (Number(day.pageviews) > maxDay) maxDay = Number(day.pageviews);
+          });
+          %>
+          <tr>
+            <td>
+              <a class="admin-post-title" href="/tool/<%= encodeURIComponent(item.slug) %>/" target="_blank" rel="noopener"><%= item.title %></a>
+              <span class="admin-post-tags"><%= item.categoryName %></span>
+            </td>
+            <td class="admin-cell-muted">
+              <% if (item.officialUrl) { %>
+                <a class="admin-source-link" href="<%= item.officialUrl %>" target="_blank" rel="noopener nofollow"><%= row.source || '官网' %></a>
+              <% } else { %>
+                —
+              <% } %>
+            </td>
+            <td>
+              <% if (item.recommendUrl) { %>
+                <a class="admin-source-link" href="<%= item.recommendUrl %>" target="_blank" rel="noopener sponsored">链接直达</a>
+                <% if (item.recommendNote) { %>
+                  <span class="admin-refer-note"><%= item.recommendNote %></span>
+                <% } %>
+              <% } else { %>
+                —
+              <% } %>
+            </td>
+            <td class="admin-cell-views"><%= row.rangeViews %></td>
+            <td class="admin-cell-views"><%= row.views %></td>
+            <td class="admin-cell-muted"><%= row.updatedAt %></td>
+          </tr>
+          <tr class="admin-desc-row">
+            <td colspan="6">
+              <details class="admin-post-detail">
+                <summary>每日浏览明细</summary>
+                <div class="admin-daily-mini">
+                  <% if (row.daily.length) { %>
+                    <% row.daily.forEach(function (day) { %>
+                      <div title="<%= day.date %>：<%= day.pageviews %> 次浏览">
+                        <i style="height:<%= day.pageviews ? Math.max(8, Math.round(Number(day.pageviews) / maxDay * 100)) : 3 %>%"></i>
+                        <span><%= String(day.date).slice(5) %></span>
+                        <em><%= day.pageviews %></em>
+                      </div>
+                    <% }) %>
+                  <% } else { %>
+                    <span class="admin-empty">暂无浏览记录。</span>
+                  <% } %>
+                </div>
+              </details>
+            </td>
+          </tr>
+        <% }) %>
+        <% if (!toolPosts.length) { %>
+          <tr><td colspan="6" class="admin-empty">尚未收录任何工具。</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</section>

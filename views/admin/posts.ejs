@@ -1,0 +1,138 @@
+<%
+var postViewsTotal = 0;
+var postViewsRange = 0;
+newsPosts.forEach(function (row) {
+  postViewsTotal += Number(row.views) || 0;
+  postViewsRange += Number(row.rangeViews) || 0;
+});
+%>
+
+<section class="admin-stat-grid">
+  <div class="admin-stat">
+    <strong><%= newsPosts.length %></strong>
+    <span>已发布资讯</span>
+  </div>
+  <div class="admin-stat">
+    <strong><%= scheduledPosts.length %></strong>
+    <span>定时排队</span>
+  </div>
+  <div class="admin-stat">
+    <strong><%= postViewsRange %></strong>
+    <span>区间资讯浏览</span>
+  </div>
+  <div class="admin-stat">
+    <strong><%= postViewsTotal %></strong>
+    <span>资讯累计浏览</span>
+  </div>
+</section>
+
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <h2>已发布资讯</h2>
+    <span>区间浏览随顶部日期筛选变化，累计浏览为全部历史</span>
+  </div>
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>标题</th>
+          <th>发布时间</th>
+          <th>来源</th>
+          <th>区间浏览</th>
+          <th>累计浏览</th>
+          <th class="admin-th-actions">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% newsPosts.forEach(function (row) { %>
+          <%
+          var item = row.post;
+          var maxDay = 1;
+          row.daily.forEach(function (day) {
+            if (Number(day.pageviews) > maxDay) maxDay = Number(day.pageviews);
+          });
+          %>
+          <tr>
+            <td>
+              <a class="admin-post-title" href="/tool/<%= encodeURIComponent(item.slug) %>/" target="_blank" rel="noopener"><%= item.title %></a>
+              <span class="admin-post-tags">
+                <% (item.tags || []).slice(0, 4).forEach(function (t) { %><%= t %> · <% }) %>
+              </span>
+            </td>
+            <td class="admin-cell-muted"><%= row.publishedAt %></td>
+            <td class="admin-cell-muted">
+              <% if (row.source) { %>
+                <a class="admin-source-link" href="<%= item.sourceUrl %>" target="_blank" rel="noopener nofollow"><%= row.source %></a>
+              <% } else { %>
+                —
+              <% } %>
+            </td>
+            <td class="admin-cell-views"><%= row.rangeViews %></td>
+            <td class="admin-cell-views"><%= row.views %></td>
+            <td>
+              <form class="inline-form" method="post" action="/admin/posts/<%= encodeURIComponent(item.slug) %>/delete" data-confirm="确认删除这篇资讯？删除后无法恢复。">
+                <input type="hidden" name="_csrf" value="<%= csrf %>">
+                <button class="admin-link-btn admin-danger-link" type="submit">删除</button>
+              </form>
+            </td>
+          </tr>
+          <tr class="admin-desc-row">
+            <td colspan="6">
+              <details class="admin-post-detail">
+                <summary>每日浏览明细</summary>
+                <div class="admin-daily-mini">
+                  <% if (row.daily.length) { %>
+                    <% row.daily.forEach(function (day) { %>
+                      <div title="<%= day.date %>：<%= day.pageviews %> 次浏览">
+                        <i style="height:<%= day.pageviews ? Math.max(8, Math.round(Number(day.pageviews) / maxDay * 100)) : 3 %>%"></i>
+                        <span><%= String(day.date).slice(5) %></span>
+                        <em><%= day.pageviews %></em>
+                      </div>
+                    <% }) %>
+                  <% } else { %>
+                    <span class="admin-empty">暂无浏览记录。</span>
+                  <% } %>
+                </div>
+              </details>
+            </td>
+          </tr>
+        <% }) %>
+        <% if (!newsPosts.length) { %>
+          <tr><td colspan="6" class="admin-empty">还没有发布过 AI 资讯。</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="admin-panel">
+  <div class="admin-panel-head">
+    <h2>定时排队</h2>
+    <span>到达计划时间后由自动化工作流发布</span>
+  </div>
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>标题</th>
+          <th>计划发布时间</th>
+          <th>来源</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% scheduledPosts.forEach(function (row) { %>
+          <tr>
+            <td><a class="admin-post-title" href="/tool/<%= encodeURIComponent(row.post.slug) %>/" target="_blank" rel="noopener"><%= row.post.title %></a></td>
+            <td class="admin-cell-muted"><%= row.publishedAt %></td>
+            <td class="admin-cell-muted"><%= row.source || '—' %></td>
+            <td><span class="admin-status admin-status--scheduled">定时中</span></td>
+          </tr>
+        <% }) %>
+        <% if (!scheduledPosts.length) { %>
+          <tr><td colspan="4" class="admin-empty">当前没有排队中的资讯。</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</section>
