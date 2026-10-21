@@ -1,0 +1,11 @@
+<% if (adsenseClient && (adsenseSlots || {})[slot]) { %>
+  <div class="ad-slot ad-slot--live" data-slot="<%= slot %>">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="<%= adsenseClient %>"
+         data-ad-slot="<%= (adsenseSlots || {})[slot] %>"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+<% } %>

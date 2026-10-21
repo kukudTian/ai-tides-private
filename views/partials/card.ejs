@@ -1,0 +1,22 @@
+<a class="tool-card <%= post.kind === 'news' ? 'tool-card--news' : '' %>" href="/tool/<%= post.slug %>/">
+  <div class="tool-card-top">
+    <% if (post.cover && post.cover.url) { %>
+      <img class="tool-card-cover" src="<%= post.cover.url %>" alt="" loading="lazy">
+    <% } else { %>
+      <span class="letter-tile" style="background-color: <%= post.cover ? post.cover.color : '#e5484d' %>"><%= post.cover ? post.cover.letter : 'AI' %></span>
+    <% } %>
+    <span class="tool-card-category"><%= post.categoryName %></span>
+  </div>
+  <div class="tool-card-body">
+    <h3><%= post.title.split(' - ')[0] %></h3>
+    <p><%= post.summary || post.subtitle %></p>
+  </div>
+  <div class="tool-card-foot">
+    <% if (post.kind === 'news') { %>
+      <span><i data-lucide="calendar"></i><%= post.publishedAt.slice(0, 10) %></span>
+    <% } else { %>
+      <span><i data-lucide="box"></i><%= post.categoryName %></span>
+    <% } %>
+    <span class="tool-card-arrow"><i data-lucide="arrow-right"></i></span>
+  </div>
+</a>
