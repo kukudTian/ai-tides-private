@@ -1,0 +1,25 @@
+name = "ai-tides"
+compatibility_date = "2026-08-16"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+[vars]
+SITE_NAME = "AI 潮汐"
+SITE_TAGLINE = "实时追踪 AI 热点，不错过每一个值得关注的新变化"
+# 站点真实域名，替换域名后同步修改这里的值
+SITE_URL = "https://ai-blog.cloud"
+# 广告相关配置通过 Cloudflare Pages 加密变量（secret）注入，见 README-cloudflare.md
+ADSENSE_SLOTS = "{}"
+CONTACT_EMAIL = "1534838732@qq.com"
+# Google Analytics 4 衡量 ID（公开值，可随环境覆盖）
+GOOGLE_ANALYTICS_ID = "G-WXMJ6STTQV"
+
+# 可选：从外部定时器触发 /api/cron/publish 时使用的密钥
+CRON_SECRET = ""
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ai-tides"
+# 在 Cloudflare 控制台创建 D1 数据库后，把它的 ID 填到这里。
+# 本地开发可先用 npx wrangler pages dev --d1 DB --local 自动创建。
+database_id = "da3b2dd6-5cd5-406e-bded-1936fb4e4b36"
