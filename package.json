@@ -1,6 +1,6 @@
 {
   "name": "ai-tides",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "AI 潮汐：AI 资讯自动博客 + AI 工具库，服务端渲染 + 发布 API + 广告位",
   "main": "server.js",
